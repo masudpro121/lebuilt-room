@@ -11,6 +11,7 @@ function StepBudget() {
   const [budget, setBudget] = useState(onBoard.budget)
   const prevStep = () => {
     if(onBoardingStep>0){
+      localStorage.setItem('onBoardingStep', onBoardingStep-1)
       setOnBoardingStep(onBoardingStep-1)
     }
   }
@@ -18,7 +19,7 @@ function StepBudget() {
     let modifyOnboard = onBoard
     modifyOnboard.budget = budget
     setOnBoard(modifyOnboard)
-    console.log(onBoard);
+    localStorage.setItem('onBoardingStep', onBoardingStep+1)
     setOnBoardingStep(onBoardingStep+1)
   }
   return (

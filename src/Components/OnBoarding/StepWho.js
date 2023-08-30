@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 
 function StepWho() {
   const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
+  
   const setOnBoard = (data) =>{
     localStorage.setItem('onBoard', JSON.stringify(data))
     console.log(data);
@@ -15,10 +16,12 @@ function StepWho() {
 
   const prevStep = () => {
     if (onBoardingStep > 0) {
+      localStorage.setItem('onBoardingStep', onBoardingStep-1)
       setOnBoardingStep(onBoardingStep - 1);
     }
   };
   const nextStep = () => {
+    localStorage.setItem('onBoardingStep', onBoardingStep+1)
     setOnBoardingStep(onBoardingStep + 1);
   };
   const iam = [

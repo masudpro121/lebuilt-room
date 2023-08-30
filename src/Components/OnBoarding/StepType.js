@@ -10,11 +10,13 @@ function StepType() {
   const [selectedOption, setSelectedOption] = useState(onBoard?.type?.name)
   const prevStep = () => {
     if(onBoardingStep>0){
+      localStorage.setItem('onBoardingStep', onBoardingStep-1)
       setOnBoardingStep(onBoardingStep-1)
     }
     
   }
   const  nextStep = () => {
+    localStorage.setItem('onBoardingStep', onBoardingStep+1)
     setOnBoardingStep(onBoardingStep+1)
   }
   const types = [

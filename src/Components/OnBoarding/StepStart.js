@@ -6,11 +6,13 @@ function StepStart() {
   
   const prevStep = () => {
     if(onBoardingStep>0){
+      localStorage.setItem('onBoardingStep', onBoardingStep-1)
       setOnBoardingStep(onBoardingStep-1)
     }
     
   }
   const  nextStep = () => {
+    localStorage.setItem('onBoardingStep', onBoardingStep+1)
     setOnBoardingStep(onBoardingStep+1)
   }
 
