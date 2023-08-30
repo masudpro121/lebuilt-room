@@ -4,7 +4,7 @@ import { createContext, useState } from "react"
 export const MyContext = createContext()
 export default function App({ Component, pageProps }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [onBoardingStep, setOnBoardingStep] = useState(2)
+  const [onBoardingStep, setOnBoardingStep] = useState(5)
   const [onBoard, setOnBoard] = useState({})
   const value = {
     isLoggedIn, setIsLoggedIn,
