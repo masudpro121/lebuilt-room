@@ -42,6 +42,7 @@ function StepWho() {
   };
   return (
     <div>
+      <h3 className="text-2xl font-semibold mb-5">I am..</h3>
       {iam.map((am, i) => {
         return (
           <div key={i}>
@@ -55,8 +56,10 @@ function StepWho() {
           </div>
         );
       })} 
-       <button onClick={prevStep}>Prev Step</button>
-      <button onClick={nextStep}>Next Step</button>
+       <div className="flex gap-5 mt-5">
+       <button className="myBtn" onClick={prevStep}>Prev Step</button>
+      <button className="myBtn" onClick={nextStep}>Next Step</button>
+       </div>
     </div>
   );
 }

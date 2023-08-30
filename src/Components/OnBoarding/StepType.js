@@ -51,6 +51,7 @@ function StepType() {
    console.log(onBoard);
   return (
     <div>
+      <h3 className="text-2xl font-semibold mb-5 ml-10">Select room Type</h3>
       <div className="flex flex-wrap justify-center gap-5">
         {
           types.map((type, i)=>{
@@ -71,8 +72,14 @@ function StepType() {
           })
         }
       </div>
-      <button onClick={prevStep}>Prev Step</button>
-      <button onClick={nextStep}>Next Step</button>
+      <div className="flex gap-5 mt-5">
+        <button className="myBtn" onClick={prevStep}>
+          Prev Step
+        </button>
+        <button className="myBtn" onClick={nextStep}>
+          Next Step
+        </button>
+      </div>
     </div>
   )
 }

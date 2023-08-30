@@ -37,6 +37,7 @@ function StepPlace() {
   };
   return (
     <div>
+      <h3 className="text-2xl font-semibold mb-5 ml-10">Select Place</h3>
       <div>
         {
           places.map((place, i) => {
@@ -53,8 +54,14 @@ function StepPlace() {
             );
           })} 
       </div>
-      <button onClick={prevStep}>Prev Step</button>
-      <button onClick={nextStep}>Next Step</button>
+      <div className="flex gap-5 mt-5">
+        <button className="myBtn" onClick={prevStep}>
+          Prev Step
+        </button>
+        <button className="myBtn" onClick={nextStep}>
+          Next Step
+        </button>
+      </div>
     </div>
   )
 }

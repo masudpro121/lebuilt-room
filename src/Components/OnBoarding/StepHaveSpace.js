@@ -25,8 +25,14 @@ function StepHaveSpace() {
         <button onClick={()=>handleSpace('yes')}>Yes</button>
         <button onClick={()=>handleSpace('no')}>No</button>
       </div>
-      <button onClick={prevStep}>Prev Step</button>
-      <button onClick={nextStep}>Next Step</button>
+      <div className="flex gap-5 mt-5">
+        <button className="myBtn" onClick={prevStep}>
+          Prev Step
+        </button>
+        <button className="myBtn" onClick={nextStep}>
+          Next Step
+        </button>
+      </div>
     </div>
   )
 }

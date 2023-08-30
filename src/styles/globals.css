@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-.mybtn{
+.myBtn{
   @apply bg-gray-300 px-3 rounded-sm
 }
-.myinput{
+.myInput{
   @apply border-2 px-2 rounded-sm my-1
 }
