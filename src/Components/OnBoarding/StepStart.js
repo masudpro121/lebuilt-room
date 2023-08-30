@@ -2,7 +2,7 @@ import { MyContext } from "@/pages/_app"
 import React, { useContext } from 'react'
 
 function StepStart() {
-  const {onBoardingStep, setOnBoardingStep, onBoard, setOnBoard} = useContext(MyContext)
+  const {onBoardingStep, setOnBoardingStep} = useContext(MyContext)
   
   const prevStep = () => {
     if(onBoardingStep>0){

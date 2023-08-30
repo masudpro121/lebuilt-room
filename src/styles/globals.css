@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.mybtn{
+  @apply bg-gray-300 px-3 rounded-sm
+}
+.myinput{
+  @apply border-2 px-2 rounded-sm my-1
+}

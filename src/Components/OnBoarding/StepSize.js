@@ -2,7 +2,12 @@ import { MyContext } from "@/pages/_app"
 import React, { useContext, useState } from 'react'
 
 function StepSize() {
-  const {onBoardingStep, setOnBoardingStep, onBoard, setOnBoard} = useContext(MyContext)
+  const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
+  const setOnBoard = (data) =>{
+    localStorage.setItem('onBoard', JSON.stringify(data))
+    console.log(data);
+  }
+  const {onBoardingStep, setOnBoardingStep} = useContext(MyContext)
   const [selectedOption, setSelectedOption] = useState(onBoard.size)
   const prevStep = () => {
     if(onBoardingStep>0){

@@ -1,7 +1,12 @@
 import { MyContext } from "@/pages/_app"
 import React, { useContext, useState } from 'react'
 function StepStyle() {
-  const { onBoardingStep, setOnBoardingStep, onBoard, setOnBoard } = useContext(MyContext);
+  const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
+  const setOnBoard = (data) =>{
+    localStorage.setItem('onBoard', JSON.stringify(data))
+    console.log(data);
+  }
+  const { onBoardingStep, setOnBoardingStep } = useContext(MyContext);
   const [selectedOption, setSelectedOption] = useState(onBoard?.style?.name)
 
   const prevStep = () => {
