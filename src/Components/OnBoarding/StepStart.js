@@ -18,8 +18,7 @@ function StepStart() {
   return (
     <div>
      
-      <button onClick={prevStep}>Prev Step</button>
-      <button onClick={nextStep}>Next Step</button>
+      <button onClick={nextStep}>Get Started</button>
     </div>
     
   )

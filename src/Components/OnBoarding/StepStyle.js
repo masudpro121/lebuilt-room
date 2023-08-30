@@ -1,20 +1,79 @@
 import { MyContext } from "@/pages/_app"
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 function StepStyle() {
   const { onBoardingStep, setOnBoardingStep, onBoard, setOnBoard } = useContext(MyContext);
-  console.log(onBoard, 'ob');
+  const [selectedOption, setSelectedOption] = useState(onBoard?.style?.name)
+
   const prevStep = () => {
     if(onBoardingStep>0){
       setOnBoardingStep(onBoardingStep-1)
     }
-    
   }
   const  nextStep = () => {
     setOnBoardingStep(onBoardingStep+1)
   }
+  const styles = [
+    {
+      name: 'American Style',
+      img: 'https://i.ibb.co/5KKcJF6/american-style.webp'
+    },
+    {
+      name: 'Installation Art',
+      img: 'https://i.ibb.co/YRrwd0L/installation-art.webp'
+    },
+    {
+      name: 'Modern Style',
+      img: 'https://i.ibb.co/19FMCxv/modern-style.webp'
+    },
+    {
+      name: 'Minimalist Style',
+      img: 'https://i.ibb.co/WyR75BL/minimalist-style.webp'
+    },
+    {
+      name: 'Nordic Style',
+      img: 'https://i.ibb.co/wB0P7BK/nordic-style.webp'
+    },
+    {
+      name: 'Country Style',
+      img: 'https://i.ibb.co/KxGwxMJ/country-style.webp'
+    },
+    {
+      name: 'Luxury Style',
+      img: 'https://i.ibb.co/f20rfL6/luxury-style.webp'
+    },
+    
+  ]
+  const handleInput = (i) => {
+    setSelectedOption(styles[i].name)
+    let myOnBoard = onBoard
+    myOnBoard.style = styles[i]
+    setOnBoard(myOnBoard)
+    nextStep()
+   };
+   console.log(onBoard);
   return (
-    <div>StepStyle
-      <button onClick={prevStep}>Prev Step</button>
+    <div>
+      <div className="flex flex-wrap justify-center gap-5">
+      {
+        styles.map((style, i)=>{
+          return (
+            <div key={style.name+i} className="w-3/12">
+              <input
+              id={style.name.replaceAll(" ", "")}
+              type="radio"
+              checked={selectedOption == style.name}
+              onChange={()=>handleInput(i)}
+            />
+            <label htmlFor={style.name.replaceAll(" ", "")}>
+              <img src={style.img} alt="" />
+              <b>{style.name}</b>
+            </label>
+            </div>
+          )
+        })
+      }
+      </div>
+       <button onClick={prevStep}>Prev Step</button>
       <button onClick={nextStep}>Next Step</button>
     </div>
   )
