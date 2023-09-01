@@ -5,15 +5,14 @@ export const MyContext = createContext()
 export default function App({ Component, pageProps }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [onBoardingStep, setOnBoardingStep] = useState(0)
-  const [haveSpace, setHaveSpace] = useState("")
+  const [haveAccount, setHaveAccount] = useState('no')
   const value = {
     isLoggedIn, setIsLoggedIn,
     onBoardingStep, setOnBoardingStep,
-    haveSpace, setHaveSpace
+    haveAccount, setHaveAccount
   }
   useEffect(()=>{
-    setOnBoardingStep(localStorage.getItem('onBoardingStep') || 0)
-    setHaveSpace(localStorage.getItem('haveSpace')||"no")
+    setOnBoardingStep(Number(localStorage.getItem('onBoardingStep')) || 0)
   },[])
   return <MyContext.Provider value={value}>
     <Component {...pageProps} />

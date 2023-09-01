@@ -16,15 +16,18 @@ function Signup() {
     <div>
       <div>
         <div>
-          <input className="myinput" type="text" placeholder="your name" />
+          <input className="myInput" type="text" placeholder="your name" />
         </div>
         <div>
-          <input className="myinput" type="text" placeholder="your email" />
+          <input className="myInput" type="text" placeholder="your email" />
         </div>
         <div>
-          <input className="myinput" type="password" placeholder="password" />
+          <input className="myInput" type="password" placeholder="password" />
         </div>
-        <button className="mybtn">Signup</button>
+        <div>
+        <button className="myBtn">Signup</button>
+        </div>
+        <div>If don't have account? <button onClick={()=>setHaveAccount('no')}>Signin</button></div>
       </div>
       <button onClick={prevStep}>Prev Step</button>
     </div>

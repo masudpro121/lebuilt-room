@@ -2,7 +2,13 @@ import { MyContext } from "@/pages/_app"
 import React, { useContext, useState } from 'react'
 
 function StepHaveSpace() {
-  const {haveSpace, setHaveSpace, setOnBoardingStep, onBoardingStep} = useContext(MyContext)
+  const { setOnBoardingStep, onBoardingStep} = useContext(MyContext)
+  const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
+  const [selectedOption, setSelectedOption] = useState(onBoard.haveSpace)
+  const setOnBoard = (data) =>{
+    localStorage.setItem('onBoard', JSON.stringify(data))
+    console.log(data);
+  }
   const prevStep = () => {
     if(onBoardingStep>0){
       localStorage.setItem('onBoardingStep', onBoardingStep-1)
@@ -13,17 +19,19 @@ function StepHaveSpace() {
     localStorage.setItem('onBoardingStep', onBoardingStep+1)
     setOnBoardingStep(onBoardingStep+1)
   }
-  const handleSpace = (space) =>{
-    localStorage.setItem('haveSpace', space)
-    setHaveSpace(space)
+  const handleInput = (selected) => {
+    setSelectedOption(selected)
+    let myOnBoard = onBoard
+    myOnBoard.haveSpace = selected
+    setOnBoard(myOnBoard)
     nextStep()
-  }
+   };
   return (
     <div>
-      <div>Do you have space?</div>
+      <div>Do you have space image?</div>
       <div className="flex  gap-5">
-        <button onClick={()=>handleSpace('yes')}>Yes</button>
-        <button onClick={()=>handleSpace('no')}>No</button>
+        <button onClick={()=>handleInput('yes')}>Yes</button>
+        <button onClick={()=>handleInput('no')}>No</button>
       </div>
       <div className="flex gap-5 mt-5">
         <button className="myBtn" onClick={prevStep}>
