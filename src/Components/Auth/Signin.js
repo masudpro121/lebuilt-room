@@ -2,8 +2,7 @@ import { MyContext } from "@/pages/_app";
 import React, { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 function Signin() {
-  const { onBoardingStep, setOnBoardingStep, haveAccount, setHaveAccount } =
-    useContext(MyContext);
+  const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
   const channelId = "2000604617";
   const redirectUrl = "http://localhost:3000/api/line-auth";
   const state = uuidv4();
@@ -19,11 +18,32 @@ function Signin() {
   const nextStep = () => {
     setOnBoardingStep(onBoardingStep + 1);
   };
+
+  const handleSignout = () => {
+    fetch('/api/user/signout')
+    .then(res=>res.json())
+    .then(res=>{
+      if(res.status=="logout"){
+        window.location.reload()
+      }
+    })
+  }
   return (
     <div>
-      <button className="myBtn" onClick={() => window.open(lineAuth, "_self")}>
+      {
+        user.email ?
+        <div>
+          <div>{user.name}</div>
+          <div>{user.email}</div>
+          <button className="myBtn" onClick={handleSignout}>
+            Signout
+          </button>
+        </div>
+        : 
+        <button className="myBtn" onClick={() => window.open(lineAuth, "_self")}>
         Signin
       </button>
+      }
       <div>
         <button onClick={prevStep}>Prev Step</button>
       </div>

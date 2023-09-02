@@ -1,14 +1,29 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 require('dotenv').config()
 const axios = require('axios')
+const jwt = require('jsonwebtoken');
+import { parse, serialize } from 'cookie';
 export default function handler(req, res) {
   const {code, state} = req.query
   getAccessToken({code})
   .then(idToken=>{
     getProfile({idToken})
-    .then(result=>{
-      console.log(result, 'profile');
-      res.redirect(307, `/?name=${result.name}?email=${result.email}?picture=${result.picture}`)
+    .then(async ({name, email, picture, sub:uid})=>{
+      const token = await jwt.sign({
+        name, email, picture, uid
+      }, process.env.JWT_SECRET);
+     
+        const maxAge = 3600; // Cookie expiration time in seconds (1 hour)
+        const serializedCookie = serialize('token', token, {
+          maxAge,
+          path: '/', 
+          httpOnly: true,
+          sameSite: 'lax',
+          secure: process.env.NODE_ENV === 'production', 
+        });
+        res.setHeader('Set-Cookie', serializedCookie);
+
+      res.redirect('/')
     })
   })
 
