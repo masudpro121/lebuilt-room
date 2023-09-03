@@ -2,7 +2,7 @@ import { MyContext } from "@/pages/_app"
 import React, { useContext, useState } from 'react'
 
 function StepHaveSpace() {
-  const { setOnBoardingStep, onBoardingStep} = useContext(MyContext)
+  const { setOnBoardingStep, onBoardingStep, user} = useContext(MyContext)
   const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
   const [selectedOption, setSelectedOption] = useState(onBoard.haveSpace)
   const setOnBoard = (data) =>{
@@ -24,7 +24,11 @@ function StepHaveSpace() {
     let myOnBoard = onBoard
     myOnBoard.haveSpace = selected
     setOnBoard(myOnBoard)
-    nextStep()
+    if(user.email){
+      nextStep()
+    }else{
+      window.open("/signin", "_self")
+    }
    };
   return (
     <div>

@@ -13,9 +13,6 @@ export default function handler(req, res) {
     .then(async ({name, email, picture, sub:uid})=>{
       const token = await jwt.sign({name, email, picture, uid}, process.env.JWT_SECRET);
 
-        const thisUser = new UserModel({
-          name, email, picture
-        })
         const maxAge = 3600; 
         const serializedCookie = serialize('token', token, {maxAge, path: '/',  httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', });
 
@@ -33,6 +30,9 @@ export default function handler(req, res) {
             })
             
           }else{
+            const thisUser = new UserModel({
+              name, email, picture
+            })
             thisUser.save()
             .then(()=>{
               res.setHeader('Set-Cookie', serializedCookie);

@@ -8,7 +8,7 @@ import StepBudget from "./StepBudget"
 import { MyContext } from "@/pages/_app"
 import StepWho from "./StepWho"
 import StepHaveSpace from "./StepHaveSpace"
-import StepAuth from "./StepAuth"
+import StepUpload from "./StepUpload"
 
 function OnBoarding() {
   const {onBoardingStep} = useContext(MyContext)
@@ -24,7 +24,8 @@ function OnBoarding() {
       {onBoardingStep==5 && <StepSize />}
       {onBoardingStep==6 && <StepBudget />}
       {onBoardingStep==7 && <StepHaveSpace />}
-      {onBoardingStep==8 && <StepAuth />}
+      {onBoardingStep==8 && <StepUpload />}
+
     </div>
   )
 }
