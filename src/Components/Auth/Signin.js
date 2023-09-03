@@ -24,7 +24,7 @@ function Signin() {
     .then(res=>res.json())
     .then(res=>{
       if(res.status=="logout"){
-        window.location.reload()
+        window.location.href = "/"
       }
     })
   }
@@ -44,9 +44,9 @@ function Signin() {
         Signin
       </button>
       }
-      <div>
+      {/* <div>
         <button onClick={prevStep}>Prev Step</button>
-      </div>
+      </div> */}
     </div>
   );
 }
