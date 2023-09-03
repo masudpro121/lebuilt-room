@@ -2,7 +2,7 @@ import React from 'react'
 
 function StepUpload() {
   return (
-    <div>StepUpload</div>
+    <div></div>
   )
 }
 
