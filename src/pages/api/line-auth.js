@@ -2,6 +2,8 @@
 require('dotenv').config()
 const axios = require('axios')
 const jwt = require('jsonwebtoken');
+import { UserModel } from "@/models/UserModel";
+import { dbConnect } from "@/utils/dbConnect";
 import { parse, serialize } from 'cookie';
 export default function handler(req, res) {
   const {code, state} = req.query
@@ -9,21 +11,37 @@ export default function handler(req, res) {
   .then(idToken=>{
     getProfile({idToken})
     .then(async ({name, email, picture, sub:uid})=>{
-      const token = await jwt.sign({
-        name, email, picture, uid
-      }, process.env.JWT_SECRET);
-     
-        const maxAge = 3600; // Cookie expiration time in seconds (1 hour)
-        const serializedCookie = serialize('token', token, {
-          maxAge,
-          path: '/', 
-          httpOnly: true,
-          sameSite: 'lax',
-          secure: process.env.NODE_ENV === 'production', 
-        });
-        res.setHeader('Set-Cookie', serializedCookie);
+      const token = await jwt.sign({name, email, picture, uid}, process.env.JWT_SECRET);
 
-      res.redirect('/')
+        const thisUser = new UserModel({
+          name, email, picture
+        })
+        const maxAge = 3600; 
+        const serializedCookie = serialize('token', token, {maxAge, path: '/',  httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', });
+
+        await dbConnect()
+        UserModel.findOne({email})
+        .then(thisUser=>{
+          if(thisUser){
+            thisUser.name = name
+            thisUser.email = email
+            thisUser.picture = picture
+            thisUser.save()
+            .then((userDb)=>{
+              res.setHeader('Set-Cookie', serializedCookie);
+              res.redirect('/')
+            })
+            
+          }else{
+            thisUser.save()
+            .then(()=>{
+              res.setHeader('Set-Cookie', serializedCookie);
+              res.redirect('/')
+            })
+          }
+        })
+        
+        
     })
   })
 
