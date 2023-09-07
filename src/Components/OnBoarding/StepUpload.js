@@ -16,6 +16,10 @@ function StepUpload() {
       setOnBoardingStep(onBoardingStep - 1);
     }
   };
+  const  nextStep = () => {
+    localStorage.setItem('onBoardingStep', onBoardingStep+1)
+    setOnBoardingStep(onBoardingStep+1)
+  }
   const uploadFile = () => {
     setUploaded(false)
     const formData = new FormData();
@@ -47,7 +51,8 @@ function StepUpload() {
           </button>
           </div>
           <div>
-            <button onClick={prevStep}>Prev Step</button>
+            <button className="myBtn" onClick={prevStep}>Prev Step</button>
+            <button className="myBtn" onClick={nextStep}>Next Step</button>
           </div>
         </div>
         {

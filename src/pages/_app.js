@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import 'react-loading-skeleton/dist/skeleton.css'
 import { createContext, useEffect, useState } from "react"
 import { useCookies } from "react-cookie"
 
