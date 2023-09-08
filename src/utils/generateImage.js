@@ -11,7 +11,6 @@ const generateImage = ({ prompt}) => {
     })
     .then(res=>res.json())
     .then(res=>{
-      console.log(res);
       if(res.success){
         resolve(res.messageId)
       }else{

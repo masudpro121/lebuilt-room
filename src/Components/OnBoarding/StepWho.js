@@ -6,7 +6,6 @@ function StepWho() {
   
   const setOnBoard = (data) =>{
     localStorage.setItem('onBoard', JSON.stringify(data))
-    console.log(data);
   }
   
   const { onBoardingStep, setOnBoardingStep } = useContext(MyContext);

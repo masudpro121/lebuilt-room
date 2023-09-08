@@ -15,7 +15,6 @@ const router = createRouter();
 router.use(upload.single("file")).post(async (req, res) => {
   uploadImage(req.file, ""+Date.now()+req.file.originalname)
   .then(uploadResult=>{
-    console.log(uploadResult);
     res.send(uploadResult)
   })
 })

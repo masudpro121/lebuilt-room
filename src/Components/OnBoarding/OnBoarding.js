@@ -13,7 +13,6 @@ import StepGenerate from "./StepGenerate"
 
 function OnBoarding() {
   const {onBoardingStep} = useContext(MyContext)
-  console.log(onBoardingStep, 'step');
   
   return (
     <div>

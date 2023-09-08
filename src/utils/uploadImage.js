@@ -12,8 +12,6 @@ const uploadImage = async (image, text) => {
             (err, result) => {
               if (result) {
                 resolve(result);
-                // console.log(result)
-                console.log("uploaded");
               }
               if (err) {
                 console.log(err);

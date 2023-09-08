@@ -1,5 +1,11 @@
-const checkImage = (msgid) => {
-  return fetch('/api/check-image?id='+msgid)
+const checkImage = (msgid, onBoard) => {
+  return fetch('/api/check-image?id='+msgid, {
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/json'
+    }, 
+    body: JSON.stringify(onBoard)
+  })
   .then(res=>res.json())
   .then(res=>{
     if(res.progress == 100){

@@ -7,7 +7,6 @@ function StepHaveSpace() {
   const [selectedOption, setSelectedOption] = useState(onBoard.haveSpace)
   const setOnBoard = (data) =>{
     localStorage.setItem('onBoard', JSON.stringify(data))
-    console.log(data);
   }
   const prevStep = () => {
     if(onBoardingStep>0){

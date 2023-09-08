@@ -5,7 +5,6 @@ function StepBudget() {
   const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
   const setOnBoard = (data) =>{
     localStorage.setItem('onBoard', JSON.stringify(data))
-    console.log(data);
   }
   const {onBoardingStep, setOnBoardingStep} = useContext(MyContext)
   const [budget, setBudget] = useState(onBoard.budget)

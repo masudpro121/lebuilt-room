@@ -9,7 +9,6 @@ function StepUpload() {
   const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
   const setOnBoard = (data) =>{
     localStorage.setItem('onBoard', JSON.stringify(data))
-    console.log(data);
   }
   const prevStep = () => {
     if (onBoardingStep > 0) {
@@ -30,7 +29,6 @@ function StepUpload() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.secure_url);
         let myOnBoard = onBoard
         myOnBoard.image = res.secure_url
         setOnBoard(myOnBoard)

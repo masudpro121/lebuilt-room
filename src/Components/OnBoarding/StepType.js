@@ -4,7 +4,6 @@ function StepType() {
   const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
   const setOnBoard = (data) =>{
     localStorage.setItem('onBoard', JSON.stringify(data))
-    console.log(data);
   }
   const {onBoardingStep, setOnBoardingStep} = useContext(MyContext)
   const [selectedOption, setSelectedOption] = useState(onBoard?.type?.name)
@@ -48,7 +47,6 @@ function StepType() {
     setOnBoard(myOnBoard)
     nextStep()
    };
-   console.log(onBoard);
   return (
     <div>
       <h3 className="text-2xl font-semibold mb-5 ml-10">Select room Type</h3>

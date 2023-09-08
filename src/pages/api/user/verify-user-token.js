@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 export default async function handler(req, res) {
-  dbConnect()
   const {token} = req.cookies
   if(token){
     const decoded = await jwt.verify(token, process.env.JWT_SECRET)

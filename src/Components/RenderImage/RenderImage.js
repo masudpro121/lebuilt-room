@@ -6,7 +6,6 @@ function RenderImage({src, cls="", skeletonCls=""}) {
   const handleLoaded = () =>{
     setIsLoading(false)
   }
-  console.log(src, 'src');
   return (
     <div className={"w-80 "+cls}>
      {

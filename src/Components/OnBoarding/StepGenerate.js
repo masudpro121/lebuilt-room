@@ -13,20 +13,17 @@ function StepGenerate() {
     setProgress(0)
     setProgressImage("");
     setGeneratedImages([])
-    const { image, type, style, place, size, budget } = JSON.parse(
+    const onBoard = JSON.parse(
       localStorage.getItem("onBoard")
     );
+    const { image, type, style, place, size, budget } = onBoard
     const prompt = `${image}, type: ${type?.name}, style: ${style?.name}, size: ${size}`;
-    console.log(prompt);
     generateImage({ prompt })
       .then((msgId) => {
         setProgress(0);
         setTimeout(() => {
-          console.log("inside timeout");
           let myInterval = setInterval(() => {
-            console.log("inside interval");
-            checkImage(msgId).then((checkRes) => {
-              console.log(checkRes);
+            checkImage(msgId, onBoard).then((checkRes) => {
               setProgress(checkRes.progress);
               if (checkRes.progress == 100) {
                 clearInterval(myInterval);
@@ -45,7 +42,6 @@ function StepGenerate() {
         console.log(err);
       });
   };
-  console.log(generatedImages, "images");
   return (
     <div>
       <button onClick={handleGenerate}>generate</button>
