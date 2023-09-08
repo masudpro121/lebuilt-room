@@ -1,10 +1,10 @@
 import React from 'react'
 import RenderImage from "../RenderImage/RenderImage"
 
-function ShowGeneratedImage() {
+function ShowGeneratedImage({src}) {
   return (
     <div>
-      <RenderImage />
+      <RenderImage src={src}/>
     </div>
   )
 }
