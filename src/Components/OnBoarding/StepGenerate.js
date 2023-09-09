@@ -3,6 +3,7 @@ import ShowGeneratedImage from "../ShowGeneratedImage/ShowGeneratedImage";
 import RenderImage from "../RenderImage/RenderImage";
 import generateImage from "@/utils/generateImage";
 import checkImage from "@/utils/checkImage";
+import { generatePrompt } from "@/utils/generatePrompt";
 
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
@@ -17,13 +18,16 @@ function StepGenerate() {
       localStorage.getItem("onBoard")
     );
     const { image, type, style, place, size, budget } = onBoard
-    const prompt = `${image}, type: ${type?.name}, style: ${style?.name}, size: ${size}`;
+    // const prompt = `${image}, type: ${type?.name}, style: ${style?.name}`;
+    const prompt = generatePrompt({image, type, style})
+    console.log(prompt, 'prompt');
     generateImage({ prompt })
       .then((msgId) => {
         setProgress(0);
         setTimeout(() => {
           let myInterval = setInterval(() => {
             checkImage(msgId, onBoard).then((checkRes) => {
+              console.log(checkRes);
               setProgress(checkRes.progress);
               if (checkRes.progress == 100) {
                 clearInterval(myInterval);
@@ -34,6 +38,7 @@ function StepGenerate() {
               if (checkRes.progressImage) {
                 setProgressImage(checkRes.progressImage);
               }
+              
             });
           }, 5000);
         }, 20000);
@@ -50,7 +55,7 @@ function StepGenerate() {
           <div>
             {<div className="text-center mb-5">Progress: {progress ? progress : 0}%</div>}
             {
-              progressImage && <RenderImage cls="w-[60vw]"  src={progressImage} />
+              progress <100 && <RenderImage  src={progressImage} />
             }
           </div>
         </div>

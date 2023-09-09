@@ -24,7 +24,13 @@ function StepHaveSpace() {
     myOnBoard.haveSpace = selected
     setOnBoard(myOnBoard)
     if(user.email){
-      nextStep()
+      if(selected=="yes"){
+        nextStep()
+      }else{
+        localStorage.setItem('onBoardingStep', onBoardingStep+2)
+        setOnBoardingStep(onBoardingStep+2)
+      }
+      
     }else{
       window.open("/signin", "_self")
     }

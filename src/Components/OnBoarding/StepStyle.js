@@ -20,33 +20,25 @@ function StepStyle() {
   };
   const styles = [
     {
-      name: "American Style",
+      name: "american style",
       img: "https://i.ibb.co/5KKcJF6/american-style.webp",
     },
     {
-      name: "Installation Art",
+      name: "serene minimalism",
       img: "https://i.ibb.co/YRrwd0L/installation-art.webp",
     },
     {
-      name: "Modern Style",
+      name: "minimalist",
       img: "https://i.ibb.co/19FMCxv/modern-style.webp",
     },
     {
-      name: "Minimalist Style",
+      name: "vintage",
       img: "https://i.ibb.co/WyR75BL/minimalist-style.webp",
     },
     {
-      name: "Nordic Style",
+      name: "luxurious",
       img: "https://i.ibb.co/wB0P7BK/nordic-style.webp",
-    },
-    {
-      name: "Country Style",
-      img: "https://i.ibb.co/KxGwxMJ/country-style.webp",
-    },
-    {
-      name: "Luxury Style",
-      img: "https://i.ibb.co/f20rfL6/luxury-style.webp",
-    },
+    }
   ];
   const handleInput = (i) => {
     setSelectedOption(styles[i].name);

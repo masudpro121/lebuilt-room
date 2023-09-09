@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 function Signin() {
   const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
-  const channelId = "2000604617";
+  const channelId = "2000692142";
   const redirectUrl = "http://localhost:3000/api/line-auth";
   const state = uuidv4();
   const scope = "profile openid email";

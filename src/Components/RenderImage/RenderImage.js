@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Skeleton from "react-loading-skeleton"
 
-function RenderImage({src, cls="", skeletonCls=""}) {
+function RenderImage({src, cls="",}) {
   const [isLoading, setIsLoading] = useState(true)
   const handleLoaded = () =>{
     setIsLoading(false)
@@ -9,7 +9,7 @@ function RenderImage({src, cls="", skeletonCls=""}) {
   return (
     <div className={"w-80 "+cls}>
      {
-      isLoading  && <Skeleton duration={0.7} className={"h-80 "+skeletonCls} />
+      isLoading  && <Skeleton duration={0.7} className={"h-80 "} />
      }
     {
        src && <img className={isLoading?"hidden":"block" + " rounded-md "} src={src} onLoad={handleLoaded} />
