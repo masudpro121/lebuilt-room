@@ -15,8 +15,10 @@ function StepHaveSpace() {
     }
   }
   const  nextStep = () => {
-    localStorage.setItem('onBoardingStep', onBoardingStep+1)
-    setOnBoardingStep(onBoardingStep+1)
+    if(onBoard.haveSpace){
+      localStorage.setItem('onBoardingStep', onBoardingStep+1)
+      setOnBoardingStep(onBoardingStep+1)
+    }
   }
   const handleInput = (selected) => {
     setSelectedOption(selected)

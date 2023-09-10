@@ -20,8 +20,11 @@ function StepWho() {
     }
   };
   const nextStep = () => {
-    localStorage.setItem('onBoardingStep', onBoardingStep+1)
-    setOnBoardingStep(onBoardingStep + 1);
+    if(onBoard.who){
+      localStorage.setItem('onBoardingStep', onBoardingStep+1)
+      setOnBoardingStep(onBoardingStep + 1)
+    }
+   ;
   };
   const iam = [
     "Home Buyer",

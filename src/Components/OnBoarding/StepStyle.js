@@ -15,9 +15,13 @@ function StepStyle() {
     }
   };
   const nextStep = () => {
-    localStorage.setItem("onBoardingStep", onBoardingStep + 1);
-    setOnBoardingStep(onBoardingStep + 1);
+    if(onBoard.style){
+      localStorage.setItem("onBoardingStep", onBoardingStep + 1);
+      setOnBoardingStep(onBoardingStep + 1);
+    }
+    
   };
+  
   const styles = [
     {
       name: "american style",
@@ -40,6 +44,7 @@ function StepStyle() {
       img: "https://i.ibb.co/wB0P7BK/nordic-style.webp",
     }
   ];
+
   const handleInput = (i) => {
     setSelectedOption(styles[i].name);
     let myOnBoard = onBoard;
@@ -47,6 +52,7 @@ function StepStyle() {
     setOnBoard(myOnBoard);
     nextStep();
   };
+
   return (
     <div>
       <h3 className="text-2xl font-semibold mb-5 ml-10">Select Style</h3>

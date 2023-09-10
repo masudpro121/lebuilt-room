@@ -16,8 +16,11 @@ function StepSize() {
     
   }
   const  nextStep = () => {
-    localStorage.setItem('onBoardingStep', onBoardingStep+1)
-    setOnBoardingStep(onBoardingStep+1)
+    if(onBoard.size){
+      localStorage.setItem('onBoardingStep', onBoardingStep+1)
+      setOnBoardingStep(onBoardingStep+1)
+    }
+   
   }
   const sizes = [
     "Below 20 Square Feet",

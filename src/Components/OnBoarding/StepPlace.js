@@ -16,9 +16,10 @@ function StepPlace() {
     
   }
   const  nextStep = () => {
-    localStorage.setItem('onBoardingStep', onBoardingStep+1)
-    setOnBoardingStep(onBoardingStep+1)
-    
+    if(onBoard.place){
+      localStorage.setItem('onBoardingStep', onBoardingStep+1)
+      setOnBoardingStep(onBoardingStep+1)
+    }
   }
   const places = [
     "New House Generation",

@@ -15,8 +15,11 @@ function StepType() {
     
   }
   const  nextStep = () => {
-    localStorage.setItem('onBoardingStep', onBoardingStep+1)
-    setOnBoardingStep(onBoardingStep+1)
+    if(onBoard.type){
+      localStorage.setItem('onBoardingStep', onBoardingStep+1)
+      setOnBoardingStep(onBoardingStep+1)
+    }
+    
   }
   const types = [
     {

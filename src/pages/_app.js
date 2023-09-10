@@ -13,16 +13,42 @@ export default function App({ Component, pageProps }) {
     onBoardingStep, setOnBoardingStep,
     user, setUser
   }
+
+  
+
+  useEffect(()=>{
+    setOnBoardingStep(Number(localStorage.getItem('onBoardingStep')) || 0)
+  },[])
+
+  const  nextStep = () => {
+    const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
+    
+    const onBoardingStep = Number(localStorage.getItem('onBoardingStep')) || 0
+    if(onBoard.haveSpace=="yes"){
+      localStorage.setItem('onBoardingStep', onBoardingStep+1)
+      setOnBoardingStep(onBoardingStep+1)
+      console.log('yes step called', onBoardingStep);
+    }else{
+      localStorage.setItem('onBoardingStep', onBoardingStep+2)
+      setOnBoardingStep(onBoardingStep+2)
+      console.log('no step called', onBoardingStep);
+    }
+  }
+
   useEffect(()=>{
     fetch('/api/user/verify-user-token')
     .then(res=>res.json())
     .then(res=>{
       setUser(res)
+      const onBoardingStep = Number(localStorage.getItem('onBoardingStep')) || 0
+      if(onBoardingStep == 7 && res.email){
+        console.log(res, 'onboarding step 7');
+        nextStep()
+      }
+      
     })
   },[])
-  useEffect(()=>{
-    setOnBoardingStep(Number(localStorage.getItem('onBoardingStep')) || 0)
-  },[])
+ 
   return <MyContext.Provider value={value}>
     <Component {...pageProps} />
   </MyContext.Provider>

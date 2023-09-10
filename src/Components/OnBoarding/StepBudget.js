@@ -15,11 +15,14 @@ function StepBudget() {
     }
   }
   const  nextStep = () => {
-    let modifyOnboard = onBoard
-    modifyOnboard.budget = budget
-    setOnBoard(modifyOnboard)
-    localStorage.setItem('onBoardingStep', onBoardingStep+1)
-    setOnBoardingStep(onBoardingStep+1)
+    if(budget){
+      let modifyOnboard = onBoard
+      modifyOnboard.budget = budget
+      setOnBoard(modifyOnboard)
+      localStorage.setItem('onBoardingStep', onBoardingStep+1)
+      setOnBoardingStep(onBoardingStep+1)
+    }
+    
   }
   return (
     <div>
