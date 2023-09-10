@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ShowGeneratedImage from "../ShowGeneratedImage/ShowGeneratedImage";
 import RenderImage from "../RenderImage/RenderImage";
 import generateImage from "@/utils/generateImage";
 import checkImage from "@/utils/checkImage";
 import { generatePrompt } from "@/utils/generatePrompt";
+import { MyContext } from "@/pages/_app";
 
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
   const [progress, setProgress] = useState();
-
+  const { onBoardingStep, setOnBoardingStep} = useContext(MyContext);
+  const onBoard = JSON.parse(localStorage.getItem('onBoard')) || {}
+  
   const handleGenerate = async () => {
     setProgress(0)
     setProgressImage("");
@@ -47,9 +50,23 @@ function StepGenerate() {
         console.log(err);
       });
   };
+
+  const prevStep = () => {
+    if (onBoardingStep > 0) {
+      if(onBoard.haveSpace == "yes"){
+        localStorage.setItem('onBoardingStep', onBoardingStep-1)
+        setOnBoardingStep(onBoardingStep - 1);
+      }else{
+        localStorage.setItem('onBoardingStep', onBoardingStep-2)
+        setOnBoardingStep(onBoardingStep - 2);
+      }
+    }
+  };
   return (
     <div>
-      <button onClick={handleGenerate}>generate</button>
+      <button onClick={handleGenerate}>generate</button> <br/>
+      <button onClick={prevStep}>Prev Step</button>
+      
       {progress<100 && (
         <div className="flex justify-center ">
           <div>
