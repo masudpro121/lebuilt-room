@@ -15,7 +15,7 @@ function StepBudget() {
     }
   }
   const  nextStep = () => {
-    if(budget){
+    if(budget || budget == 0){
       let modifyOnboard = onBoard
       modifyOnboard.budget = budget
       setOnBoard(modifyOnboard)

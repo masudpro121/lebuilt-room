@@ -1,5 +1,6 @@
 import { MyContext } from "@/pages/_app"
 import React, { useContext } from 'react'
+import Homepage from "../Homepage/Homepage"
 
 function StepStart() {
   const {onBoardingStep, setOnBoardingStep} = useContext(MyContext)
@@ -19,8 +20,8 @@ function StepStart() {
   
   return (
     <div>
-     
-      <button onClick={nextStep}>Get Started</button>
+      <Homepage nextStep={nextStep}/>
+      {/* <button onClick={nextStep}>Get Started</button> */}
     </div>
     
   )
