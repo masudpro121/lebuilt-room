@@ -29,10 +29,10 @@ const Homepage = ({ nextStep }) => {
   ];
   return (
     <div className="">
-      <div>
-        <div className="w-full h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
-          <div className="justify-start items-center gap-2.5 flex">
-            <Image src={Logo} className="w-16 h-16" />
+      <div className="sticky top-0">
+        <div className="w-full h-20 sm:h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
+          <div className="justify-start items-center  flex">
+            <Image src={Logo} className=" w-12 sm:w-16 sm:h-16" />
             <div className="hidden sm:block text-stone-900 text-lg font-normal font-['Gilroy-Medium']">
               Create exclusive AI interior design in 30 seconds
             </div>
@@ -40,7 +40,7 @@ const Homepage = ({ nextStep }) => {
               <div>Ufoliving</div>
             </div>
           </div>
-          <div onClick={nextStep} className="cursor-pointer w-48 justify-center items-center gap-6 flex">
+          <div onClick={nextStep} className="cursor-pointer w-48 justify-end mr-2 items-center gap-6 flex">
             <div className="sm:w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
               <div
                 className="  text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none"
@@ -54,23 +54,23 @@ const Homepage = ({ nextStep }) => {
 
       {/* Hero Section  */}
       <div className={`w-full flex justify-center ${styles.herobg}`}>
-        <div className=" h-96 flex-col justify-start items-start gap-2.5 inline-flex">
-          <div className="self-stretch grow shrink basis-0 px-8 py-2.5 bg-black bg-opacity-40 flex-col justify-center items-center gap-8 flex">
-            <div className="herobg self-stretch text-center">
+        <div className=" py-10 sm:py-20 flex-col justify-start items-start gap-2.5 inline-flex">
+          <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
+            <div className="herobg self-stretch text-center leading-[3] sm:leading-[4]">
               <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
                 Elevate your space with{" "}
               </span>
-              <span className="text-lime-100 text-3xl sm:text-6xl font-normal font-['Gilroy-ExtraBoldItalic']">
+              <span className="text-lime-200 text-3xl sm:text-6xl font-normal font-['Gilroy-ExtraBoldItalic']">
                 ufoliving <br />
               </span>
               <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
-                the AI tool that reshapes <br />
+                the <span className="text-lime-200 font-['Gilroy-ExtraBold']">AI tool</span> that reshapes <br />
                 interior design paradigms.
               </span>
             </div>
-            <div onClick={nextStep} className="cursor-pointer  px-7 py-4 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex">
+            <div onClick={nextStep} className="cursor-pointer px-7 sm:px-20 py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex">
             <Image width={30} height={30} src={StarImg} />
-              <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-snug">
+              <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-snug ">
                 Generate your designs
               </div>
             </div>
@@ -91,7 +91,7 @@ const Homepage = ({ nextStep }) => {
         })}
       </div>
 
-      <div className="flex justify-center mt-5 px-5">
+      <div className="flex justify-center mt-5 px-5 py-12">
         <div className="flex-col justify-center items-center gap-2 inline-flex">
           <div className="self-stretch grow shrink basis-0 flex-col justify-center items-center gap-6 flex">
             <div className="flex-col justify-start items-center gap-3 flex">
@@ -104,7 +104,7 @@ const Homepage = ({ nextStep }) => {
               </div>
             </div>
             <div onClick={nextStep} className="h-20 justify-start items-start inline-flex cursor-pointer">
-              <div className="px-7 py-4 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
+              <div className="px-7 sm:px-20 py-5 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
               <Image width={20} height={20} src={WhiteStarImg} />
                 <div className="  text-white text-lg font-semibold font-['Inter'] leading-7">
                   Generate your designs
@@ -116,15 +116,16 @@ const Homepage = ({ nextStep }) => {
       </div>
 
       {/* Footer  */}
-      <div className="w-full pt-5 bg-stone-900 flex-col justify-between items-start inline-flex">
-        <div className="self-stretch px-2 sm:px-8 justify-between sm:justify-start items-start gap-5 inline-flex flex-wrap">
+      <div className="w-full pt-5 bg-[#271703] flex-col justify-between items-start inline-flex">
+        <div className="self-stretch px-3 sm:px-8 justify-between sm:justify-start items-start gap-5 inline-flex flex-wrap">
           <div className=" flex gap-10 items-center">
             <div className=" flex items-center gap-2 text-orange-50 text-xl font-bold font-['Plus Jakarta Sans']">
               <Image src={Logo} className="w-7 h-6" />
               <div>Ufoliving</div>
             </div>
             <div className=" text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-7">
-              <div className="text-right sm:text-left">Where Each Corner Reflects the Future of Living</div>
+              <div className="sm:hidden text-right sm:text-left">Where Each Corner Reflects the Future of Living</div>
+              <div className="hidden sm:block text-right sm:text-left">Where Each Corner Reflects the <br/> Future of Living</div>
             </div>
           </div>
           <div className="grow   pl-6 flex-col justify-start items-end gap-2 inline-flex mt-10 sm:mt-0 mb-3 pr-2 sm:pr-0">

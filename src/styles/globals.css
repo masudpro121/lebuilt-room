@@ -29,6 +29,12 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'Gilroy-ExtraBold'; /* Give your font a name */
+  src: url('../assets/fonts/Gilroy-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Gilroy-ExtraBoldItalic'; /* Give your font a name */
   src: url('../assets/fonts/Gilroy-ExtraBoldItalic.ttf') format('truetype');
   font-weight: normal;
