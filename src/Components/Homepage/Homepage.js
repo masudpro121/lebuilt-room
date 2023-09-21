@@ -10,6 +10,8 @@ import FbImg from "@/assets/images/fb.png"
 import InstaImg from "@/assets/images/insta.png"
 import YtImg from "@/assets/images/yt.png"
 import TiktokImg from "@/assets/images/tiktok.png"
+import WhiteStarImg from "@/assets/images/whitestar.svg"
+import StarImg from "@/assets/images/star.svg"
 const Homepage = ({ nextStep }) => {
   const images = [
     RoomImg,
@@ -28,15 +30,18 @@ const Homepage = ({ nextStep }) => {
   return (
     <div className="">
       <div>
-        <div className="w-full h-24 px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
+        <div className="w-full h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
           <div className="justify-start items-center gap-2.5 flex">
             <Image src={Logo} className="w-16 h-16" />
             <div className="hidden sm:block text-stone-900 text-lg font-normal font-['Gilroy-Medium']">
               Create exclusive AI interior design in 30 seconds
             </div>
+            <div className=" sm:hidden text-black text-2xl font-bold font-['Plus Jakarta Sans']">
+              <div>Ufoliving</div>
+            </div>
           </div>
           <div onClick={nextStep} className="cursor-pointer w-48 justify-center items-center gap-6 flex">
-            <div className="w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
+            <div className="sm:w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
               <div
                 className="  text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none"
               >
@@ -64,6 +69,7 @@ const Homepage = ({ nextStep }) => {
               </span>
             </div>
             <div onClick={nextStep} className="cursor-pointer  px-7 py-4 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex">
+            <Image width={30} height={30} src={StarImg} />
               <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-snug">
                 Generate your designs
               </div>
@@ -85,7 +91,7 @@ const Homepage = ({ nextStep }) => {
         })}
       </div>
 
-      <div className="flex justify-center mt-5">
+      <div className="flex justify-center mt-5 px-5">
         <div className="flex-col justify-center items-center gap-2 inline-flex">
           <div className="self-stretch grow shrink basis-0 flex-col justify-center items-center gap-6 flex">
             <div className="flex-col justify-start items-center gap-3 flex">
@@ -99,6 +105,7 @@ const Homepage = ({ nextStep }) => {
             </div>
             <div onClick={nextStep} className="h-20 justify-start items-start inline-flex cursor-pointer">
               <div className="px-7 py-4 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
+              <Image width={20} height={20} src={WhiteStarImg} />
                 <div className="  text-white text-lg font-semibold font-['Inter'] leading-7">
                   Generate your designs
                 </div>
@@ -114,10 +121,10 @@ const Homepage = ({ nextStep }) => {
           <div className=" flex gap-10 items-center">
             <div className=" flex items-center gap-2 text-orange-50 text-xl font-bold font-['Plus Jakarta Sans']">
               <Image src={Logo} className="w-7 h-6" />
-              <div>ufoliving</div>
+              <div>Ufoliving</div>
             </div>
             <div className=" text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-7">
-              Where Each Corner Reflects the Future of Living
+              <div className="text-right sm:text-left">Where Each Corner Reflects the Future of Living</div>
             </div>
           </div>
           <div className="grow   pl-6 flex-col justify-start items-end gap-2 inline-flex mt-10 sm:mt-0 mb-3 pr-2 sm:pr-0">
@@ -133,13 +140,13 @@ const Homepage = ({ nextStep }) => {
           </div>
         </div>
         <div className="mb-0 sm:mt-20 py-5 px-8 bg-stone-950 justify-start items-center gap-5 block w-full sm:inline-flex">
-          <div className="py-1 text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
+          <div className="py-2 text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
             Copyright 2023 - Ufoliving
           </div>
-          <div className="py-1 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
+          <div className="py-2 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
             Terms & policies
           </div>
-          <div className="py-1 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
+          <div className="py-2 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
             Privacy & policies
           </div>
         </div>
