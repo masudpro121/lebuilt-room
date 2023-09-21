@@ -9,3 +9,29 @@
 .myInput{
   @apply border-2 px-2 rounded-sm my-1
 }
+
+@font-face {
+  font-family: 'Gilroy-Regular'; /* Give your font a name */
+  src: url('../assets/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy-Medium'; /* Give your font a name */
+  src: url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy-SemiBold'; /* Give your font a name */
+  src: url('../assets/fonts/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy-ExtraBoldItalic'; /* Give your font a name */
+  src: url('../assets/fonts/Gilroy-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

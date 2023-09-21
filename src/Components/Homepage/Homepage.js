@@ -6,7 +6,11 @@ import RoomImg from "@/assets/images/room/room.png";
 import RoomImg1 from "@/assets/images/room/room1.jpg";
 import RoomImg2 from "@/assets/images/room/room2.jpg";
 import RoomImg3 from "@/assets/images/room/room3.jpg";
-const Homepage = ({nextStep}) => {
+import FbImg from "@/assets/images/fb.png"
+import InstaImg from "@/assets/images/insta.png"
+import YtImg from "@/assets/images/yt.png"
+import TiktokImg from "@/assets/images/tiktok.png"
+const Homepage = ({ nextStep }) => {
   const images = [
     RoomImg,
     RoomImg1,
@@ -31,9 +35,11 @@ const Homepage = ({nextStep}) => {
               Create exclusive AI interior design in 30 seconds
             </div>
           </div>
-          <div className="w-48 justify-center items-center gap-6 flex">
+          <div onClick={nextStep} className="cursor-pointer w-48 justify-center items-center gap-6 flex">
             <div className="w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
-              <div onClick={nextStep} className=" cursor-pointer text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none">
+              <div
+                className="  text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none"
+              >
                 Start generating
               </div>
             </div>
@@ -57,7 +63,7 @@ const Homepage = ({nextStep}) => {
                 interior design paradigms.
               </span>
             </div>
-            <div className="  px-7 py-4 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex">
+            <div onClick={nextStep} className="cursor-pointer  px-7 py-4 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex">
               <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-snug">
                 Generate your designs
               </div>
@@ -91,9 +97,9 @@ const Homepage = ({nextStep}) => {
                 Create images just as stunning or even surpass what you've seen!
               </div>
             </div>
-            <div className="h-20 justify-start items-start inline-flex">
-              <div className="px-7 py-4 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex">
-                <div className="text-white text-lg font-semibold font-['Inter'] leading-7">
+            <div onClick={nextStep} className="h-20 justify-start items-start inline-flex cursor-pointer">
+              <div className="px-7 py-4 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
+                <div className="  text-white text-lg font-semibold font-['Inter'] leading-7">
                   Generate your designs
                 </div>
               </div>
@@ -104,44 +110,36 @@ const Homepage = ({nextStep}) => {
 
       {/* Footer  */}
       <div className="w-full pt-5 bg-stone-900 flex-col justify-between items-start inline-flex">
-        <div className="self-stretch px-8 justify-start items-start gap-5 inline-flex">
-          <div className="grow shrink basis-0 h-11 justify-start items-center gap-4 flex">
-            <div className="justify-start items-start flex">
-              <div className="w-11 h-11 justify-center items-center flex">
-                <div className="w-11 h-11 relative">
-                  <img
-                    className="w-11 h-11 left-0 top-0 absolute"
-                    src="https://via.placeholder.com/44x44"
-                  />
-                  <img
-                    className="w-11 h-11 left-0 top-0 absolute"
-                    src="https://via.placeholder.com/44x44"
-                  />
-                </div>
-              </div>
-              <div className="w-28 h-8 text-orange-50 text-xl font-bold font-['Plus Jakarta Sans']">
-                ufoliving
-              </div>
+        <div className="self-stretch px-2 sm:px-8 justify-between sm:justify-start items-start gap-5 inline-flex flex-wrap">
+          <div className=" flex gap-10 items-center">
+            <div className=" flex items-center gap-2 text-orange-50 text-xl font-bold font-['Plus Jakarta Sans']">
+              <Image src={Logo} className="w-7 h-6" />
+              <div>ufoliving</div>
             </div>
-            <div className="w-52  text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-7">
+            <div className=" text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-7">
               Where Each Corner Reflects the Future of Living
             </div>
           </div>
-          <div className="grow shrink basis-0 pl-6 flex-col justify-start items-end gap-2 inline-flex">
+          <div className="grow   pl-6 flex-col justify-start items-end gap-2 inline-flex mt-10 sm:mt-0 mb-3 pr-2 sm:pr-0">
             <div className="text-orange-50 text-lg font-normal font-['Gilroy-SemiBold'] leading-snug">
               Connect with us
             </div>
-            
+            <div className="flex gap-3">
+              <Image className="cursor-pointer" src={FbImg}  />
+              <Image className="cursor-pointer" src={InstaImg}  />
+              <Image className="cursor-pointer" src={YtImg}  />
+              <Image className="cursor-pointer" src={TiktokImg}  />
+            </div>
           </div>
         </div>
-        <div className="mb-0 mt-20 self-stretch h-16 px-8 bg-stone-950 justify-start items-center gap-5 inline-flex">
-          <div className="w-52 text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
+        <div className="mb-0 sm:mt-20 py-5 px-8 bg-stone-950 justify-start items-center gap-5 block w-full sm:inline-flex">
+          <div className="py-1 text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
             Copyright 2023 - Ufoliving
           </div>
-          <div className="text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
+          <div className="py-1 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
             Terms & policies
           </div>
-          <div className="text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
+          <div className="py-1 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
             Privacy & policies
           </div>
         </div>
