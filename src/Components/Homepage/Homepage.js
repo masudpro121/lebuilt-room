@@ -126,7 +126,7 @@ const Homepage = ({ nextStep }) => {
       <div className="mt-0 ">
         <div className=" h-8 relative top-8 bg-white"></div>
         <div className="hidden absolute lg:flex justify-center items-start right-0 mt-7 h-[300px] w-3/12 bg-gray-50 ">
-          <div className="p-5 pl-8 shadow-sm bg-white rounded-lg mt-2 h-[220px] w-full xl:w-[90%]">
+          <div className="p-5 pl-8 shadow-inner bg-white rounded-lg mt-2 h-[220px] w-full xl:w-[90%]">
             <h3 className="font-['Gilroy-SemiBold'] text-2xl ">
               Ready to Design?
             </h3>
@@ -134,7 +134,7 @@ const Homepage = ({ nextStep }) => {
               Start your own unique <br />
               AI-generated design journey now!
             </p>
-            <button onClick={nextStep} className=" bg-[#9D5C0D] font-['Gilroy-SemiBold'] text-white  py-4 rounded-md tracking-wider mt-5 w-[95%]">
+            <button onClick={nextStep} className=" bg-[#9D5C0D] font-['Gilroy-SemiBold'] text-white  py-4 rounded-md tracking-wider mt-5 w-[95%] xl:w-[290px]">
               Start generating
             </button>
           </div>
