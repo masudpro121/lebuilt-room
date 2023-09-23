@@ -16,21 +16,30 @@ import StarImg from "@/assets/images/star.svg";
 const Homepage = ({ nextStep }) => {
   const images = [
     RoomImg,
-    RoomImg1,
-    RoomImg2,
-    RoomImg3,
     RoomImg,
+    RoomImg3,
+    RoomImg2,
+    RoomImg3,
     RoomImg1,
     RoomImg2,
     RoomImg3,
+    RoomImg2,
+    RoomImg1,
+    RoomImg1,
+    RoomImg2,
     RoomImg,
-    RoomImg1,
-    RoomImg2,
+    RoomImg,
     RoomImg3,
+    RoomImg2,
   ];
+  const  images1 = images.slice(0,4)
+  const  images2 = images.slice(4,8)
+  const  images3 = images.slice(8,12)
+  const  images4 = images.slice(12,16)
+
   return (
     <div className="">
-      <div className="sticky top-0">
+      <div className="sticky top-0 z-50">
         <div className="w-full h-20 sm:h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
           <div className="justify-start items-center  flex">
             <Image src={Logo} className=" w-[50px] sm:w-16 sm:h-16" />
@@ -44,49 +53,61 @@ const Homepage = ({ nextStep }) => {
           >
             <div className="sm:w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
               <div className=" flex items-center gap-3 text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none">
-                <div>Start generating </div>
                 <Image width={20} height={20} src={WhiteStarImg} />
+                <div>Start generating </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Hero Section  */}
-      <div className={`w-full flex justify-center ${styles.herobg}`}>
-        <div className=" py-10 sm:py-20 flex-col justify-start items-start gap-2.5 inline-flex">
-          <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
-            <div className="herobg self-stretch text-center leading-[3] sm:leading-[4]">
-              <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
-                Elevate your space with{" "}
-              </span>
-              <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent text-3xl sm:text-6xl font-normal font-['Gilroy-ExtraBoldItalic']">
-                ufoliving <br />
-              </span>
-              <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
-                the{" "}
-                <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent font-['Gilroy-ExtraBold']">
-                  AI tool
-                </span>{" "}
-                that reshapes <br />
-                interior design paradigms.
-              </span>
-            </div>
-            <div
-              onClick={nextStep}
-              className="cursor-pointer px-7 sm:px-20 py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex"
-            >
-              <Image width={30} height={30} src={StarImg} />
-              <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-[21.6px] ">
-                Generate your designs
+      {/* Hero Section with Video  */}
+      <div className="relative ">
+        <video
+          autoPlay
+          loop
+          muted
+          className="h-[305px] sm:h-[506px] w-full object-cover"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 h-[305px] sm:h-[506px] flex items-center justify-center">
+          <div className={`w-full h-full flex justify-center bg-[#9D5C0D]/95 `}>
+            <div className=" py-10  flex-col justify-start items-start gap-2.5 inline-flex">
+              <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
+                <div className="herobg self-stretch text-center leading-[2] sm:leading-[4]">
+                  <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
+                    Elevate your space with{" "}
+                  </span>
+                  <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent text-3xl sm:text-6xl font-normal font-['Gilroy-ExtraBoldItalic']">
+                    ufoliving <br />
+                  </span>
+                  <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
+                    the{" "}
+                    <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent font-['Gilroy-ExtraBold']">
+                      AI tool
+                    </span>{" "}
+                    that reshapes <br />
+                    interior design paradigms.
+                  </span>
+                </div>
+                <div
+                  onClick={nextStep}
+                  className="cursor-pointer px-7 sm:px-20 py-4 sm:py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex"
+                >
+                  <Image width={30} height={30} src={StarImg} />
+                  <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-[21.6px] ">
+                    Generate your designs
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Show Images  */}
-      <div className="">
+      {/* Old Version Show Images  */}
+      {/* <div className="">
         <div className="w-full mt-7 px-5 bg-white justify-center items-start gap-2.5 inline-flex flex-wrap">
           {images.map((image, key) => {
             return (
@@ -99,8 +120,161 @@ const Homepage = ({ nextStep }) => {
           })}
         </div>
         <div className=" h-20 relative bottom-20 bg-gradient-to-t from-slate-100 to-transparent "></div>
+      </div> */}
+
+       {/* New Version Show Images  */}
+      <div className="mt-0 ">
+      <div className=" h-8 relative top-8 bg-white "></div>
+        <div className="px-3 grid sm:grid-cols-2 md:grid-cols-4 gap-4 grid-flow-dense">
+          <div  className="grid gap-0">
+            {images1.map((image, key) => {
+              return (
+                <Image
+                  key={"images1" + key}
+                  className="h-[300px] w-full rounded-lg"
+                  src={image}
+                />
+              );
+            })}
+          </div>
+          <div  className="grid gap-4 mt-7">
+            {images2.map((image, key) => {
+              return (
+                <Image
+                  key={"images2" + key}
+                  className="h-[300px] w-full rounded-lg"
+                  src={image}
+                />
+              );
+            })}
+          </div>
+          <div  className="grid gap-0">
+            {images3.map((image, key) => {
+              return (
+                <Image
+                  key={"images3" + key}
+                  className="h-[300px] w-full rounded-lg"
+                  src={image}
+                />
+              );
+            })}
+          </div>
+          <div  className="grid gap-4 mt-7">
+            {images4.map((image, key) => {
+              return (
+                <Image
+                  key={"images4" + key}
+                  className="h-[300px] w-full rounded-lg"
+                  src={image}
+                />
+              );
+            })}
+          </div>
+          
+        </div>
+        <div className=" h-20 relative bottom-20 bg-gradient-to-t from-slate-100 to-transparent "></div>
       </div>
 
+      {/* TEST   */}
+
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid gap-4">
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div> */}
+
+      {/* TEST  */}
+
+      {/* Design Like this  */}
       <div className="flex justify-center px-5 pb-10 -mt-10">
         <div className="flex-col justify-center items-center gap-2 inline-flex">
           <div className="self-stretch grow shrink basis-0 flex-col justify-center items-center gap-6 flex">
@@ -117,7 +291,7 @@ const Homepage = ({ nextStep }) => {
               onClick={nextStep}
               className="h-20 justify-start items-start inline-flex cursor-pointer"
             >
-              <div className="px-7 sm:px-20 py-5 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
+              <div className="px-7 sm:px-20 py-4 sm:py-5 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
                 <Image width={20} height={20} src={WhiteStarImg} />
                 <div className="  text-white text-lg font-semibold font-['Inter'] leading-7">
                   Generate your designs
