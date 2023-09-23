@@ -1,17 +1,18 @@
 import React from "react";
 import Logo from "@/assets/images/logo.png";
+import LogoWhite from "@/assets/images/logo-white.png";
 import Image from "next/image";
 import styles from "./homepage.module.css";
 import RoomImg from "@/assets/images/room/room.png";
 import RoomImg1 from "@/assets/images/room/room1.jpg";
 import RoomImg2 from "@/assets/images/room/room2.jpg";
 import RoomImg3 from "@/assets/images/room/room3.jpg";
-import FbImg from "@/assets/images/fb.png"
-import InstaImg from "@/assets/images/insta.png"
-import YtImg from "@/assets/images/yt.png"
-import TiktokImg from "@/assets/images/tiktok.png"
-import WhiteStarImg from "@/assets/images/whitestar.svg"
-import StarImg from "@/assets/images/star.svg"
+import FbImg from "@/assets/images/fb.png";
+import InstaImg from "@/assets/images/insta.png";
+import YtImg from "@/assets/images/yt.png";
+import TiktokImg from "@/assets/images/tiktok.png";
+import WhiteStarImg from "@/assets/images/whitestar.svg";
+import StarImg from "@/assets/images/star.svg";
 const Homepage = ({ nextStep }) => {
   const images = [
     RoomImg,
@@ -32,20 +33,19 @@ const Homepage = ({ nextStep }) => {
       <div className="sticky top-0">
         <div className="w-full h-20 sm:h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
           <div className="justify-start items-center  flex">
-            <Image src={Logo} className=" w-12 sm:w-16 sm:h-16" />
+            <Image src={Logo} className=" w-[50px] sm:w-16 sm:h-16" />
             <div className="hidden sm:block text-stone-900 text-lg font-normal font-['Gilroy-Medium']">
               Create exclusive AI interior design in 30 seconds
             </div>
-            <div className=" sm:hidden text-black text-2xl font-bold font-['Plus Jakarta Sans']">
-              <div>Ufoliving</div>
-            </div>
           </div>
-          <div onClick={nextStep} className="cursor-pointer w-48 justify-end mr-2 items-center gap-6 flex">
+          <div
+            onClick={nextStep}
+            className="cursor-pointer w-48 justify-end mr-2 items-center gap-6 flex"
+          >
             <div className="sm:w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
-              <div
-                className="  text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none"
-              >
-                Start generating
+              <div className=" flex items-center gap-3 text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none">
+                <div>Start generating </div>
+                <Image width={20} height={20} src={WhiteStarImg} />
               </div>
             </div>
           </div>
@@ -60,17 +60,24 @@ const Homepage = ({ nextStep }) => {
               <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
                 Elevate your space with{" "}
               </span>
-              <span className="text-lime-200 text-3xl sm:text-6xl font-normal font-['Gilroy-ExtraBoldItalic']">
+              <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent text-3xl sm:text-6xl font-normal font-['Gilroy-ExtraBoldItalic']">
                 ufoliving <br />
               </span>
               <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
-                the <span className="text-lime-200 font-['Gilroy-ExtraBold']">AI tool</span> that reshapes <br />
+                the{" "}
+                <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent font-['Gilroy-ExtraBold']">
+                  AI tool
+                </span>{" "}
+                that reshapes <br />
                 interior design paradigms.
               </span>
             </div>
-            <div onClick={nextStep} className="cursor-pointer px-7 sm:px-20 py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex">
-            <Image width={30} height={30} src={StarImg} />
-              <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-snug ">
+            <div
+              onClick={nextStep}
+              className="cursor-pointer px-7 sm:px-20 py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex"
+            >
+              <Image width={30} height={30} src={StarImg} />
+              <div className="text-yellow-950 text-lg font-normal font-['Gilroy-SemiBold'] leading-[21.6px] ">
                 Generate your designs
               </div>
             </div>
@@ -79,19 +86,22 @@ const Homepage = ({ nextStep }) => {
       </div>
 
       {/* Show Images  */}
-      <div className="w-full mt-7 px-5 bg-white justify-center items-start gap-2.5 inline-flex flex-wrap">
-        {images.map((image, key) => {
-          return (
-            <Image
-              key={"image" + key}
-              className="w-80 h-80  grow shrink basis-0"
-              src={image}
-            />
-          );
-        })}
+      <div className="">
+        <div className="w-full mt-7 px-5 bg-white justify-center items-start gap-2.5 inline-flex flex-wrap">
+          {images.map((image, key) => {
+            return (
+              <Image
+                key={"image" + key}
+                className="w-80 h-80  grow shrink basis-0"
+                src={image}
+              />
+            );
+          })}
+        </div>
+        <div className=" h-20 relative bottom-20 bg-gradient-to-t from-slate-100 to-transparent "></div>
       </div>
 
-      <div className="flex justify-center mt-5 px-5 py-12">
+      <div className="flex justify-center px-5 pb-10 -mt-10">
         <div className="flex-col justify-center items-center gap-2 inline-flex">
           <div className="self-stretch grow shrink basis-0 flex-col justify-center items-center gap-6 flex">
             <div className="flex-col justify-start items-center gap-3 flex">
@@ -103,9 +113,12 @@ const Homepage = ({ nextStep }) => {
                 Create images just as stunning or even surpass what you've seen!
               </div>
             </div>
-            <div onClick={nextStep} className="h-20 justify-start items-start inline-flex cursor-pointer">
+            <div
+              onClick={nextStep}
+              className="h-20 justify-start items-start inline-flex cursor-pointer"
+            >
               <div className="px-7 sm:px-20 py-5 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
-              <Image width={20} height={20} src={WhiteStarImg} />
+                <Image width={20} height={20} src={WhiteStarImg} />
                 <div className="  text-white text-lg font-semibold font-['Inter'] leading-7">
                   Generate your designs
                 </div>
@@ -118,14 +131,17 @@ const Homepage = ({ nextStep }) => {
       {/* Footer  */}
       <div className="w-full pt-5 bg-[#271703] flex-col justify-between items-start inline-flex">
         <div className="self-stretch px-3 sm:px-8 justify-between sm:justify-start items-start gap-5 inline-flex flex-wrap">
-          <div className=" flex gap-10 items-center">
+          <div className=" flex gap-5 items-center">
             <div className=" flex items-center gap-2 text-orange-50 text-xl font-bold font-['Plus Jakarta Sans']">
-              <Image src={Logo} className="w-7 h-6" />
-              <div>Ufoliving</div>
+              <Image src={LogoWhite} className="w-[50px] h-[50px]" />
             </div>
             <div className=" text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-7">
-              <div className="sm:hidden text-right sm:text-left">Where Each Corner Reflects the Future of Living</div>
-              <div className="hidden sm:block text-right sm:text-left">Where Each Corner Reflects the <br/> Future of Living</div>
+              <div className="sm:hidden text-right sm:text-left">
+                Where Each Corner Reflects the Future of Living
+              </div>
+              <div className="hidden sm:block text-right sm:text-left">
+                Where Each Corner Reflects the <br /> Future of Living
+              </div>
             </div>
           </div>
           <div className="grow   pl-6 flex-col justify-start items-end gap-2 inline-flex mt-10 sm:mt-0 mb-3 pr-2 sm:pr-0">
@@ -133,10 +149,10 @@ const Homepage = ({ nextStep }) => {
               Connect with us
             </div>
             <div className="flex gap-3">
-              <Image className="cursor-pointer" src={FbImg}  />
-              <Image className="cursor-pointer" src={InstaImg}  />
-              <Image className="cursor-pointer" src={YtImg}  />
-              <Image className="cursor-pointer" src={TiktokImg}  />
+              <Image className="cursor-pointer" src={FbImg} />
+              <Image className="cursor-pointer" src={InstaImg} />
+              <Image className="cursor-pointer" src={YtImg} />
+              <Image className="cursor-pointer" src={TiktokImg} />
             </div>
           </div>
         </div>
