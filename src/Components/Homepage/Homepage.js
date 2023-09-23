@@ -32,10 +32,10 @@ const Homepage = ({ nextStep }) => {
     RoomImg3,
     RoomImg2,
   ];
-  const  images1 = images.slice(0,4)
-  const  images2 = images.slice(4,8)
-  const  images3 = images.slice(8,12)
-  const  images4 = images.slice(12,16)
+  const images1 = images.slice(0, 4);
+  const images2 = images.slice(4, 8);
+  const images3 = images.slice(8, 12);
+  const images4 = images.slice(12, 16);
 
   return (
     <div className="">
@@ -122,11 +122,25 @@ const Homepage = ({ nextStep }) => {
         <div className=" h-20 relative bottom-20 bg-gradient-to-t from-slate-100 to-transparent "></div>
       </div> */}
 
-       {/* New Version Show Images  */}
+      {/* New Version Show Images  */}
       <div className="mt-0 ">
-      <div className=" h-8 relative top-8 bg-white "></div>
+        <div className=" h-8 relative top-8 bg-white"></div>
+        <div className="hidden absolute lg:flex justify-center items-start right-0 mt-7 h-[300px] w-3/12 bg-gray-50 ">
+          <div className="p-5 pl-8 shadow-sm bg-white rounded-lg mt-2 h-[220px] w-full xl:w-[90%]">
+            <h3 className="font-['Gilroy-SemiBold'] text-2xl ">
+              Ready to Design?
+            </h3>
+            <p className=" text-neutral-500 mt-4 text-[16px]">
+              Start your own unique <br />
+              AI-generated design journey now!
+            </p>
+            <button onClick={nextStep} className=" bg-[#9D5C0D] font-['Gilroy-SemiBold'] text-white  py-4 rounded-md tracking-wider mt-5 w-[95%]">
+              Start generating
+            </button>
+          </div>
+        </div>
         <div className="px-3 grid sm:grid-cols-2 md:grid-cols-4 gap-4 grid-flow-dense">
-          <div  className="grid gap-0">
+          <div className="grid gap-0">
             {images1.map((image, key) => {
               return (
                 <Image
@@ -137,7 +151,7 @@ const Homepage = ({ nextStep }) => {
               );
             })}
           </div>
-          <div  className="grid gap-4 mt-7">
+          <div className="grid gap-4 mt-7">
             {images2.map((image, key) => {
               return (
                 <Image
@@ -148,7 +162,7 @@ const Homepage = ({ nextStep }) => {
               );
             })}
           </div>
-          <div  className="grid gap-0">
+          <div className="grid gap-0">
             {images3.map((image, key) => {
               return (
                 <Image
@@ -159,7 +173,7 @@ const Homepage = ({ nextStep }) => {
               );
             })}
           </div>
-          <div  className="grid gap-4 mt-7">
+          <div className="grid gap-4 mt-7">
             {images4.map((image, key) => {
               return (
                 <Image
@@ -170,109 +184,9 @@ const Homepage = ({ nextStep }) => {
               );
             })}
           </div>
-          
         </div>
         <div className=" h-20 relative bottom-20 bg-gradient-to-t from-slate-100 to-transparent "></div>
       </div>
-
-      {/* TEST   */}
-
-      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-      </div> */}
-
-      {/* TEST  */}
 
       {/* Design Like this  */}
       <div className="flex justify-center px-5 pb-10 -mt-10">
