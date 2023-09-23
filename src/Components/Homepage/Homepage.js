@@ -139,8 +139,9 @@ const Homepage = ({ nextStep }) => {
             </button>
           </div>
         </div>
-        <div className="px-3 grid sm:grid-cols-2 md:grid-cols-4 gap-4 grid-flow-dense">
-          <div className="grid gap-0">
+
+        <div className="px-3 grid sm:grid-cols-2  lg:grid-cols-4 gap-4 grid-flow-dense">
+          <div className="grid gap-4 sm:gap-0">
             {images1.map((image, key) => {
               return (
                 <Image
@@ -151,7 +152,7 @@ const Homepage = ({ nextStep }) => {
               );
             })}
           </div>
-          <div className="grid gap-4 mt-7">
+          <div className="grid gap-4 sm:mt-7">
             {images2.map((image, key) => {
               return (
                 <Image
@@ -162,7 +163,7 @@ const Homepage = ({ nextStep }) => {
               );
             })}
           </div>
-          <div className="grid gap-0">
+          <div className="grid gap-4 sm:gap-0">
             {images3.map((image, key) => {
               return (
                 <Image
@@ -173,7 +174,7 @@ const Homepage = ({ nextStep }) => {
               );
             })}
           </div>
-          <div className="grid gap-4 mt-7">
+          <div className="grid gap-4 sm:mt-7">
             {images4.map((image, key) => {
               return (
                 <Image
