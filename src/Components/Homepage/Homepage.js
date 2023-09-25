@@ -13,6 +13,9 @@ import YtImg from "@/assets/images/yt.png";
 import TiktokImg from "@/assets/images/tiktok.png";
 import WhiteStarImg from "@/assets/images/whitestar.svg";
 import StarImg from "@/assets/images/star.svg";
+import {Noto_Sans} from '@next/font/google'
+const nt = Noto_Sans({subsets:['latin'], weight:['400','500', '600', '700', '800']})
+
 const Homepage = ({ nextStep }) => {
   const images = [
     RoomImg,
@@ -72,23 +75,22 @@ const Homepage = ({ nextStep }) => {
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 h-[305px] sm:h-[506px] flex items-center justify-center">
-          <div className={`w-full h-full flex justify-center bg-[#9D5C0D]/95 `}>
+          <div className={`w-full h-full flex justify-center  bg-[#885216]/90 `}>
             <div className=" py-10  flex-col justify-start items-start gap-2.5 inline-flex">
               <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
-                <div className="herobg self-stretch text-center leading-[2] sm:leading-[4]">
-                  <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
-                    Elevate your space with{" "}
+                <div className={"herobg self-stretch text-center leading-[2] sm:leading-[4] "+nt.className}>
+                  <span className="text-orange-50 text-2xl sm:text-5xl font-semibold ">
+                   讓{" "}
                   </span>
-                  <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent text-3xl sm:text-6xl font-normal font-['Gilroy-ExtraBoldItalic']">
-                    ufoliving <br />
+                  <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent text-3xl sm:text-6xl font-bold ">
+                  Al顛覆 {" "}
                   </span>
-                  <span className="text-orange-50 text-2xl sm:text-5xl font-normal font-['Gilroy-SemiBold']">
-                    the{" "}
-                    <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent font-['Gilroy-ExtraBold']">
-                      AI tool
+                  <span className="text-orange-50 text-2xl sm:text-5xl font-semibold ">
+                  傳統的室內設計 <br/>
+                    <span className="bg-gradient-to-r  from-lime-100 to-lime-200 bg-clip-text text-3xl sm:text-6xl text-transparent font-bold">
+                    悠孚AI
                     </span>{" "}
-                    that reshapes <br />
-                    interior design paradigms.
+                    重新定義設計新標準
                   </span>
                 </div>
                 <div
@@ -124,9 +126,9 @@ const Homepage = ({ nextStep }) => {
 
       {/* New Version Show Images  */}
       <div className="mt-0 ">
-        <div className=" h-8 relative top-8 bg-white"></div>
+        <div className=" h-8 relative top-8 bg-gray-50"></div>
         <div className="hidden absolute lg:flex justify-center items-start right-0 mt-7 h-[300px] w-3/12 bg-gray-50 ">
-          <div className="p-5 pl-8 shadow-inner bg-white rounded-lg mt-2 h-[220px] w-full xl:w-[90%]">
+          <div className="py-10 pl-10 shadow-inner bg-white rounded-lg mt-2  w-full xl:w-[90%]">
             <h3 className="font-['Gilroy-SemiBold'] text-2xl ">
               Ready to Design?
             </h3>
