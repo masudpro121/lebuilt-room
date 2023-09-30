@@ -1,5 +1,15 @@
 import { MyContext } from "@/pages/_app";
+import Image from "next/image";
 import React, { useContext, useState } from "react";
+import logo from "../../assets/images/onBoard/logo svg (1).png";
+import Link from "next/link";
+import step from "../../assets/images/_Step icon base.png";
+import leftarrow from "../../assets/images/arrow-left.png";
+import repeat from "../../assets/images/onBoard/repeat-02.png";
+import arrow from "../../assets/images/onBoard/ion_arrow-up.png";
+import greenCheckbox from "../../assets/images/onBoard/green-checkbox.png";
+import whiteCheckbox from "../../assets/images/onBoard/white_checkbox.png";
+
 function StepStyle() {
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
   const setOnBoard = (data) => {
@@ -15,14 +25,13 @@ function StepStyle() {
     }
   };
   const nextStep = () => {
-    if(onBoard.style){
+    if (onBoard.style) {
       localStorage.setItem("onBoardingStep", onBoardingStep + 1);
       setOnBoardingStep(onBoardingStep + 1);
     }
-    
   };
-  
-  const styles = [
+
+  const allStyles = [
     {
       name: "american style",
       img: "https://i.ibb.co/5KKcJF6/american-style.webp",
@@ -42,45 +51,180 @@ function StepStyle() {
     {
       name: "luxurious",
       img: "https://i.ibb.co/wB0P7BK/nordic-style.webp",
-    }
+    },
   ];
 
+  const firstStyle = allStyles[0];
+  const styles = allStyles.slice(1);
+
   const handleInput = (i) => {
-    setSelectedOption(styles[i].name);
+    console.log(i, 'i');
+    setSelectedOption(allStyles[i].name);
     let myOnBoard = onBoard;
-    myOnBoard.style = styles[i];
+    myOnBoard.style = allStyles[i];
     setOnBoard(myOnBoard);
     nextStep();
   };
 
   return (
-    <div>
-      <h3 className="text-2xl font-semibold mb-5 ml-10">Select Style</h3>
-      <div className="flex flex-wrap justify-center gap-5">
-        {styles.map((style, i) => {
-          return (
-            <div key={style.name + i} className="w-3/12">
-              <input
-                id={style.name.replaceAll(" ", "")}
-                type="radio"
-                checked={selectedOption == style.name}
-                onChange={() => handleInput(i)}
-              />
-              <label htmlFor={style.name.replaceAll(" ", "")}>
-                <img src={style.img} alt="" />
-                <b>{style.name}</b>
-              </label>
+    <div className="h-full flex justify-center items-center">
+      <div className="h-full">
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold ">
+          Select style
+        </h3>
+        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[18px]">
+          Choose your preferred design style.
+        </p>
+
+        <div className="md:hidden mb-[16px] w-full px-0 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
+          <Image className="" src={step} alt="" />
+          <div className="">
+            <h3 className=" text-[#271703] text-[16px] font-bold ">
+              {" "}
+              Select style
+            </h3>
+            <p className="  text-[12px] text-[#9D5C0D] ">
+              Choose your preferred design style.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex px-4 md:px-6 pt-6 pb-[30px] space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl mb-6">
+          <Image
+            className=" w-[40px] h-[40px] bg-[#9D5C0D] rounded-xl border-4  border-[#f1c28e]"
+            src={logo}
+            alt=""
+          />
+          <h2 className="hidden md:block text-[14px] md:text-[14px] font-semibold text-[#271703]">
+            Your selection is crucial, as the final outcome hinges on the style
+            you choose. Take your time and choose with care. Click{" "}
+            <Link className="text-[#667412]" href="/">
+              Show More Styles
+            </Link>{" "}
+            to discover other options. Your ideal style might be just a click
+            away!
+          </h2>
+          <h2 className=" md:hidden text-[14px] md:text-[14px] font-semibold text-[#271703]">
+            Your selection is crucial, as the final outcome hinges on the style
+            you choose.
+          </h2>
+        </div>
+
+        {/* Style here  */}
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-5 px-5"
+          
+        >
+          <div className="" onClick={() => handleInput(0)}  >
+            <label htmlFor={firstStyle.name.replaceAll(" ", "")}>
+              <div className="relative cursor-pointer">
+                <img
+                  className={`w-full  rounded-lg
+                      `}
+                  src={firstStyle.img}
+                  alt={firstStyle.name}
+                />
+                <Image
+                  src={
+                    selectedOption == firstStyle.name
+                      ? greenCheckbox
+                      : whiteCheckbox
+                  }
+                  className="absolute top-4 right-3"
+                />
+              </div>
+              {/* <b>{style.name}</b> */}
+            </label>
+          </div>
+
+          <div className="grid gap-5 grid-cols-2">
+            {styles.map((style, i) => {
+              return (
+                <div key={style.name + i} onClick={() => handleInput(i + 1)}>
+                  <label htmlFor={style.name.replaceAll(" ", "")}>
+                    <div className="relative cursor-pointer">
+                      <img
+                        className={`w-full  rounded-lg 
+                      `}
+                        //  ${
+                        //   checked && "border-4 border-[98AE1A]"
+                        // }
+                        src={style.img}
+                        alt={style.name}
+                      />
+                      <Image
+                        src={
+                          selectedOption == style.name
+                            ? greenCheckbox
+                            : whiteCheckbox
+                        }
+                        className="absolute top-3 right-2 w-[32px]"
+                      />
+                    </div>
+                    {/* <b>{style.name}</b> */}
+                  </label>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        {/* .........  next prev button........... */}
+
+        <div className="mx-5  md:mx-7 my-10">
+          <div className="myBtn hidden md:block" onClick={prevStep}>
+            <Image
+              className="border w-[55px] rounded-lg bg-gray-50 py-3 px-[14px]"
+              src={leftarrow}
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-end items-center">
+            <div className=" hidden md:flex border rounded-lg py-4 px-[28px] items-center  space-x-[12px]">
+              <Image src={repeat} alt="more style" />
+              <p className="text-[#323A46] text-[20px] font-semibold">
+                Show More Styles
+              </p>
             </div>
-          );
-        })}
-      </div>
-      <div className="flex gap-5 mt-5">
-        <button className="myBtn" onClick={prevStep}>
-          Prev Step
-        </button>
-        <button className="myBtn" onClick={nextStep}>
-          Next Step
-        </button>
+
+            <div
+              onClick={nextStep}
+              className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-4 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
+            >
+              <p className=" text-[20px] font-semibold whitespace-nowrap">
+                Next Step
+              </p>
+              <Image className="mb-[-3px]" src={arrow} alt="" />
+            </div>
+          </div>
+          <div className="flex justify-end mb-3">
+            <div className=" lg:hidden flex border rounded-lg py-4 px-[32px] items-center justify-center  space-x-[12px]">
+              <Image src={repeat} alt="" />
+              <p className="text-[#323A46] text-[20px] font-semibold">
+                Show More Styles
+              </p>
+            </div>
+          </div>
+
+          {/* ........... for responsive......... */}
+          <div className="lg:hidden flex w-full items-center justify-end space-x-[18px] ">
+            <div className="myBtn" onClick={prevStep}>
+              <Image
+                className="border w-[55px] rounded-lg bg-gray-50 py-[12px] px-[14px]"
+                src={leftarrow}
+                alt="prev"
+              />
+            </div>
+            <div
+              onClick={nextStep}
+              className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+            >
+              <p className="text-[17px] md:text-[20px] font-semibold">
+                Next Step
+              </p>
+              <Image className="mb-[-3px]" src={arrow} alt="next" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
