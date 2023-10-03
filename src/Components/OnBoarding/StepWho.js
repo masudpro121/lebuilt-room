@@ -99,7 +99,7 @@ function StepWho() {
               return (
                 <div
                   onClick={() => handleInput(am.title)}
-                  className={`w-full lg:w-[492px] pl-4 pr-6 py-3  flex justify-between items-center space-x-[4px] rounded-xl ${selectedOption == am.title? ' border-[3px] border-[#FBE8D0]': '  border-[2px]' }`}
+                  className={`w-full lg:w-[492px] pl-4 pr-6 py-3  flex justify-between items-center space-x-[4px] rounded-xl ${selectedOption == am.title? ' border-[3px] border-[#FBE8D0]': '  border-[2px]' } cursor-pointer`}
                   key={i}
                 >
                   <div className="flex items-center space-x-[24px]">
@@ -147,7 +147,7 @@ function StepWho() {
 
       {/* .......  next prev btn.......... */}
       <div className="flex w-full mb-10 items-center justify-end space-x-[18px] pr-6 md:pr-[60px] mt-14 md:mt-10">
-        <div className="myBtn" onClick={prevStep}>
+        <div className="myBtn md:hidden" onClick={prevStep}>
           <Image
             className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
             src={leftarrow}

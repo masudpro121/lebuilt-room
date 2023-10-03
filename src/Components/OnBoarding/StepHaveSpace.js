@@ -67,7 +67,7 @@ function StepHaveSpace() {
     //   </div>
     // </div>
     <div className="w-full  md:h-full flex items-center ">
-      <div className=" min-h-[100vh] md:h-full w-full  pt-[15%]  mx-4 md:mx-7">
+      <div className=" md:h-full w-full  pt-[15%]  mx-4 md:mx-7">
         <h3 className="mb-[30px] text-[#271703] text-[25px] md:text-[48px] text-center font-semibold ">
           Do you have a space image?
         </h3>

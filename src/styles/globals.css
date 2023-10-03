@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-/* .myBtn {
-  @apply px-3 rounded-sm
-} */
+.myBtn {
+  @apply cursor-pointer
+}
 
 .myInput {
   @apply border-2 px-2 rounded-sm my-1

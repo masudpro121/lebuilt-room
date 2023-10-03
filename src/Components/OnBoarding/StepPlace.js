@@ -79,8 +79,9 @@ function StepPlace() {
 
           <div className=" mt-6 md:mt-10 flex justify-center md:justify-start flex-wrap gap-x-4 gap-y-6 rounded-md">
             {places.map((place, i) => {
+              console.log(selectedOption == place, place);
               return (
-                <div className="" key={i}>
+                <div className={` px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-semibold shadow ${selectedOption == place? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} key={i}>
                   <input
                     className="hidden"
                     id={place.replaceAll(" ", "")}
@@ -89,7 +90,7 @@ function StepPlace() {
                     onChange={() => handleInput(place)}
                   />
                   <label
-                    className="px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-semibold shadow bg-white"
+                    className=""
                     htmlFor={place.replaceAll(" ", "")}
                   >
                     {place}
@@ -102,7 +103,7 @@ function StepPlace() {
 
         {/* .......  next prev btn.......... */}
         <div className="flex mx-4 md:mx-7 mb-5 items-center justify-end space-x-[18px] mt-14 md:mt-10">
-          <div className="myBtn" onClick={prevStep}>
+          <div className="myBtn md:hidden" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
               src={leftarrow}

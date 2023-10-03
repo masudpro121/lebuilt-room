@@ -231,7 +231,7 @@ function StepType() {
               return (
                 <div
                   key={type.name + i}
-                  className="px-4 py-[6px] bg-white shadow rounded-md cursor-pointer"
+                  className={`px-4 py-[6px] shadow rounded-md cursor-pointer ${selectedOption == type.name ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`}
                 >
                   <input
                     className="hidden"
@@ -243,7 +243,7 @@ function StepType() {
                   <label htmlFor={type.name.replaceAll(" ", "")}>
                     {/* <img src={type.img} alt="" />
                     <b>{type.name}</b> */}
-                    <h2 className="text-[#271703] text-[14px] cursor-pointer">
+                    <h2 className=" text-[14px] cursor-pointer">
                       {type.name}
                     </h2>
                   </label>
@@ -256,13 +256,13 @@ function StepType() {
         {/* .........  next prev button........... */}
 
         <div className="mx-5  md:mx-7 my-10">
-          <div className="myBtn hidden md:block" onClick={prevStep}>
+          {/* <div className="myBtn hidden md:block" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-3 px-[14px]"
               src={leftarrow}
               alt=""
             />
-          </div>
+          </div> */}
           <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-end items-center">
             <div
               onClick={nextStep}

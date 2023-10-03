@@ -180,7 +180,7 @@ function StepUpload() {
                     <h2 className="text-[20px] text-[#333A09] leading-6 md:leading-9 mb-3 text-center md:text-[33px] font-medium">
                       Upload Inspirational <br /> Image
                     </h2>
-                    <p className="text-center leading-4 font-medium text-[#333A09] text-[14px] md:text-[16px] ">
+                    <p className="text-center mt-2 text-[#333A09] text-[14px] md:text-[16px] ">
                       Please upload in PNG or JPG format.
                       <br /> Maximum file size: 10MB
                     </p>
@@ -191,9 +191,7 @@ function StepUpload() {
 
             {/* ...... next prev button .......... */}
 
-            <button className="myBtn" onClick={prevStep}>
-              Prev Step
-            </button>
+           
 
             <div className="flex justify-end mt-10 mb-5 md:mb-0 px-4 md:px-6 items-center space-x-2">
               <div

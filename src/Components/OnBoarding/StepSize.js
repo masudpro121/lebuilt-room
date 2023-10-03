@@ -77,7 +77,7 @@ function StepSize() {
           <div className=" mt-6  flex justify-center md:justify-start flex-wrap gap-x-4 gap-y-6 rounded-md">
             {sizes.map((size, i) => {
               return (
-                <div key={i}>
+                <div key={i} className={`px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-semibold shadow ${selectedOption == size ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} >
                   <input
                     className="hidden"
                     id={size.replaceAll(" ", "")}
@@ -86,7 +86,7 @@ function StepSize() {
                     onChange={() => handleInput(size)}
                   />
                   <label
-                    className="px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-semibold shadow bg-white"
+                    
                     htmlFor={size.replaceAll(" ", "")}
                   >
                     {size}
@@ -116,7 +116,7 @@ function StepSize() {
 
         {/* .......  next prev btn.......... */}
         <div className="flex mx-4 md:mx-7 mb-5 items-center justify-end space-x-[18px] mt-14 md:mt-10">
-          <div className="myBtn" onClick={prevStep}>
+          <div className="myBtn md:hidden" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
               src={leftarrow}
