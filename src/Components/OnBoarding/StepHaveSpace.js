@@ -68,7 +68,7 @@ function StepHaveSpace() {
     // </div>
     <div className="w-full  md:h-full flex items-center ">
       <div className=" md:h-full w-full  pt-[15%]  mx-4 md:mx-7">
-        <h3 className="mb-[30px] text-[#271703] text-[25px] md:text-[48px] text-center font-semibold ">
+        <h3 className="mb-[30px] text-[#271703] text-[25px] md:text-[48px] text-center font-[Gilroy-SemiBold] ">
           Do you have a space image?
         </h3>
 
@@ -78,7 +78,7 @@ function StepHaveSpace() {
             src={logo}
             alt=""
           />
-          <h2 className=" text-[12px] md:text-[14px] font-semibold text-[#271703]">
+          <h2 className=" text-[12px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
             <Link href="/" className="text-[#667412]">
               {" "}
               Uploading an inspiring image is key! 🌟
@@ -94,13 +94,13 @@ function StepHaveSpace() {
             <div className=" gap-4 items-center flex  justify-center bg-[#F7F8F9] border border-[#B8C0CC] rounded-[12px] px-3 py-2">
               <button
                 onClick={() => handleInput("yes")}
-                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-medium text-[#9D5C0D] rounded-lg "
+                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-[Gilroy-SemiBold] text-[#9D5C0D] rounded-lg "
               >
                 Yes
               </button>
               <button
                 onClick={() => handleInput("no")}
-                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-medium text-[#9D5C0D] rounded-lg "
+                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-[Gilroy-SemiBold] text-[#9D5C0D] rounded-lg "
               >
                 No
               </button>
@@ -121,7 +121,7 @@ function StepHaveSpace() {
             onClick={nextStep}
             className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
           >
-            <p className="text-[17px] md:text-[20px] font-semibold">
+            <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
               Next Step
             </p>
             <Image className="mb-[-3px]" src={arrow} alt="" />

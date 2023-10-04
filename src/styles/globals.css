@@ -4,11 +4,15 @@
 
 
 .myBtn {
-  @apply cursor-pointer
+  @apply cursor-pointer font-[Gilroy-Semibold]
 }
 
 .myInput {
   @apply border-2 px-2 rounded-sm my-1
+}
+
+p{
+  @apply font-[Gilroy-Regular]
 }
 
 @font-face {

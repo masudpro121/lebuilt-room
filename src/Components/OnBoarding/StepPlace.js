@@ -43,7 +43,7 @@ function StepPlace() {
   return (
     <div className="w-full h-full flex justify-center items-center ">
       <div className="h-full  pt-[8%]">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold ">
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select place
         </h3>
         <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px]">
@@ -70,7 +70,7 @@ function StepPlace() {
               src={logo}
               alt=""
             />
-            <p className="mb-[12px] text-[14px] md:text-[16px] font-medium text-[#76450A]">
+            <p className="mb-[12px] text-[14px] md:text-[16px] font-[Gilroy-SemiBold] text-[#76450A]">
               Pick a Space! Choose from options.
             </p>
           </div>
@@ -81,7 +81,7 @@ function StepPlace() {
             {places.map((place, i) => {
               console.log(selectedOption == place, place);
               return (
-                <div className={` px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-semibold shadow ${selectedOption == place? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} key={i}>
+                <div className={` px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${selectedOption == place? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} key={i}>
                   <input
                     className="hidden"
                     id={place.replaceAll(" ", "")}
@@ -114,7 +114,7 @@ function StepPlace() {
             onClick={nextStep}
             className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
           >
-            <p className="text-[17px] md:text-[20px] font-semibold">
+            <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
               Next Step
             </p>
             <Image className="mb-[-3px]" src={arrow} alt="" />

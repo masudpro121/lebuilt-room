@@ -40,7 +40,7 @@ function StepSize() {
   return (
     <div className="w-full h-full flex ">
       <div className="  md:h-full w-full  md:pt-[12%]  ">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold ">
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select Room Size
         </h3>
         <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px]">
@@ -67,7 +67,7 @@ function StepSize() {
               src={logo}
               alt=""
             />
-            <p className="mb-[12px] text-[14px] md:text-[16px] font-medium text-[#76450A]">
+            <p className="mb-[12px] text-[14px] md:text-[16px] font-[Gilroy-SemiBold] text-[#76450A]">
               Pick a Space! Choose from options.
             </p>
           </div>
@@ -77,7 +77,7 @@ function StepSize() {
           <div className=" mt-6  flex justify-center md:justify-start flex-wrap gap-x-4 gap-y-6 rounded-md">
             {sizes.map((size, i) => {
               return (
-                <div key={i} className={`px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-semibold shadow ${selectedOption == size ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} >
+                <div key={i} className={`px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${selectedOption == size ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} >
                   <input
                     className="hidden"
                     id={size.replaceAll(" ", "")}
@@ -127,7 +127,7 @@ function StepSize() {
             onClick={nextStep}
             className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
           >
-            <p className="text-[17px] md:text-[20px] font-semibold">
+            <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
               Next Step
             </p>
             <Image className="mb-[-3px]" src={arrow} alt="" />

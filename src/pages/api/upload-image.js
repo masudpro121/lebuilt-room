@@ -13,6 +13,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 const router = createRouter();
 
 router.use(upload.single("file")).post(async (req, res) => {
+  console.log(req.file, 'file');
   uploadImage(req.file, ""+Date.now()+req.file.originalname)
   .then(uploadResult=>{
     res.send(uploadResult)

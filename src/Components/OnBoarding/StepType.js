@@ -162,7 +162,7 @@ function StepType() {
   return (
     <div className="w-full h-full flex justify-center items-center ">
       <div className="h-full">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold ">
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select room Type
         </h3>
         <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[30px]">
@@ -203,7 +203,7 @@ function StepType() {
       </div> */}
 
         <div className="rounded-[20px] flex flex-col items-center md:items-start px-2 md:px-4  pt-6 pb-[64px] mx-4 md:mx-7  bg-[#F7F8F9]">
-          <p className="mb-[12px] text-[14px] text-center px-2 md:text-left md:text-[16px] font-medium text-[#76450A] ">
+          <p className="mb-[12px] text-[14px] text-center px-2 md:text-left md:text-[16px] font-[Gilroy-SemiBold] text-[#76450A] ">
             Pick a Room Type or Craft Your Own! Choose from options, or type in
             your unique space.
           </p>
@@ -243,7 +243,7 @@ function StepType() {
                   <label htmlFor={type.name.replaceAll(" ", "")}>
                     {/* <img src={type.img} alt="" />
                     <b>{type.name}</b> */}
-                    <h2 className=" text-[14px] cursor-pointer">
+                    <h2 className=" text-[14px] cursor-pointer font-[Gilroy-SemiBold]">
                       {type.name}
                     </h2>
                   </label>
@@ -268,7 +268,7 @@ function StepType() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-4 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
             >
-              <p className=" text-[20px] font-semibold whitespace-nowrap">
+              <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
                 Next Step
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="" />
@@ -288,7 +288,7 @@ function StepType() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
-              <p className="text-[17px] md:text-[20px] font-semibold">
+              <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                 Next Step
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="" />

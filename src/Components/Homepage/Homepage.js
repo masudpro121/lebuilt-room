@@ -79,13 +79,13 @@ const Homepage = ({ nextStep }) => {
             <div className=" py-10  flex-col justify-start items-start gap-2.5 inline-flex">
               <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
                 <div className={"herobg self-stretch text-center leading-[2] sm:leading-[4] "+nt.className}>
-                  <span className="text-orange-50 text-2xl sm:text-5xl font-semibold ">
+                  <span className="text-orange-50 text-2xl sm:text-5xl font-[Gilroy-SemiBold] ">
                    讓{" "}
                   </span>
                   <span className="bg-gradient-to-r from-lime-100 to-lime-200 bg-clip-text text-transparent text-3xl sm:text-6xl font-bold ">
                   Al顛覆 {" "}
                   </span>
-                  <span className="text-orange-50 text-2xl sm:text-5xl font-semibold ">
+                  <span className="text-orange-50 text-2xl sm:text-5xl font-[Gilroy-SemiBold] ">
                   傳統的室內設計 <br/>
                     <span className="bg-gradient-to-r  from-lime-100 to-lime-200 bg-clip-text text-3xl sm:text-6xl text-transparent font-bold">
                     悠孚AI
@@ -210,7 +210,7 @@ const Homepage = ({ nextStep }) => {
             >
               <div className="px-7 sm:px-20 py-4 sm:py-5 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
                 <Image width={20} height={20} src={WhiteStarImg} />
-                <div className="  text-white text-lg font-semibold font-['Inter'] leading-7">
+                <div className="  text-white text-lg font-[Gilroy-SemiBold] font-['Inter'] leading-7">
                   Generate your designs
                 </div>
               </div>

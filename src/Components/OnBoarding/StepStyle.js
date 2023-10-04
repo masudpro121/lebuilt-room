@@ -69,7 +69,7 @@ function StepStyle() {
   return (
     <div className="h-full flex justify-center items-center">
       <div className="h-full">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold ">
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select style
         </h3>
         <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[18px]">
@@ -95,7 +95,7 @@ function StepStyle() {
             src={logo}
             alt=""
           />
-          <h2 className="hidden md:block text-[14px] md:text-[14px] font-semibold text-[#271703]">
+          <h2 className="hidden md:block text-[14px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
             Your selection is crucial, as the final outcome hinges on the style
             you choose. Take your time and choose with care. Click{" "}
             <Link className="text-[#667412]" href="/">
@@ -104,7 +104,7 @@ function StepStyle() {
             to discover other options. Your ideal style might be just a click
             away!
           </h2>
-          <h2 className=" md:hidden text-[14px] md:text-[14px] font-semibold text-[#271703]">
+          <h2 className=" md:hidden text-[14px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
             Your selection is crucial, as the final outcome hinges on the style
             you choose.
           </h2>
@@ -181,7 +181,7 @@ function StepStyle() {
           <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-end items-center">
             <div className=" hidden md:flex border rounded-lg py-4 px-[28px] items-center  space-x-[12px] cursor-pointer">
               <Image src={repeat} alt="more style" />
-              <p className="text-[#323A46] text-[20px] font-semibold">
+              <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
                 Show More Styles
               </p>
             </div>
@@ -190,7 +190,7 @@ function StepStyle() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-4 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
             >
-              <p className=" text-[20px] font-semibold whitespace-nowrap">
+              <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
                 Next Step
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="" />
@@ -199,7 +199,7 @@ function StepStyle() {
           <div className="flex justify-end mb-3">
             <div className=" lg:hidden flex border rounded-lg py-4 px-[32px] items-center justify-center  space-x-[12px] cursor-pointer">
               <Image src={repeat} alt="" />
-              <p className="text-[#323A46] text-[20px] font-semibold">
+              <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
                 Show More Styles
               </p>
             </div>
@@ -218,7 +218,7 @@ function StepStyle() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
-              <p className="text-[17px] md:text-[20px] font-semibold">
+              <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                 Next Step
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="next" />

@@ -12,8 +12,6 @@ import error from "../../assets/images/Featured icon outline.png";
 import leftarrow from "../../assets/images/arrow-left.png";
 
 function StepUpload() {
-  const [file, setFile] = useState();
-
   const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
   const [uploaded, setUploaded] = useState(false);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
@@ -32,10 +30,10 @@ function StepUpload() {
       setOnBoardingStep(onBoardingStep + 1);
     }
   };
-  const uploadFile = () => {
+  const uploadFile = (myfile) => {
     setUploaded(false);
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("file", myfile);
     fetch("/api/upload-image", {
       method: "POST",
       body: formData,
@@ -49,16 +47,15 @@ function StepUpload() {
       });
   };
 
-  // .......... extra add by anisha show upload image.........
 
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-
     if (file) {
       setSelectedImage(URL.createObjectURL(file));
     }
+    uploadFile(file)
   };
   return (
     <div>
@@ -87,7 +84,7 @@ function StepUpload() {
         // </div>
         <div className="h-full flex justify-center items-center">
           <div className="h-full">
-            <h3 className="hidden md:block text-[#271703] text-[30px] lg:text-[48px] text-center font-semibold ">
+            <h3 className="hidden md:block text-[#271703] text-[30px] lg:text-[48px] text-center font-[Gilroy-SemiBold] ">
               Choose and upload file
             </h3>
             <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center">
@@ -117,7 +114,7 @@ function StepUpload() {
                 src={logo}
                 alt=""
               />
-              <h2 className=" text-[12px] md:text-[14px] font-semibold text-[#271703]">
+              <h2 className=" text-[12px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
                 <Link href="/" className="text-[#667412]">
                   {" "}
                   Uploading an inspiring image is key! 🌟
@@ -130,18 +127,18 @@ function StepUpload() {
 
             {/* ...... error mesage .......... */}
 
-            <div className="flex px-4 md:px-6 pt-5 pb-[30px] space-x-[16px] bg-[#FFFBFA] mx-4 md:mx-[35px] rounded-3xl my-5 md:my-[30px] border border-[#FCA5A5] ">
+            {/* <div className="flex px-4 md:px-6 pt-5 pb-[30px] space-x-[16px] bg-[#FFFBFA] mx-4 md:mx-[35px] rounded-3xl my-5 md:my-[30px] border border-[#FCA5A5] ">
               <Image className="object-contain" src={error} alt="" />
               <div className="">
-                <h2 className=" text-[12px] md:text-[14px] font-semibold text-[#B91C1C]">
+                <h2 className=" text-[12px] md:text-[14px] font-[Gilroy-SemiBold] text-[#B91C1C]">
                   Invalid File Format
                 </h2>
-                <h2 className=" text-[12px] md:text-[14px] text-[#B91C1C]">
+                <h2 className=" text-[12px] md:text-[14px] text-[#B91C1C] font-[Gilroy-Regular]">
                   Ensure your image is in PNG or JPG format and doesn’t exceed
                   10MB. Let’s try that again!
                 </h2>
               </div>
-            </div>
+            </div> */}
 
             {/* ...... upload input field .......... */}
 
@@ -155,7 +152,7 @@ function StepUpload() {
                   alt=""
                 />
                 <div className="absolute top-4 right-8 cursor-pointer p-[2px] border-4 border-red-300 rounded-full bg-red-600">
-                  <Image className="" src={close} alt="" />
+                  <Image className="" src={close} alt="" onClick={()=>setSelectedImage("")} />
                 </div>
               </div>
             ) : (
@@ -166,21 +163,22 @@ function StepUpload() {
                       type="file"
                       id="file-input"
                       className="hidden"
+                      accept="image/*"
                       onChange={handleFileChange}
                     />
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center ">
                     <div className="inline-block mx-auto cursor-pointer">
                       <div className="p-5 border bg-white shadow-lg rounded-full mb-[28px]">
                         <Image src={uploadIcon} alt="" />
                       </div>
                     </div>
 
-                    <h2 className="text-[20px] text-[#333A09] leading-6 md:leading-9 mb-3 text-center md:text-[33px] font-medium">
+                    <h2 className="text-[20px] text-[#333A09] leading-6 md:leading-9 mb-3 text-center md:text-[33px] font-[Gilroy-SemiBold]">
                       Upload Inspirational <br /> Image
                     </h2>
-                    <p className="text-center mt-2 text-[#333A09] text-[14px] md:text-[16px] ">
+                    <p className="text-center mt-2 text-[#333A09] text-[14px] md:text-[16px] font-[Gilroy-Regular]">
                       Please upload in PNG or JPG format.
                       <br /> Maximum file size: 10MB
                     </p>
@@ -198,7 +196,7 @@ function StepUpload() {
                 // onClick={nextStep}
                 className="myBtn hidden  text-[#9D5C0D] border border-[#9D5C0D] md:flex rounded py-[9px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
               >
-                <p className="text-[17px] md:text-[20px] font-semibold">Skip</p>
+                <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">Skip</p>
               </div>
               <div className="myBtn md:hidden" onClick={prevStep}>
                 <Image
@@ -211,7 +209,7 @@ function StepUpload() {
                 onClick={nextStep}
                 className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
               >
-                <p className="text-[17px] md:text-[20px] font-semibold">
+                <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                   Next Step
                 </p>
                 <Image className="mb-[-3px]" src={arrow} alt="" />

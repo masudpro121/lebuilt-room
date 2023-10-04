@@ -111,7 +111,7 @@ const OnBoardLayout = (props) => {
                     >
                       <Image src={item.step==onBoardingStep?menuIconBrown:menuIconGreen} alt="" />
                       <div className="">
-                        <h2 className="text-[16px] text-[#344054] font-medium">
+                        <h2 className="text-[16px] text-[#344054] font-[Gilroy-SemiBold]">
                           {item.title}
                         </h2>
                         <p className={`text-[14px]  ${(onBoard[item.target] && !(onBoardingStep==item.step)) ?'text-[#98AE1A]':' text-[#9D5C0D]'}`}>

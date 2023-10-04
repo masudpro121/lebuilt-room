@@ -30,7 +30,7 @@ function StepBudget() {
   };
   return (
     // <div>
-    //   <h3 className="text-2xl font-semibold mb-5 ml-10">Enter your Budget</h3>
+    //   <h3 className="text-2xl font-[Gilroy-SemiBold] mb-5 ml-10">Enter your Budget</h3>
     //   <div>
     //     <input onChange={(e)=>setBudget(Number(e.target.value))} value={budget} type="number" placeholder="Tell me your maximum budget.." className="w-80 border-2" />
     //   </div>
@@ -45,7 +45,7 @@ function StepBudget() {
     // </div>
     <div className="w-full h-full flex ">
       <div className="  md:h-full w-full  md:pt-[12%]  ">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold ">
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Enter Your Budget
         </h3>
         <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px]">
@@ -66,7 +66,7 @@ function StepBudget() {
         </div>
 
         <div className="rounded-[20px] flex flex-col items-center md:items-start px-2 md:px-4  pt-6 pb-5 md:pb-[64px]  bg-[#F7F8F9] mx-4 md:mx-7">
-          <p className="mb-[12px] text-[14px] text-center px-2 md:text-left md:text-[16px] font-semibold md:font-medium text-[#76450A] ">
+          <p className="mb-[12px] text-[14px] text-center px-2 md:text-left md:text-[16px] font-[Gilroy-SemiBold] md:font-[Gilroy-SemiBold] text-[#76450A] ">
             Pick a Room Type or Craft Your Own! Choose from options, or type in
             your unique space.
           </p>
@@ -103,7 +103,7 @@ function StepBudget() {
             onClick={nextStep}
             className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
           >
-            <p className="text-[17px] md:text-[20px] font-semibold">
+            <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
               Next Step
             </p>
             <Image className="mb-[-3px]" src={arrow} alt="" />
