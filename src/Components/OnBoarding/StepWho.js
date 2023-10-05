@@ -71,7 +71,6 @@ function StepWho() {
     let myOnBoard = onBoard;
     myOnBoard.who = selected;
     setOnBoard(myOnBoard);
-    nextStep();
   };
   return (
     <div className="w-full md:w-auto">

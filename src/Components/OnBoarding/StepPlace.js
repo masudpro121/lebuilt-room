@@ -38,7 +38,6 @@ function StepPlace() {
     let myOnBoard = onBoard;
     myOnBoard.place = selected;
     setOnBoard(myOnBoard);
-    nextStep();
   };
   return (
     <div className="w-full h-full flex justify-center items-center ">
@@ -81,20 +80,8 @@ function StepPlace() {
             {places.map((place, i) => {
               console.log(selectedOption == place, place);
               return (
-                <div className={` px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${selectedOption == place? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} key={i}>
-                  <input
-                    className="hidden"
-                    id={place.replaceAll(" ", "")}
-                    type="radio"
-                    checked={selectedOption == place}
-                    onChange={() => handleInput(place)}
-                  />
-                  <label
-                    className=""
-                    htmlFor={place.replaceAll(" ", "")}
-                  >
+                <div onClick={() => handleInput(place)} className={` px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${selectedOption == place? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} key={i}>
                     {place}
-                  </label>
                 </div>
               );
             })}

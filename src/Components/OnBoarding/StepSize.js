@@ -35,7 +35,6 @@ function StepSize() {
     let myOnBoard = onBoard;
     myOnBoard.size = selected;
     setOnBoard(myOnBoard);
-    nextStep();
   };
   return (
     <div className="w-full h-full flex ">
@@ -77,20 +76,9 @@ function StepSize() {
           <div className=" mt-6  flex justify-center md:justify-start flex-wrap gap-x-4 gap-y-6 rounded-md">
             {sizes.map((size, i) => {
               return (
-                <div key={i} className={`px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${selectedOption == size ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} >
-                  <input
-                    className="hidden"
-                    id={size.replaceAll(" ", "")}
-                    type="radio"
-                    checked={selectedOption == size}
-                    onChange={() => handleInput(size)}
-                  />
-                  <label
-                    
-                    htmlFor={size.replaceAll(" ", "")}
-                  >
-                    {size}
-                  </label>
+                <div onClick={() => handleInput(size)} key={i} className={`px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${selectedOption == size ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`} >
+                
+                  {size}
                 </div>
               );
             })}

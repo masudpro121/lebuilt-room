@@ -63,7 +63,6 @@ function StepStyle() {
     let myOnBoard = onBoard;
     myOnBoard.style = allStyles[i];
     setOnBoard(myOnBoard);
-    nextStep();
   };
 
   return (

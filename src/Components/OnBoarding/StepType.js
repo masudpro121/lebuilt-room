@@ -157,7 +157,14 @@ function StepType() {
     let myOnBoard = onBoard;
     myOnBoard.type = types[i];
     setOnBoard(myOnBoard);
-    nextStep();
+  };
+  const handleInput2 = (value) => {
+    setSelectedOption(value);
+    let myOnBoard = onBoard;
+    myOnBoard.type = {
+      name : value,
+    }
+    setOnBoard(myOnBoard);
   };
   return (
     <div className="w-full h-full flex justify-center items-center ">
@@ -221,6 +228,10 @@ function StepType() {
               className="border-0 outline-none "
               type="text"
               placeholder="|E.g Open-concept living room."
+              value={selectedOption}
+              onChange={e=>{
+                handleInput2(e.target.value)
+              }}
             />
           </div>
 
@@ -230,23 +241,14 @@ function StepType() {
             {types.map((type, i) => {
               return (
                 <div
+                    onClick={() => handleInput(i)}
                   key={type.name + i}
                   className={`px-4 py-[6px] shadow rounded-md cursor-pointer ${selectedOption == type.name ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`}
                 >
-                  <input
-                    className="hidden"
-                    id={type.name.replaceAll(" ", "")}
-                    type="radio"
-                    checked={selectedOption == type.name}
-                    onChange={() => handleInput(i)}
-                  />
-                  <label htmlFor={type.name.replaceAll(" ", "")}>
-                    {/* <img src={type.img} alt="" />
-                    <b>{type.name}</b> */}
+                
                     <h2 className=" text-[14px] cursor-pointer font-[Gilroy-SemiBold]">
                       {type.name}
                     </h2>
-                  </label>
                 </div>
               );
             })}
