@@ -58,7 +58,7 @@ function StepStyle() {
   const styles = allStyles.slice(1);
 
   const handleInput = (i) => {
-    console.log(i, 'i');
+    console.log(i, "i");
     setSelectedOption(allStyles[i].name);
     let myOnBoard = onBoard;
     myOnBoard.style = allStyles[i];
@@ -66,7 +66,7 @@ function StepStyle() {
   };
 
   return (
-    <div className="h-full flex justify-center items-center">
+    <div className="h-full flex justify-center items-center ">
       <div className="h-full">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select style
@@ -110,58 +110,56 @@ function StepStyle() {
         </div>
 
         {/* Style here  */}
-        <div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-5 px-5"
-          
-        >
-          <div className="" onClick={() => handleInput(0)}  >
-            <label htmlFor={firstStyle.name.replaceAll(" ", "")}>
-              <div className="relative cursor-pointer ">
-                <img
-                  className={`w-full  rounded-lg ${selectedOption==firstStyle.name && 'border-[6px] border-[#C5DF2C]'}
+        <div className="sm:flex justify-between gap-3 px-3 h-full  ">
+          <div className="hidden md:block  w-full p-3 sm:p-0" onClick={() => handleInput(0)}>
+            <div className="relative cursor-pointer h-full">
+              <img
+                className={`w-full h-full rounded-lg ${
+                  selectedOption == firstStyle.name &&
+                  "border-[6px] border-[#C5DF2C]"
+                }
                       `}
-                  src={firstStyle.img}
-                  alt={firstStyle.name}
-                />
-                <Image
-                  src={
-                    selectedOption == firstStyle.name
-                      ? greenCheckbox
-                      : whiteCheckbox
-                  }
-                  className="absolute top-4 right-3"
-                />
-              </div>
-              {/* <b>{style.name}</b> */}
-            </label>
+                src={firstStyle.img}
+                alt={firstStyle.name}
+              />
+              <Image
+                src={
+                  selectedOption == firstStyle.name
+                    ? greenCheckbox
+                    : whiteCheckbox
+                }
+                className="absolute top-4 right-3"
+              />
+            </div>
           </div>
 
-          <div className="grid gap-5 grid-cols-2">
+          <div className="w-full  flex flex-wrap justify-center">
             {styles.map((style, i) => {
               return (
-                <div key={style.name + i} onClick={() => handleInput(i + 1)}>
-                  <label htmlFor={style.name.replaceAll(" ", "")}>
-                    <div className="relative cursor-pointer">
-                      <img
-                        className={`w-full  rounded-lg  ${selectedOption==style.name && 'border-[6px] border-[#C5DF2C]'}
+                <div
+                  className="w-1/2  sm:p-0"
+                  key={style.name + i}
+                  onClick={() => handleInput(i + 1)}
+                >
+                  <div className="relative cursor-pointer h-full p-1">
+                    <img
+                      className={`w-full h-full rounded-lg  ${
+                        selectedOption == style.name &&
+                        "border-[6px] border-[#C5DF2C]"
+                      }
                       `}
-                        //  ${
-                        //   checked && "border-4 border-[98AE1A]"
-                        // }
-                        src={style.img}
-                        alt={style.name}
-                      />
-                      <Image
-                        src={
-                          selectedOption == style.name
-                            ? greenCheckbox
-                            : whiteCheckbox
-                        }
-                        className="absolute top-3 right-2 w-[32px]"
-                      />
-                    </div>
-                    {/* <b>{style.name}</b> */}
-                  </label>
+                      src={style.img}
+                      alt={style.name}
+                    />
+                    <Image
+                      src={
+                        selectedOption == style.name
+                          ? greenCheckbox
+                          : whiteCheckbox
+                      }
+                      className="absolute top-3 right-2 w-[32px]"
+                    />
+                  </div>
                 </div>
               );
             })}
@@ -169,7 +167,7 @@ function StepStyle() {
         </div>
         {/* .........  next prev button........... */}
 
-        <div className="mx-5  md:mx-7 my-10">
+        <div className="  sticky bottom-[-2px] bg-white w-full px-5 py-3">
           {/* <div className="myBtn md:hidden" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-3 px-[14px]"
@@ -178,7 +176,7 @@ function StepStyle() {
             />
           </div> */}
           <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-end items-center">
-            <div className=" hidden md:flex border rounded-lg py-4 px-[28px] items-center  space-x-[12px] cursor-pointer">
+            <div className=" hidden md:flex border rounded-lg py-3 px-[28px] items-center  space-x-[12px] cursor-pointer">
               <Image src={repeat} alt="more style" />
               <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
                 Show More Styles
@@ -187,7 +185,7 @@ function StepStyle() {
 
             <div
               onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-4 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
+              className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-3 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
             >
               <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
                 Next Step
@@ -196,7 +194,7 @@ function StepStyle() {
             </div>
           </div>
           <div className="flex justify-end mb-3">
-            <div className=" lg:hidden flex border rounded-lg py-4 px-[32px] items-center justify-center  space-x-[12px] cursor-pointer">
+            <div className=" lg:hidden flex border rounded-lg py-3 px-[32px] items-center justify-center  space-x-[12px] cursor-pointer">
               <Image src={repeat} alt="" />
               <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
                 Show More Styles

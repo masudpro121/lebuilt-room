@@ -97,7 +97,7 @@ const OnBoardLayout = (props) => {
 
       {/* //.......... sidebar............. */}
 
-      <div className="md:p-8">
+      <div className="md:p-6">
         <div className="custom-container md:py-3 flex flex-col md:flex-row gap-[10px]  bg-white rounded">
           <div className="hidden md:block left py-6 pl-4 pr-[10px] border-r border-[#D0D5DD]">
             <div className="flex flex-col space-y-[10px]">
@@ -124,7 +124,7 @@ const OnBoardLayout = (props) => {
               })}
             </div>
           </div>
-          <div className="right md:border-3 md:py-7 md:border-[3px] w-full md:mr-4 md:border-[#FBE8D0] rounded-lg min-h-[80vh]">
+          <div className="right md:border-3  md:border-[3px] w-full md:mr-4 md:border-[#FBE8D0] pt-2 rounded-lg h-[92vh] md:h-[85vh] overflow-y-scroll ">
             <div>{props.children}</div>
           </div>
         </div>

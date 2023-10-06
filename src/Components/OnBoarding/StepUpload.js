@@ -82,7 +82,7 @@ function StepUpload() {
         //   </div>
         // }
         // </div>
-        <div className="h-full flex justify-center items-center">
+        <div className="h-full flex justify-center ">
           <div className="h-full">
             <h3 className="hidden md:block text-[#271703] text-[30px] lg:text-[48px] text-center font-[Gilroy-SemiBold] ">
               Choose and upload file

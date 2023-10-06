@@ -15,6 +15,26 @@ p{
   @apply font-[Gilroy-Regular]
 }
 
+/* width */
+::-webkit-scrollbar {
+  @apply hidden
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply hidden
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply hidden
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply hidden
+}
+
 @font-face {
   font-family: 'Gilroy-Regular';
   /* Give your font a name */

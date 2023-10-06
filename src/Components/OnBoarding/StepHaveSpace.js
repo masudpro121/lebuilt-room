@@ -110,7 +110,7 @@ function StepHaveSpace() {
 
         {/* .......  next prev btn.......... */}
         <div className="flex w-full  mb-5 items-center justify-end space-x-[18px] mt-20 md:mt-10">
-          <div className="myBtn" onClick={prevStep}>
+          <div className="myBtn md:hidden" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
               src={leftarrow}

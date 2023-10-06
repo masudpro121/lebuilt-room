@@ -93,7 +93,7 @@ function StepWho() {
             </div>
           </div>
 
-          <div className="flex flex-col space-y-[20px] p-6">
+          <div className="flex flex-col gap-4 px-3">
             {iam.map((am, i) => {
               return (
                 <div
@@ -145,7 +145,7 @@ function StepWho() {
       </div>
 
       {/* .......  next prev btn.......... */}
-      <div className="flex w-full mb-10 items-center justify-end space-x-[18px] pr-6 md:pr-[60px] mt-14 md:mt-10">
+      <div className="flex items-center justify-end space-x-[18px] pr-6 md:pr-[60px]  sticky bottom-0 bg-white w-full px-5 py-3">
         <div className="myBtn md:hidden" onClick={prevStep}>
           <Image
             className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"

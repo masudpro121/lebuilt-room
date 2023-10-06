@@ -257,7 +257,7 @@ function StepType() {
 
         {/* .........  next prev button........... */}
 
-        <div className="mx-5  md:mx-7 my-10">
+        <div className=" sticky bottom-0 bg-white w-full px-5 py-3">
           {/* <div className="myBtn hidden md:block" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-3 px-[14px]"
@@ -268,7 +268,7 @@ function StepType() {
           <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-end items-center">
             <div
               onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-4 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
+              className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-3 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
             >
               <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
                 Next Step
