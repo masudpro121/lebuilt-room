@@ -64,6 +64,7 @@ function StepStyle() {
     myOnBoard.style = allStyles[i];
     setOnBoard(myOnBoard);
   };
+ 
 
   return (
     <div className="h-full flex justify-center items-center ">
@@ -132,14 +133,48 @@ function StepStyle() {
               />
             </div>
           </div>
-
-          <div className="w-full  flex flex-wrap justify-center">
+          
+          {/* For Desktop  */}
+          <div className="hidden w-full  md:flex flex-wrap justify-center">
             {styles.map((style, i) => {
               return (
                 <div
                   className="w-1/2  sm:p-0"
                   key={style.name + i}
                   onClick={() => handleInput(i + 1)}
+                >
+                  <div className="relative cursor-pointer h-full p-1">
+                    <img
+                      className={`w-full h-full rounded-lg  ${
+                        selectedOption == style.name &&
+                        "border-[6px] border-[#C5DF2C]"
+                      }
+                      `}
+                      src={style.img}
+                      alt={style.name}
+                    />
+                    <Image
+                      src={
+                        selectedOption == style.name
+                          ? greenCheckbox
+                          : whiteCheckbox
+                      }
+                      className="absolute top-3 right-2 w-[32px]"
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+           
+          {/* For Mobile  */}
+          <div className=" w-full  flex md:hidden flex-wrap justify-center">
+            {allStyles.map((style, i) => {
+              return (
+                <div
+                  className="w-1/2  sm:p-0"
+                  key={style.name + i}
+                  onClick={() => handleInput(i)}
                 >
                   <div className="relative cursor-pointer h-full p-1">
                     <img
