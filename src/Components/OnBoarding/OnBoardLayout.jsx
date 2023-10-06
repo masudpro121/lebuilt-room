@@ -75,8 +75,8 @@ const OnBoardLayout = (props) => {
   return (
     <div className="md:bg-[#EAECF0]">
       {/* //.......... header............. */}
-      <div className="border border-[#F1F5F9] bg-white w-full">
-        <div className="hidden custom-container px-8 xl:px-0  md:flex justify-between ">
+      <div className="border border-[#F1F5F9] bg-white w-full ">
+        <div className="hidden custom-container px-8 xl:px-0  md:flex justify-between  ">
           <div className="left flex items-center space-x-[60px]">
             <Image src={logo} alt="" />
             <div className="flex items-center space-x-[20px]">
@@ -89,10 +89,10 @@ const OnBoardLayout = (props) => {
             <Image src={downArrow} alt="" />
           </div>
         </div>
-        <div className="flex md:hidden justify-center space-x-1">
+        {/* <div className="flex md:hidden justify-center space-x-1">
           <Image src={logo} alt="" />
           <Image src={smdownArrow} alt="" />
-        </div>
+        </div> */}
       </div>
 
       {/* //.......... sidebar............. */}
@@ -124,8 +124,8 @@ const OnBoardLayout = (props) => {
               })}
             </div>
           </div>
-          <div className="right md:border-3  md:border-[3px] w-full md:mr-4 md:border-[#FBE8D0] pt-2 rounded-lg h-[92vh] md:h-[85vh] overflow-y-scroll ">
-            <div>{props.children}</div>
+          <div className="right md:border-3  md:border-[3px] w-full md:mr-4 md:border-[#FBE8D0] pt-2 rounded-lg h-[100vh] md:h-[85vh] overflow-y-scroll ">
+            <div className="">{props.children}</div>
           </div>
         </div>
       </div>

@@ -73,7 +73,7 @@ function StepWho() {
     setOnBoard(myOnBoard);
   };
   return (
-    <div className="w-full md:w-auto">
+    <div className="w-full h-[100vh] md:h-full md:w-auto">
       <div className="w-full md:w-auto h-full mx-auto flex justify-center items-center">
         <div className="h-full w-full md:w-auto">
           <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
@@ -145,7 +145,7 @@ function StepWho() {
       </div>
 
       {/* .......  next prev btn.......... */}
-      <div className="flex items-center justify-end space-x-[18px] pr-6 md:pr-[60px]  sticky bottom-0 bg-white w-full px-5 py-3">
+      <div className="flex items-center justify-center md:justify-end space-x-[18px] pr-6 md:pr-[60px]  sticky bottom-0 bg-white w-full px-5 py-3">
         <div className="myBtn md:hidden" onClick={prevStep}>
           <Image
             className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"

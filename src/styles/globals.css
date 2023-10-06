@@ -76,7 +76,7 @@ p{
 }
 
 .custom-container {
-  @apply max-w-[1440px] mx-auto
+  @apply max-w-full mx-auto
 }
 
 /* Example custom class for checked radio button */

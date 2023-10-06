@@ -67,8 +67,8 @@ function StepStyle() {
  
 
   return (
-    <div className="h-full flex justify-center items-center ">
-      <div className="h-full">
+    <div className="h-[100vh] md:h-full flex justify-center items-center ">
+      <div className="">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select style
         </h3>
@@ -135,7 +135,7 @@ function StepStyle() {
           </div>
           
           {/* For Desktop  */}
-          <div className="hidden w-full  md:flex flex-wrap justify-center">
+          <div className="hidden w-full h-full md:flex flex-wrap justify-center">
             {styles.map((style, i) => {
               return (
                 <div
@@ -168,7 +168,7 @@ function StepStyle() {
           </div>
            
           {/* For Mobile  */}
-          <div className=" w-full  flex md:hidden flex-wrap justify-center">
+          <div className=" w-full h-full flex md:hidden flex-wrap justify-center">
             {allStyles.map((style, i) => {
               return (
                 <div
@@ -210,7 +210,7 @@ function StepStyle() {
               alt=""
             />
           </div> */}
-          <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-end items-center">
+          <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center">
             <div className=" hidden md:flex border rounded-lg py-3 px-[28px] items-center  space-x-[12px] cursor-pointer">
               <Image src={repeat} alt="more style" />
               <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
@@ -228,7 +228,7 @@ function StepStyle() {
               <Image className="mb-[-3px]" src={arrow} alt="" />
             </div>
           </div>
-          <div className="flex justify-end mb-3">
+          <div className="flex justify-center md:justify-end mb-3">
             <div className=" lg:hidden flex border rounded-lg py-3 px-[32px] items-center justify-center  space-x-[12px] cursor-pointer">
               <Image src={repeat} alt="" />
               <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
@@ -238,7 +238,7 @@ function StepStyle() {
           </div>
 
           {/* ........... for responsive......... */}
-          <div className="lg:hidden flex w-full items-center justify-end space-x-[18px] ">
+          <div className="lg:hidden flex w-full items-center justify-center md:justify-end space-x-[18px] ">
             <div className="myBtn " onClick={prevStep}>
               <Image
                 className="border w-[55px] rounded-lg bg-gray-50 py-[12px] px-[14px]"

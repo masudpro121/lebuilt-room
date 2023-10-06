@@ -1,5 +1,5 @@
 import { MyContext } from "@/pages/_app";
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import logo from "../../assets/images/onBoard/logo svg (1).png";
 import repeat from "../../assets/images/onBoard/repeat-02.png";
 import arrow from "../../assets/images/onBoard/ion_arrow-up.png";
@@ -7,6 +7,7 @@ import Image from "next/image";
 import step from "../../assets/images/_Step icon base.png";
 import leftarrow from "../../assets/images/arrow-left.png";
 function StepType() {
+  const inputRef = useRef("input")
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
   const setOnBoard = (data) => {
     localStorage.setItem("onBoard", JSON.stringify(data));
@@ -157,18 +158,20 @@ function StepType() {
     let myOnBoard = onBoard;
     myOnBoard.type = types[i];
     setOnBoard(myOnBoard);
+    inputRef.current.focus()
+
   };
   const handleInput2 = (value) => {
     setSelectedOption(value);
     let myOnBoard = onBoard;
     myOnBoard.type = {
-      name : value,
-    }
+      name: value,
+    };
     setOnBoard(myOnBoard);
   };
   return (
-    <div className="w-full h-full flex justify-center items-center ">
-      <div className="h-full">
+    <div className="w-full sm:h-[100vh]   ">
+      <div className="h-full  md:pt-[10%]">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select room Type
         </h3>
@@ -225,12 +228,13 @@ function StepType() {
               alt="logo"
             />
             <input
-              className="border-0 outline-none "
+              className="border-0 outline-none cursor-pointer w-full"
               type="text"
               placeholder="|E.g Open-concept living room."
               value={selectedOption}
-              onChange={e=>{
-                handleInput2(e.target.value)
+              ref={inputRef}
+              onChange={(e) => {
+                handleInput2(e.target.value);
               }}
             />
           </div>
@@ -241,14 +245,17 @@ function StepType() {
             {types.map((type, i) => {
               return (
                 <div
-                    onClick={() => handleInput(i)}
+                  onClick={() => handleInput(i)}
                   key={type.name + i}
-                  className={`px-4 py-[6px] shadow rounded-md cursor-pointer ${selectedOption == type.name ? "bg-[#271703] text-white":"text-[#271703] bg-white"}`}
+                  className={`px-4 py-[6px] shadow rounded-md cursor-pointer ${
+                    selectedOption == type.name
+                      ? "bg-[#271703] text-white"
+                      : "text-[#271703] bg-white"
+                  }`}
                 >
-                
-                    <h2 className=" text-[14px] cursor-pointer font-[Gilroy-SemiBold]">
-                      {type.name}
-                    </h2>
+                  <h2 className=" text-[14px] cursor-pointer font-[Gilroy-SemiBold]">
+                    {type.name}
+                  </h2>
                 </div>
               );
             })}
@@ -256,45 +263,44 @@ function StepType() {
         </div>
 
         {/* .........  next prev button........... */}
-
-        <div className=" sticky bottom-0 bg-white w-full px-5 py-3">
-          {/* <div className="myBtn hidden md:block" onClick={prevStep}>
+      </div>
+      <div className=" sticky bottom-0 bg-white w-full px-5 py-3">
+        {/* <div className="myBtn hidden md:block" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-3 px-[14px]"
               src={leftarrow}
               alt=""
             />
           </div> */}
-          <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-end items-center">
-            <div
-              onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-3 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
-            >
-              <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
-                Next Step
-              </p>
-              <Image className="mb-[-3px]" src={arrow} alt="" />
-            </div>
+        <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center">
+          <div
+            onClick={nextStep}
+            className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-3 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
+          >
+            <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
+              Next Step
+            </p>
+            <Image className="mb-[-3px]" src={arrow} alt="" />
           </div>
+        </div>
 
-          {/* ........... for responsive......... */}
-          <div className="lg:hidden flex w-full items-center justify-end space-x-[18px] ">
-            <div className="myBtn" onClick={prevStep}>
-              <Image
-                className="border w-[55px] rounded-lg bg-gray-50 py-[12px] px-[14px]"
-                src={leftarrow}
-                alt=""
-              />
-            </div>
-            <div
-              onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
-            >
-              <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-                Next Step
-              </p>
-              <Image className="mb-[-3px]" src={arrow} alt="" />
-            </div>
+        {/* ........... for responsive......... */}
+        <div className="lg:hidden flex w-full items-center justify-center md:justify-end space-x-[18px] ">
+          <div className="myBtn" onClick={prevStep}>
+            <Image
+              className="border w-[55px] rounded-lg bg-gray-50 py-[12px] px-[14px]"
+              src={leftarrow}
+              alt=""
+            />
+          </div>
+          <div
+            onClick={nextStep}
+            className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+          >
+            <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
+              Next Step
+            </p>
+            <Image className="mb-[-3px]" src={arrow} alt="" />
           </div>
         </div>
       </div>

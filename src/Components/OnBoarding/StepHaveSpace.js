@@ -34,20 +34,19 @@ function StepHaveSpace() {
     if (user.email) {
       if (selected == "yes") {
         nextStep();
-      } 
-      if(selected == "no") {
+      }
+      if (selected == "no") {
         localStorage.setItem("onBoardingStep", onBoardingStep + 2);
         setOnBoardingStep(onBoardingStep + 2);
       }
     } else {
-   
       const channelId = "2000692142";
       const redirectUrl = "http://localhost:3000/api/line-auth";
       const state = uuidv4();
       const scope = "profile openid email";
       const nonce = "anythingToSecureTheURI012";
       let lineAuth = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${redirectUrl}&state=${state}&scope=${scope}&nonce=${nonce}`;
-      window.open(lineAuth, "_self")
+      window.open(lineAuth, "_self");
     }
   };
   return (
@@ -66,8 +65,8 @@ function StepHaveSpace() {
     //     </button>
     //   </div>
     // </div>
-    <div className="w-full  md:h-full flex items-center ">
-      <div className=" md:h-full w-full  pt-[15%]  mx-4 md:mx-7">
+    <div className="w-full h-[100vh]   ">
+      <div className="h-full  w-full pt-[10%]  ">
         <h3 className="mb-[30px] text-[#271703] text-[25px] md:text-[48px] text-center font-[Gilroy-SemiBold] ">
           Do you have a space image?
         </h3>
@@ -107,9 +106,10 @@ function StepHaveSpace() {
             </div>
           </div>
         </div>
-
-        {/* .......  next prev btn.......... */}
-        <div className="flex w-full  mb-5 items-center justify-end space-x-[18px] mt-20 md:mt-10">
+      </div>
+      {/* .......  next prev btn.......... */}
+      <div className="sticky bottom-2 bg-white w-full px-5 py-3s">
+        <div className="flex w-full  items-center justify-center md:justify-end ">
           <div className="myBtn md:hidden" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
