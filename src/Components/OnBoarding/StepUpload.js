@@ -81,6 +81,14 @@ function StepUpload() {
     }
     uploadFile(file);
   };
+
+  const handleSkip = () => {
+    let myOnBoard = onBoard;
+    myOnBoard.image = "";
+    setOnBoard(myOnBoard);
+    localStorage.setItem("onBoardingStep", onBoardingStep + 1);
+    setOnBoardingStep(onBoardingStep + 1);
+  }
   return (
     <div>
       {user.email && (
@@ -142,16 +150,20 @@ function StepUpload() {
               </div>
             </div> */}
 
-            {progress > 0 && <ProgressBar progress={progress} />}
+            {
+            progress > 0 && 
+            <div className="px-10 max-w-[1000px] m-auto">
+              <ProgressBar progress={progress} />
+            </div>
+            }
 
+            <div className="px-10">
             {selectedImage ? (
               <div
-                className={`relative ${
-                  uploaded && "px-5"
-                } sm:w-[380px] w-full sm:h-[380px] mx-auto mt-5`}
+                className={`relative sm:w-[380px] w-full sm:h-[380px] mx-auto mt-5`}
               >
                 {!uploaded && (
-                  <div className="absolute  w-full h-full bg-[#9D5C0D] opacity-80"></div>
+                  <div className="absolute w-full  h-full bg-[#9D5C0D] opacity-80"></div>
                 )}
                 <img
                   className=" border-4 border-[#C5DF2C] w-full h-full  object-cover mx-auto"
@@ -159,7 +171,7 @@ function StepUpload() {
                   alt=""
                 />
                 {uploaded && (
-                  <div className="absolute top-4 right-8 cursor-pointer p-[2px] border-4 border-red-300 rounded-full bg-red-600">
+                  <div className="absolute top-4 right-5 cursor-pointer p-[2px] border-4 border-red-300 rounded-full bg-red-600">
                     <Image
                       className=""
                       src={close}
@@ -200,6 +212,7 @@ function StepUpload() {
                 </label>
               </div>
             )}
+            </div>
 
             {/* ...... next prev button .......... */}
 
@@ -208,7 +221,7 @@ function StepUpload() {
           <div className="sticky bottom-0 bg-white w-full px-5 py-3">
               <div className="flex justify-center sm:justify-end items-center space-x-2">
                 <div
-                  // onClick={nextStep}
+                  onClick={handleSkip}
                   className="myBtn hidden  text-[#9D5C0D] border border-[#9D5C0D] md:flex rounded py-[9px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
                 >
                   <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">

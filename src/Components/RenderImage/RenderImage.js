@@ -4,6 +4,7 @@ import Skeleton from "react-loading-skeleton"
 function RenderImage({src, cls="",}) {
   const [isLoading, setIsLoading] = useState(true)
   const handleLoaded = () =>{
+    console.log('load');
     setIsLoading(false)
   }
   return (
