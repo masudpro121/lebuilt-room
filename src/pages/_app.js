@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import "react-loading-skeleton/dist/skeleton.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { createContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { Inter } from "next/font/google";

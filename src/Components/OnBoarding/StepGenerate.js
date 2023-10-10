@@ -16,7 +16,8 @@ import PlusIconImg from "@/assets/images/onBoard/plusicon.png";
 import RepeatImg from "@/assets/images/onBoard/repeat-02.png";
 import Image from "next/image";
 import ProgressBar from "../ProgressBar/ProgressBar";
-const RoomImg = "/public/images/room.png"
+import ImageModal from "../ImageModal/ImageModal";
+const RoomImg = "/public/images/room.png";
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
@@ -24,6 +25,12 @@ function StepGenerate() {
   const { onBoardingStep, setOnBoardingStep } = useContext(MyContext);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
 
+  const demoImages = [
+    "https://i.ibb.co/316mc1W/room.png",
+    "https://i.ibb.co/q5S5HyQ/room1.jpg",
+    "https://i.ibb.co/G3Sd3nx/room2.jpg",
+    "https://i.ibb.co/rZD3hb3/room3.jpg",
+  ];
   const handleGenerate = async () => {
     setProgress(0);
     setProgressImage("");
@@ -119,7 +126,7 @@ function StepGenerate() {
                 <p>Generating real estate images just for you...</p>
               </div>
             </div> */}
-           
+
             <div className="w-2/5 m-auto">
               <div className="mt-5 flex  gap-3">
                 <Image src={LogoBlackBgImg} />
@@ -139,10 +146,15 @@ function StepGenerate() {
 
             <div className="w-2/3 m-auto flex justify-center mt-10">
               <div className="gap-5 flex justify-center flex-wrap">
-                <RenderImage src="https://i.ibb.co/316mc1W/room.png" cls="w-80 h-80"/>
-                <RenderImage src="https://i.ibb.co/316mc1W/room.png" cls="w-80 h-80"/>
-                <RenderImage src="https://i.ibb.co/316mc1W/room.png" cls="w-80 h-80"/>
-                <RenderImage src="https://i.ibb.co/316mc1W/room.png" cls="w-80 h-80"/>
+                {demoImages.map((img, i) => {
+                  return (
+                    <ImageModal key={img+i} img={img}>
+                      <div className="cursor-pointer">
+                        <RenderImage src={img} cls="w-80 h-80" />
+                      </div>
+                    </ImageModal>
+                  );
+                })}
               </div>
             </div>
 
@@ -157,7 +169,9 @@ function StepGenerate() {
               </div>
               <div className="flex gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
                 <Image src={LogoWhite} />
-                <p className="font-[Gilroy-SemiBold]">Get a local designer to work on your project</p>
+                <p className="font-[Gilroy-SemiBold]">
+                  Get a local designer to work on your project
+                </p>
               </div>
             </div>
           </div>
