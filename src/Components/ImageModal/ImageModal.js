@@ -10,8 +10,8 @@ function ImageModal({ children, img }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div>
-      <div onClick={handleShow}>{children}</div>
+    <>
+      <div className=" w-[95%] md:w-[45%]" onClick={handleShow}>{children}</div>
       <Modal centered show={show} onHide={handleClose}>
         <div className="px-5 pb-3">
           <div  onClick={handleClose}>
@@ -24,7 +24,7 @@ function ImageModal({ children, img }) {
           </div>
         </div>
       </Modal>
-    </div>
+    </>
   );
 }
 

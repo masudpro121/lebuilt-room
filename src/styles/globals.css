@@ -12,7 +12,7 @@
 }
 
 p{
-  @apply font-[Gilroy-Regular]
+  @apply font-[Gilroy-Regular] !m-0
 }
 
 /* width */

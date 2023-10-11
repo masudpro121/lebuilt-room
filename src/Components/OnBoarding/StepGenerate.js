@@ -100,18 +100,18 @@ function StepGenerate() {
       </div>
 
       {/* Progress and Loading  */}
-      <div className="bg-[#E3E9EE] min-h-[93vh] p-8">
+      <div className="lg:bg-[#E3E9EE] min-h-[93vh] lg:p-8">
         <div className="bg-white rounded-md p-8 ">
-          <div className="border-2 border-[#FBE8D0] p-10 min-h-[82vh]">
+          <div className="lg:border-2 lg:border-[#FBE8D0] md:py-8 min-h-[82vh]">
             <div className="text-center  pb-8">
-              <h2 className="text-[#271703] font-[Gilroy-SemiBold] text-4xl">
+              <h2 className="text-[#271703] font-[Gilroy-SemiBold] text-3xl md:text-4xl">
                 Generate My Space
               </h2>
-              <p className="text-[#9D5C0D] text-xl mt-3">
+              <p className="text-[#9D5C0D] text-md md:text-xl mt-3">
                 Let AI craft a space that’s uniquely yours
               </p>
             </div>
-            <div className="w-2/3 border-b-2 m-auto"></div>
+            <div className="hidden md:block w-2/3 border-b-2 m-auto"></div>
 
             {/* <div className="w-1/2 m-auto">
               <div className="my-3">
@@ -127,30 +127,30 @@ function StepGenerate() {
               </div>
             </div> */}
 
-            <div className="w-2/5 m-auto">
-              <div className="mt-5 flex  gap-3">
-                <Image src={LogoBlackBgImg} />
+            <div className="lg:w-2/5 relative lg:-left-10 m-auto">
+              <div className="mt-3 md:mt-5 flex items-center  gap-3">
+                <Image className="h-8 w-8" src={LogoBlackBgImg} />
                 <p>
                   With ufoliving touch, your real estate images are ready to
                   impress!
                 </p>
               </div>
             </div>
-            <div className="w-2/5 m-auto bg-[#F2F1EF] mt-5 rounded-md px-5 py-3">
+            <div className="lg:w-2/5 m-auto bg-[#F2F1EF] mt-5 rounded-md px-3 md:px-5 py-3">
               <div className="flex  gap-3">
-                <p className="font-[Gilroy-SemiBold] text-xl">
+                <p className="font-[Gilroy-SemiBold] text-md md:text-xl">
                   Modern Style Old-house renovation
                 </p>
               </div>
             </div>
 
-            <div className="w-2/3 m-auto flex justify-center mt-10">
-              <div className="gap-5 flex justify-center flex-wrap">
+            <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
+              <div className="gap-5 flex justify-center flex-wrap mt-10">
                 {demoImages.map((img, i) => {
                   return (
                     <ImageModal key={img+i} img={img}>
                       <div className="cursor-pointer">
-                        <RenderImage src={img} cls="w-80 h-80" />
+                        <RenderImage src={img}  />
                       </div>
                     </ImageModal>
                   );
@@ -158,16 +158,16 @@ function StepGenerate() {
               </div>
             </div>
 
-            <div className="flex gap-10 justify-end sm:justify-center">
-              <div className="flex gap-3 cursor-pointer px-8 rounded-md items-center border-2 border-[#D0D5DD]">
+            <div className="flex flex-wrap gap-3 md:gap-10 justify-end sm:justify-center mt-5">
+              <div className="flex w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={RepeatImg} />
                 <p className="font-[Gilroy-SemiBold]">Regenerate</p>
               </div>
-              <div className="flex gap-3 cursor-pointer px-8 rounded-md items-center border-2 border-[#D0D5DD]">
+              <div className="flex w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={PlusIconImg} />
                 <p className="font-[Gilroy-SemiBold]">Select a new Style</p>
               </div>
-              <div className="flex gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
+              <div className="flex w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
                 <Image src={LogoWhite} />
                 <p className="font-[Gilroy-SemiBold]">
                   Get a local designer to work on your project

@@ -8,14 +8,14 @@ function RenderImage({src, cls="",}) {
     setIsLoading(false)
   }
   return (
-    <div className={"w-80 "+cls}>
+    <>
      {
       isLoading  && <Skeleton duration={0.7} className={"h-80 "} />
      }
     {
-       src && <img className={isLoading?"hidden":"block" + " rounded-md "} src={src} onLoad={handleLoaded} />
+       src && <img className={isLoading?"hidden":"block" + " rounded-md  w-full h-[400px] object-cover"} src={src} onLoad={handleLoaded} />
     }
-    </div>
+    </>
   )
 }
 
