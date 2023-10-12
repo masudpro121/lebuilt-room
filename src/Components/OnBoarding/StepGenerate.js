@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ShowGeneratedImage from "../ShowGeneratedImage/ShowGeneratedImage";
 import RenderImage from "../RenderImage/RenderImage";
 import generateImage from "@/utils/generateImage";
@@ -21,16 +21,19 @@ const RoomImg = "/public/images/room.png";
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
-  const [progress, setProgress] = useState();
+  const [progress, setProgress] = useState(0);
   const { onBoardingStep, setOnBoardingStep } = useContext(MyContext);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
-
+console.log(progress, 'pro');
   const demoImages = [
     "https://i.ibb.co/316mc1W/room.png",
     "https://i.ibb.co/q5S5HyQ/room1.jpg",
     "https://i.ibb.co/G3Sd3nx/room2.jpg",
     "https://i.ibb.co/rZD3hb3/room3.jpg",
   ];
+  useEffect(()=>{
+    handleGenerate()
+  },[])
   const handleGenerate = async () => {
     setProgress(0);
     setProgressImage("");
@@ -40,14 +43,23 @@ function StepGenerate() {
     // const prompt = `${image}, type: ${type?.name}, style: ${style?.name}`;
     const prompt = generatePrompt({ image, type, style });
     console.log(prompt, "prompt");
+    setProgress(5);
+    setTimeout(()=>{
+      setProgress(10)
+    },2000)
+    setTimeout(()=>{
+      setProgress(15)
+    },4000)
     generateImage({ prompt })
       .then((msgId) => {
-        setProgress(0);
         setTimeout(() => {
+          setProgress(20);
           let myInterval = setInterval(() => {
             checkImage(msgId, onBoard).then((checkRes) => {
-              console.log(checkRes);
-              setProgress(checkRes.progress);
+           
+              if(checkRes.progress > 20 ){
+                setProgress(checkRes.progress);
+              }
               if (checkRes.progress == 100) {
                 clearInterval(myInterval);
               }
@@ -79,8 +91,7 @@ function StepGenerate() {
   };
   return (
     <div>
-      {/* <button onClick={handleGenerate}>generate</button> <br/>
-      <button onClick={prevStep}>Prev Step</button> */}
+      {/* <button onClick={prevStep}>Prev Step</button>  */}
 
       {/* Header  */}
       <div className="border border-[#F1F5F9] bg-white w-full px-10 ">
@@ -113,53 +124,72 @@ function StepGenerate() {
             </div>
             <div className="hidden md:block w-2/3 border-b-2 m-auto"></div>
 
-            {/* <div className="w-1/2 m-auto">
-              <div className="my-3">
-                <ProgressBar progress={10} />
-              </div>
-              <div className="mt-5 flex  gap-3">
-                <Image src={CheckImg} />
-                <p>Scanning the data..</p>
-              </div>
-              <div className="mt-3 flex  gap-3">
-                <Image src={StarImg} />
-                <p>Generating real estate images just for you...</p>
-              </div>
-            </div> */}
-
-            <div className="lg:w-2/5 relative lg:-left-10 m-auto">
-              <div className="mt-3 md:mt-5 flex items-center  gap-3">
-                <Image className="h-8 w-8" src={LogoBlackBgImg} />
-                <p>
-                  With ufoliving touch, your real estate images are ready to
-                  impress!
-                </p>
-              </div>
-            </div>
-            <div className="lg:w-2/5 m-auto bg-[#F2F1EF] mt-5 rounded-md px-3 md:px-5 py-3">
-              <div className="flex  gap-3">
-                <p className="font-[Gilroy-SemiBold] text-md md:text-xl">
-                  Modern Style Old-house renovation
-                </p>
-              </div>
+            <div className="w-1/2 m-auto">
+              {progress > 0 && progress != 100 && (
+                <div className="my-3 ">
+                  <ProgressBar progress={progress} />
+                </div>
+              )}
+              {progress >=10 && progress != 100 && (
+                <div className="mt-2 flex  gap-3 animate-pulse">
+                  <Image src={CheckImg} />
+                  <p>Scanning the data <span className="animate-ping">..</span></p>
+                </div>
+              )}
+              {progress >= 20 && progress != 100 && (
+                <div className="mt-3 flex  gap-3 animate-pulse">
+                  <Image src={StarImg} />
+                  <p>Generating real estate images just for you...</p>
+                </div>
+              )}
             </div>
 
-            <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
-              <div className="gap-5 flex justify-center flex-wrap mt-10">
-                {demoImages.map((img, i) => {
-                  return (
-                    <ImageModal key={img+i} img={img}>
-                      <div className="cursor-pointer">
-                        <RenderImage src={img}  />
-                      </div>
-                    </ImageModal>
-                  );
-                })}
+           {
+            progress < 100 &&
+            <div className="mt-5">
+            <RenderImage src={progressImage} />
+          </div>
+           }
+
+            {/* After Generateing Images  */}
+            {progress == 100 && (
+              <>
+                <div className="lg:w-2/5 relative lg:-left-10 m-auto">
+                  <div className="mt-3 md:mt-5 flex items-center  gap-3">
+                    <Image className="h-8 w-8" src={LogoBlackBgImg} />
+                    <p>
+                      With ufoliving touch, your real estate images are ready to
+                      impress!
+                    </p>
+                  </div>
+                </div>
+                <div className="lg:w-2/5 m-auto bg-[#F2F1EF] mt-3 rounded-md px-3 md:px-5 py-3">
+                  <div className="flex  gap-3">
+                    <p className="font-[Gilroy-SemiBold] text-md md:text-xl">
+                      Modern Style Old-house renovation
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
+            {progress == 100 && (
+              <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
+                <div className="gap-5 flex justify-center flex-wrap mt-10">
+                  {generatedImages.map((img, i) => {
+                    return (
+                      <ImageModal key={img + i} img={img}>
+                        <div className="cursor-pointer">
+                          <RenderImage src={img} />
+                        </div>
+                      </ImageModal>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="flex flex-wrap gap-3 md:gap-10 justify-end sm:justify-center mt-5">
-              <div className="flex w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
+              <div onClick={handleGenerate} className="flex w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={RepeatImg} />
                 <p className="font-[Gilroy-SemiBold]">Regenerate</p>
               </div>
@@ -175,26 +205,6 @@ function StepGenerate() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {progress < 100 && (
-        <div className="flex justify-center ">
-          <div>
-            {
-              <div className="text-center mb-5">
-                Progress: {progress ? progress : 0}%
-              </div>
-            }
-            {progress < 100 && <RenderImage src={progressImage} />}
-          </div>
-        </div>
-      )}
-      <div>
-        <div className="flex flex-wrap justify-center gap-5">
-          {generatedImages.map((image, key) => {
-            return <ShowGeneratedImage key={key} src={image} />;
-          })}
         </div>
       </div>
     </div>

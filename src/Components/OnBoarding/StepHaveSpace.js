@@ -71,7 +71,7 @@ function StepHaveSpace() {
           Do you have a space image?
         </h3>
 
-        <div className="flex px-4 md:px-6 pt-6 pb-[30px] space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl mb-[30px]">
+        <div className="flex items-center px-4 md:px-6 pt-6 pb-[30px] space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl mb-[30px]">
           <Image
             className=" w-[40px] h-[40px] bg-[#9D5C0D] rounded-xl border-4  border-[#f1c28e]"
             src={logo}

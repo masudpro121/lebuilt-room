@@ -10,10 +10,12 @@ function RenderImage({src, cls="",}) {
   return (
     <>
      {
-      isLoading  && <Skeleton duration={0.7} className={"h-80 "} />
+      isLoading  && <div className="flex justify-center">
+        <Skeleton duration={0.7} className={"!w-80 !h-80 sm:!w-[500px] sm:!h-[400px]"} />
+      </div>
      }
     {
-       src && <img className={isLoading?"hidden":"block" + " rounded-md  w-full h-[400px] object-cover"} src={src} onLoad={handleLoaded} />
+       src && <img className={isLoading?"hidden":"block" + " rounded-md  w-full max-w-[500px] m-auto h-[400px] object-cover"} src={src} onLoad={handleLoaded} />
     }
     </>
   )

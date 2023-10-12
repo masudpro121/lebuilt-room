@@ -62,8 +62,8 @@ function StepPlace() {
           </div>
         </div>
 
-        <div className="rounded-[20px] px-4 md:px-6 pt-6 pb-[64px]  bg-[#F7F8F9] mx-4 md:mx-7">
-          <div className="flex justify-center md:justify-start space-x-[12px] items-start">
+        <div className="mt-3 rounded-[20px] px-4 md:px-6 pt-6 pb-[64px]  bg-[#F7F8F9] mx-4 md:mx-7">
+          <div className="flex justify-center md:justify-start space-x-[12px] gap-2 items-start">
             <Image
               className=" w-[30px] h-[30px] bg-[#271703] rounded-lg "
               src={logo}

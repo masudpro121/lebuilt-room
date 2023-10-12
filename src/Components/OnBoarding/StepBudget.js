@@ -59,14 +59,14 @@ function StepBudget() {
               {" "}
               Enter Your Budget
             </h3>
-            <p className="  text-[12px] text-[#9D5C0D] ">
+            <p className=" text-[12px] text-[#9D5C0D] ">
               Enter the amount you plan to invest
             </p>
           </div>
         </div>
 
-        <div className="rounded-[20px] flex flex-col items-center md:items-start px-2 md:px-4  pt-6 pb-5 md:pb-[64px]  bg-[#F7F8F9] mx-4 md:mx-7">
-          <p className="mb-[12px] text-[14px] text-center px-2 md:text-left md:text-[16px] font-[Gilroy-SemiBold] md:font-[Gilroy-SemiBold] text-[#76450A] ">
+        <div className="rounded-[20px] flex flex-col items-center md:items-start px-4 md:px-8 pt-6 pb-5 md:pb-[64px] mt-3 bg-[#F7F8F9] mx-4 md:mx-7">
+          <p className="mb-3  text-[14px] text-center px-2 md:text-left md:text-[16px] font-[Gilroy-SemiBold] md:font-[Gilroy-SemiBold] text-[#76450A] ">
             Pick a Room Type or Craft Your Own! Choose from options, or type in
             your unique space.
           </p>

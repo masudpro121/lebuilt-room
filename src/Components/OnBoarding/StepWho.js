@@ -83,7 +83,7 @@ function StepWho() {
             Tell us a bit about yourself.
           </p>
 
-          <div className="md:hidden mb-[16px] w-full px-0 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
+          <div className=" md:hidden mb-[16px] w-full px-0 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
             <Image className="" src={step} alt="" />
             <div className="">
               <h3 className=" text-[#271703] text-[16px]  font-[Gilroy-SemiBold]">I am</h3>
@@ -93,7 +93,7 @@ function StepWho() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 px-3">
+          <div className="flex flex-col gap-4 px-3 mt-3">
             {iam.map((am, i) => {
               return (
                 <div

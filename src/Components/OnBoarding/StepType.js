@@ -212,15 +212,15 @@ function StepType() {
         })}
       </div> */}
 
-        <div className="rounded-[20px] flex flex-col items-center md:items-start px-2 md:px-4  pt-6 pb-[64px] mx-4 md:mx-7  bg-[#F7F8F9]">
-          <p className="mb-[12px] text-[14px] text-center px-2 md:text-left md:text-[16px] font-[Gilroy-SemiBold] text-[#76450A] ">
+        <div className="mt-3  rounded-[20px] flex flex-col items-center md:items-start px-2 md:px-4  pt-6 pb-[64px] mx-4 md:mx-7  bg-[#F7F8F9]">
+          <p className="mb-[12px] text-[14px] text-center px-4 md:text-left md:text-[16px] font-[Gilroy-SemiBold] text-[#76450A] ">
             Pick a Room Type or Craft Your Own! Choose from options, or type in
             your unique space.
           </p>
 
           {/* .........  input field ........... */}
 
-          <div className="flex bg-white rounded-[10px] w-full md:w-[96%] space-x-[10px] md:space-x-[16px] px-3 py-2 mr-6 ml-7 md:ml-0 md:py-3 mx-3 border border-[#D0D5DD] mb-5 shadow-lg md:shadow">
+          <div className="mt-2 flex bg-white rounded-[10px] w-full md:w-[96%] space-x-[10px] md:space-x-[16px] px-3 py-2 mr-6 ml-7 md:ml-0 md:py-3 mx-3 border border-[#D0D5DD] mb-5 shadow-lg md:shadow">
             <Image
               width="50"
               className="p-[6px] rounded-[10px] bg-[#271703] w-[35px] h-[35px]"
