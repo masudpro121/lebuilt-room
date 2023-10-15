@@ -12,7 +12,7 @@ export default function handler(req, res) {
     getProfile({idToken})
     .then(async ({name, email, picture, sub:uid})=>{
       const token = await jwt.sign({name, email, picture, uid}, process.env.JWT_SECRET);
-
+      console.log(uid, 'uid');
         const maxAge = 2600000; 
         const serializedCookie = serialize('token', token, {maxAge, path: '/',  httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', });
 

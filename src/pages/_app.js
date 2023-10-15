@@ -8,7 +8,7 @@ import { Inter } from "next/font/google";
 export const MyContext = createContext();
 export default function App({ Component, pageProps }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [onBoardingStep, setOnBoardingStep] = useState(0);
+  const [onBoardingStep, setOnBoardingStep] = useState();
   const [user, setUser] = useState({});
   const value = {
     isLoggedIn,
