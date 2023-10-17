@@ -23,6 +23,7 @@ export default function handler(req, res) {
             thisUser.name = name
             thisUser.email = email
             thisUser.picture = picture
+            thisUser.uid = uid
             thisUser.save()
             .then((userDb)=>{
               res.setHeader('Set-Cookie', serializedCookie);
@@ -31,7 +32,7 @@ export default function handler(req, res) {
             
           }else{
             const thisUser = new UserModel({
-              name, email, picture
+              name, email, picture, uid
             })
             thisUser.save()
             .then(()=>{

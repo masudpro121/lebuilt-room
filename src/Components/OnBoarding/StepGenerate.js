@@ -22,9 +22,10 @@ function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
   const [progress, setProgress] = useState(0);
-  const { onBoardingStep, setOnBoardingStep } = useContext(MyContext);
+  const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
-console.log(progress, 'pro');
+
+
   const demoImages = [
     "https://i.ibb.co/316mc1W/room.png",
     "https://i.ibb.co/q5S5HyQ/room1.jpg",
@@ -34,6 +35,18 @@ console.log(progress, 'pro');
   useEffect(()=>{
     handleGenerate()
   },[])
+
+  const sendMessage = () => {
+    fetch("/api/send-line-message", {
+      method: 'POST',
+      body: JSON.stringify({
+        uid: user.uid,
+        text: 'test text', 
+        img: generatedImages
+      })
+    })
+  }
+  
   const handleGenerate = async () => {
     setProgress(0);
     setProgressImage("");
@@ -197,12 +210,15 @@ console.log(progress, 'pro');
                 <Image src={PlusIconImg} />
                 <p className="font-[Gilroy-SemiBold]">Select a new Style</p>
               </div>
-              <div className="flex w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
+              {
+                generatedImages.length > 0 && 
+                <div onClick={sendMessage} className="flex w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
                 <Image src={LogoWhite} />
                 <p className="font-[Gilroy-SemiBold]">
                   Get a local designer to work on your project
                 </p>
               </div>
+              }
             </div>
           </div>
         </div>
