@@ -36,13 +36,47 @@ function StepGenerate() {
     handleGenerate()
   },[])
 
-  const sendMessage = () => {
+  const sendImageMsg = () => {
     fetch("/api/send-line-message", {
       method: 'POST',
       body: JSON.stringify({
         uid: user.uid,
-        text: 'test text', 
-        img: generatedImages
+        messages: [
+          {
+            type: "image",
+            originalContentUrl: generatedImages[0],
+            previewImageUrl: generatedImages[0],
+          },
+          {
+            type: "image",
+            originalContentUrl: generatedImages[1],
+            previewImageUrl: generatedImages[1],
+          },
+          {
+            type: "image",
+            originalContentUrl: generatedImages[2],
+            previewImageUrl: generatedImages[2],
+          },
+          {
+            type: "image",
+            originalContentUrl: generatedImages[3],
+            previewImageUrl: generatedImages[3],
+          },
+        ]
+      })
+    })
+  }
+  const sendTextMsg = () => {
+    fetch("/api/send-line-message", {
+      method: 'POST',
+      body: JSON.stringify({
+        uid: user.uid,
+        messages: [
+          {
+            type: "text",
+            text: "This is test text",
+          },
+        ]
       })
     })
   }
@@ -78,6 +112,7 @@ function StepGenerate() {
               }
               if (checkRes.images) {
                 setGeneratedImages(checkRes.images);
+                sendImageMsg()
               }
               if (checkRes.progressImage) {
                 setProgressImage(checkRes.progressImage);
@@ -212,7 +247,7 @@ function StepGenerate() {
               </div>
               {
                 generatedImages.length > 0 && 
-                <div onClick={sendMessage} className="flex w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
+                <div onClick={sendTextMsg} className="flex w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
                 <Image src={LogoWhite} />
                 <p className="font-[Gilroy-SemiBold]">
                   Get a local designer to work on your project
