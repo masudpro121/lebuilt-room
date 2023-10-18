@@ -7,8 +7,10 @@ import logo from "../../assets/images/onBoard/logo svg (1).png";
 import step from "../../assets/images/_Step icon base.png";
 import Image from "next/image";
 import Link from "next/link";
+import lineAuth from "@/data/lineauth";
 function StepHaveSpace() {
   const { setOnBoardingStep, onBoardingStep, user } = useContext(MyContext);
+  console.log(user, 'usr');
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
   const [selectedOption, setSelectedOption] = useState(onBoard.haveSpace);
   const setOnBoard = (data) => {
@@ -40,12 +42,6 @@ function StepHaveSpace() {
         setOnBoardingStep(onBoardingStep + 2);
       }
     } else {
-      const channelId = "2000692142";
-      const redirectUrl = "http://localhost:3000/api/line-auth";
-      const state = uuidv4();
-      const scope = "profile openid email";
-      const nonce = "anythingToSecureTheURI012";
-      let lineAuth = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${redirectUrl}&state=${state}&scope=${scope}&nonce=${nonce}`;
       window.open(lineAuth, "_self");
     }
   };
