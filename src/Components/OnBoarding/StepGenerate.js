@@ -35,32 +35,34 @@ function StepGenerate() {
   useEffect(()=>{
     handleGenerate()
   },[])
-
-  const sendImageMsg = () => {
+  
+  const sendImageMsg = (images) => {
+    const  myuid = JSON.parse(localStorage.getItem("user")).uid
+  console.log(myuid, "uidd");
     fetch("/api/send-line-message", {
       method: 'POST',
       body: JSON.stringify({
-        uid: user.uid,
+        uid: myuid,
         messages: [
           {
             type: "image",
-            originalContentUrl: generatedImages[0],
-            previewImageUrl: generatedImages[0],
+            originalContentUrl: images[0],
+            previewImageUrl: images[0],
           },
           {
             type: "image",
-            originalContentUrl: generatedImages[1],
-            previewImageUrl: generatedImages[1],
+            originalContentUrl: images[1],
+            previewImageUrl: images[1],
           },
           {
             type: "image",
-            originalContentUrl: generatedImages[2],
-            previewImageUrl: generatedImages[2],
+            originalContentUrl: images[2],
+            previewImageUrl: images[2],
           },
           {
             type: "image",
-            originalContentUrl: generatedImages[3],
-            previewImageUrl: generatedImages[3],
+            originalContentUrl: images[3],
+            previewImageUrl: images[3],
           },
         ]
       })
@@ -112,7 +114,7 @@ function StepGenerate() {
               }
               if (checkRes.images) {
                 setGeneratedImages(checkRes.images);
-                sendImageMsg()
+                sendImageMsg(checkRes.images, user.uid)
               }
               if (checkRes.progressImage) {
                 setProgressImage(checkRes.progressImage);

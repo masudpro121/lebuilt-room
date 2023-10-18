@@ -44,6 +44,7 @@ export default function App({ Component, pageProps }) {
       .then((res) => res.json())
       .then((res) => {
         setUser(res);
+        localStorage.setItem("user", JSON.stringify(res))
         const onBoardingStep =
           Number(localStorage.getItem("onBoardingStep")) || 0;
         if (onBoardingStep == 7 && res.email) {

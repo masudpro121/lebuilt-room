@@ -7,6 +7,8 @@ export default function handler(req, res) {
       to: uid,
       messages
     };
+    console.log(uid, 'uid');
+    console.log(messages);
     if (uid && messages.length>0) {
       axios
         .post("https://api.line.me/v2/bot/message/push", data, {

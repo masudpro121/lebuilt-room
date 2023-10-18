@@ -1,4 +1,4 @@
-import lineAuth from "@/data/lineauth";
+import lineAuth from "@/data/lineAuth";
 import { MyContext } from "@/pages/_app";
 import React, { useContext } from "react";
 
