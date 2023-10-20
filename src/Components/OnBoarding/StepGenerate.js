@@ -17,6 +17,8 @@ import RepeatImg from "@/assets/images/onBoard/repeat-02.png";
 import Image from "next/image";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import ImageModal from "../ImageModal/ImageModal";
+import Link from "next/link";
+import Header from "../Header/Header";
 const RoomImg = "/public/images/room.png";
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
@@ -38,7 +40,6 @@ function StepGenerate() {
   
   const sendImageMsg = (images) => {
     const  myuid = JSON.parse(localStorage.getItem("user")).uid
-  console.log(myuid, "uidd");
     fetch("/api/send-line-message", {
       method: 'POST',
       body: JSON.stringify({
@@ -143,22 +144,7 @@ function StepGenerate() {
     <div>
       {/* <button onClick={prevStep}>Prev Step</button>  */}
 
-      {/* Header  */}
-      <div className="border border-[#F1F5F9] bg-white w-full px-10 ">
-        <div className="hidden custom-container px-8 xl:px-0  md:flex justify-between  ">
-          <div className="left flex items-center space-x-[60px]">
-            <Image src={logo} alt="" />
-            <div className="flex items-center space-x-[20px]">
-              <h2 className="text-[16px] text-[#475569] ">History</h2>
-              <h2 className="text-[16px] text-[#475569] ">Collection</h2>
-            </div>
-          </div>
-          <div className="right flex items-center space-x-[4px]">
-            <Image src={userIcon} alt="" />
-            <Image src={downArrow} alt="" />
-          </div>
-        </div>
-      </div>
+    <Header />
 
       {/* Progress and Loading  */}
       <div className="lg:bg-[#E3E9EE] min-h-[93vh] lg:p-8">

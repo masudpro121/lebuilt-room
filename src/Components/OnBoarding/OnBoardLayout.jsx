@@ -80,8 +80,8 @@ const OnBoardLayout = (props) => {
           <div className="left flex items-center space-x-[60px]">
             <Image src={logo} alt="" />
             <div className="flex items-center space-x-[20px]">
-              <h2 className="text-[16px] text-[#475569] ">History</h2>
-              <h2 className="text-[16px] text-[#475569] ">Collection</h2>
+              <h2 className="text-[16px] text-[#475569] cursor-pointer ">History</h2>
+              <h2 className="text-[16px] text-[#475569] cursor-pointer ">Collection</h2>
             </div>
           </div>
           <div className="right flex items-center space-x-[4px]">
