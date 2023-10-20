@@ -16,6 +16,7 @@ const Collection = () => {
   return (
     <div>
       <Header />
+      <div className="bg-[#F2F1EF] py-3 px-3 rounded-md font-[Gilroy-SemiBold] text-xl mt-4 mb-2 w-[85%] m-auto">Explore what others are creating</div>
       <CollectionHistory data={data} />
     </div>
   )
