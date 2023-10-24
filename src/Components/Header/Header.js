@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/images/onBoard/logo svg.png";
 import userIcon from "@/assets/images/onBoard/user-01.png";
 import downArrow from "@/assets/images/onBoard/downArrow.png";
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
     <div className="hidden md:block border border-[#F1F5F9] bg-white w-full px-10 ">
@@ -33,7 +38,23 @@ const Header = () => {
 
     <div className="flex justify-center items-center md:hidden">
       <Link href="/"><Image src={logo} alt="" /></Link>
-      <Image src={downArrow}  alt="" />
+      
+      <div className="relative">
+      <Image className="cursor-pointer" onClick={toggleDropdown} src={downArrow}  alt="" />
+
+      {isOpen && (
+        <div className="absolute right-0  mt-2  bg-white  rounded shadow-lg">
+          <ul className="m-0 p-0 ">
+            <Link className="no-underline  text-black " href="/history">
+              <li className="px-4 py-1.5">History</li>
+            </Link>
+            <Link className="no-underline text-black " href="/collection">
+              <li className="px-4 py-1.5">Collection</li>
+            </Link>
+          </ul>
+        </div>
+      )}
+    </div>
     </div>
     </>
   );
