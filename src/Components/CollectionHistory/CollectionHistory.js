@@ -7,11 +7,13 @@ const CollectionHistory = ({ data }) => {
       <div className="flex flex-wrap gap-3 justify-center py-3">
       {data.map((image, i) => {
         return (
-          <CollectionHistoryModal key={image + i} img={image}>
-            <div className="cursor-pointer">
-              <RenderImage src={image} />
+          <div key={image + i} className="w-[45%] md:w-[20%]  flex flex-wrap">
+            <CollectionHistoryModal img={image}>
+            <div className="cursor-pointer ">
+            <img className="rounded-md object-cover" src={image}  />
             </div>
           </CollectionHistoryModal>
+          </div>
         );
       })}
     </div>

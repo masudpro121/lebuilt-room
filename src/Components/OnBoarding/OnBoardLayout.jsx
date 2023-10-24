@@ -7,6 +7,7 @@ import menuIconGreen from "../../assets/images/onBoard/Connector wrap (2).png";
 import smdownArrow from "../../assets/images/chevron-down.png";
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "@/pages/_app";
+import Header from "../Header/Header";
 
 const OnBoardLayout = (props) => {
   const {onBoardingStep, setOnBoardingStep} = useContext(MyContext)
@@ -76,19 +77,7 @@ const OnBoardLayout = (props) => {
     <div className="md:bg-[#EAECF0]">
       {/* //.......... header............. */}
       <div className="border border-[#F1F5F9] bg-white w-full ">
-        <div className="hidden custom-container px-8 xl:px-0  md:flex justify-between  ">
-          <div className="left flex items-center space-x-[60px]">
-            <Image src={logo} alt="" />
-            <div className="flex items-center space-x-[20px]">
-              <h2 className="text-[16px] text-[#475569] cursor-pointer ">History</h2>
-              <h2 className="text-[16px] text-[#475569] cursor-pointer ">Collection</h2>
-            </div>
-          </div>
-          <div className="right flex items-center space-x-[4px]">
-            <Image src={userIcon} alt="" />
-            <Image src={downArrow} alt="" />
-          </div>
-        </div>
+        <Header />
         {/* <div className="flex md:hidden justify-center space-x-1">
           <Image src={logo} alt="" />
           <Image src={smdownArrow} alt="" />
