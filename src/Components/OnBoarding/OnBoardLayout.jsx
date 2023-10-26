@@ -98,7 +98,7 @@ const OnBoardLayout = (props) => {
                       key={index}
                       className={`py-[12px] pl-[10px] w-[300px] pr-[8px] bg-[#F7F8F9] rounded-tr-lg rounded-br-lg flex space-x-[12px] border-l-2 border-[#9D5C0D] cursor-pointer`}
                     >
-                      <Image src={item.step==onBoardingStep?menuIconBrown:menuIconGreen} alt="" />
+                      <Image className="w-8" src={item.step==onBoardingStep?menuIconBrown:menuIconGreen} alt="" />
                       <div className="">
                         <h2 className="text-[16px] text-[#344054] font-[Gilroy-SemiBold]">
                           {item.title}

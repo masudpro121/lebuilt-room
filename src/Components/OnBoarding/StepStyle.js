@@ -212,7 +212,7 @@ function StepStyle() {
                           ? greenCheckbox
                           : whiteCheckbox
                       }
-                      className="absolute top-3 right-2 w-[32px]"
+                      className="absolute top-0 right-0 w-[32px] m-4"
                     />
                   </div>
                 </div>
@@ -245,7 +245,7 @@ function StepStyle() {
                           ? greenCheckbox
                           : whiteCheckbox
                       }
-                      className="absolute top-3 right-2 w-[32px]"
+                      className="absolute top-0 right-0 m-3 w-[32px]"
                     />
                   </div>
                 </div>
@@ -264,7 +264,7 @@ function StepStyle() {
             />
           </div> */}
           <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center">
-            <div onClick={showMoreStyle} className=" hidden md:flex border rounded-lg py-3 px-[28px] items-center gap-2  space-x-[12px] cursor-pointer">
+            <div onClick={showMoreStyle} className=" hidden md:flex border rounded-lg py-3 px-[28px] items-center gap-2 cursor-pointer">
               <Image src={repeat} alt="more style" />
               <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
                 Show More Styles
@@ -282,7 +282,7 @@ function StepStyle() {
             </div>
           </div>
           <div className="flex justify-center md:justify-end mb-3">
-            <div className=" lg:hidden flex border rounded-lg py-3 px-[32px] items-center justify-center  space-x-[12px] cursor-pointer">
+            <div className=" lg:hidden flex border rounded-lg py-3 px-[32px] items-center justify-center  gap-2 cursor-pointer">
               <Image src={repeat} alt="" />
               <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
                 Show More Styles
