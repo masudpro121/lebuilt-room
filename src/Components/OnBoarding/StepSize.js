@@ -123,7 +123,7 @@ function StepSize() {
             </div>
             <div
               onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+              className="myBtn bg-[#9D5C0D] text-white flex rounded py-2.5 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                 Next Step

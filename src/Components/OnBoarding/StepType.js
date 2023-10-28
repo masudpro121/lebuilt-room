@@ -247,13 +247,13 @@ function StepType() {
                 <div
                   onClick={() => handleInput(i)}
                   key={type.name + i}
-                  className={`px-4 py-[6px] shadow rounded-md cursor-pointer ${
+                  className={`px-4 py-[6px]  shadow rounded-md flex items-center cursor-pointer ${
                     selectedOption == type.name
                       ? "bg-[#271703] text-white"
                       : "text-[#271703] bg-white"
                   }`}
                 >
-                  <h2 className=" text-[14px] cursor-pointer font-[Gilroy-SemiBold]">
+                  <h2 className=" m-0 py-1 text-[14px] cursor-pointer font-[Gilroy-SemiBold]">
                     {type.name}
                   </h2>
                 </div>
