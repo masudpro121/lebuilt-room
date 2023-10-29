@@ -29,21 +29,8 @@ function StepBudget() {
     }
   };
   return (
-    // <div>
-    //   <h3 className="text-2xl font-[Gilroy-SemiBold] mb-5 ml-10">Enter your Budget</h3>
-    //   <div>
-    //     <input onChange={(e)=>setBudget(Number(e.target.value))} value={budget} type="number" placeholder="Tell me your maximum budget.." className="w-80 border-2" />
-    //   </div>
-    //   <div className="flex gap-5 mt-5">
-    //     <button className="myBtn" onClick={prevStep}>
-    //       Prev Step
-    //     </button>
-    //     <button className="myBtn" onClick={nextStep}>
-    //       Next Step
-    //     </button>
-    //   </div>
-    // </div>
-    <div className="w-full h-[100vh] ">
+    <div className="h-[90vh] md:h-[86vh]">
+      <div className="w-full h-full md:h-auto ">
       <div className="h-full  md:h-full w-full  md:pt-[10%]  ">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Enter Your Budget
@@ -93,7 +80,7 @@ function StepBudget() {
         {/* .......  next prev btn.......... */}
         
       </div>
-      <div className="sticky bottom-[-2px] bg-white w-full px-5 py-3">
+      <div className="sticky bottom-[-2px] bg-white w-full px-5 ">
           <div className="flex mx-4 md:mx-7  mb-5 items-center justify-center md:justify-end space-x-[18px] mt-20 md:mt-10">
             <div className="myBtn md:hidden" onClick={prevStep}>
               <Image
@@ -104,15 +91,16 @@ function StepBudget() {
             </div>
             <div
               onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+              className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-                Next Step
+                Next
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="" />
             </div>
           </div>
         </div>
+    </div>
     </div>
   );
 }

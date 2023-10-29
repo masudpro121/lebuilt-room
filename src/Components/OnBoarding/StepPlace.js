@@ -40,7 +40,8 @@ function StepPlace() {
     setOnBoard(myOnBoard);
   };
   return (
-    <div className="w-full h-[100vh]   ">
+    <div className="h-[90vh] md:h-[86vh] ">
+      <div className="w-full h-full md:h-auto  ">
       <div className="h-full   md:pt-[10%]">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select place
@@ -99,7 +100,7 @@ function StepPlace() {
         {/* .......  next prev btn.......... */}
         
       </div>
-      <div className="sticky bottom-[-2px] bg-white w-full px-5 py-3">
+      <div className="sticky bottom-0 bg-white w-full px-5 pt-3">
           <div className=" flex items-center justify-center md:justify-end space-x-[18px]  ">
             <div className="myBtn md:hidden" onClick={prevStep}>
               <Image
@@ -110,15 +111,16 @@ function StepPlace() {
             </div>
             <div
               onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+              className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-                Next Step
+                Next
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="" />
             </div>
           </div>
         </div>
+    </div>
     </div>
   );
 }

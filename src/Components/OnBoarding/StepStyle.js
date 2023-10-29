@@ -271,7 +271,7 @@ function StepStyle() {
               className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-3 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
             >
               <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
-                Next Step
+                Next
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="" />
             </div>
@@ -299,7 +299,7 @@ function StepStyle() {
               className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-                Next Step
+                Next
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="next" />
             </div>

@@ -170,7 +170,8 @@ function StepType() {
     setOnBoard(myOnBoard);
   };
   return (
-    <div className="w-full sm:h-[100vh]   ">
+    <div className="h-[90vh] md:h-[86vh]">
+      <div className="w-full  md:h-auto   ">
       <div className="h-full  md:pt-[10%]">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select room Type
@@ -264,21 +265,14 @@ function StepType() {
 
         {/* .........  next prev button........... */}
       </div>
-      <div className=" sticky bottom-0 bg-white w-full px-5 py-3">
-        {/* <div className="myBtn hidden md:block" onClick={prevStep}>
-            <Image
-              className="border w-[55px] rounded-lg bg-gray-50 py-3 px-[14px]"
-              src={leftarrow}
-              alt=""
-            />
-          </div> */}
+      <div className=" sticky bottom-0 bg-white w-full px-5 pt-3">
         <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center">
           <div
             onClick={nextStep}
-            className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-3 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
+            className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-2 md:py-3 px-[28px] items-center justify-center w-full  md:w-[192px] cursor-pointer"
           >
             <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
-              Next Step
+              Next
             </p>
             <Image className="mb-[-3px]" src={arrow} alt="" />
           </div>
@@ -295,15 +289,16 @@ function StepType() {
           </div>
           <div
             onClick={nextStep}
-            className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+            className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
           >
             <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-              Next Step
+              Next
             </p>
             <Image className="mb-[-3px]" src={arrow} alt="" />
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

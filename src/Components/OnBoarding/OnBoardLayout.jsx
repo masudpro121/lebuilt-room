@@ -113,8 +113,8 @@ const OnBoardLayout = (props) => {
               })}
             </div>
           </div>
-          <div className="right md:border-3  md:border-[3px] w-full md:mr-4 md:border-[#FBE8D0] pt-2 rounded-lg h-[100vh] md:h-[85vh] overflow-y-scroll ">
-            <div className="">{props.children}</div>
+          <div className="right md:border-3  md:border-[3px] w-full md:mr-4 md:border-[#FBE8D0] pt-2 rounded-lg  overflow-y-scroll  ">
+            {props.children}
           </div>
         </div>
       </div>

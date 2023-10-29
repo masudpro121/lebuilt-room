@@ -37,7 +37,8 @@ function StepSize() {
     setOnBoard(myOnBoard);
   };
   return (
-    <div className="w-full h-[100vh] ">
+    <div className="h-[90vh] md:h-[86vh]">
+      <div className="w-full h-full md:h-auto">
       <div className=" h-full  md:h-full w-full  md:pt-[10%]  ">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select Room Size
@@ -59,7 +60,7 @@ function StepSize() {
           </div>
         </div>
 
-        <div className="rounded-[20px] px-4 md:px-6 pt-10 md:pt-6 pb-[64px] bg-[#F7F8F9] mx-4 md:mx-7">
+        <div className="rounded-[20px] px-4 mt-3 md:px-6 pt-10 md:pt-6 pb-[64px] bg-[#F7F8F9] mx-4 md:mx-7">
           <div className="flex flex-col  md:flex-row md:justify-start gap-2 lg:gap-3 items-center md:items-start">
             <Image
               className=" w-[30px] h-[30px] bg-[#271703] rounded-lg "
@@ -112,8 +113,8 @@ function StepSize() {
        
       </div>
        {/* .......  next prev btn.......... */}
-       <div className=" sticky bottom-[-2px] bg-white w-full px-5 py-3">
-          <div className="flex mx-4 md:mx-7 mb-5 items-center justify-center md:justify-end space-x-[18px] mt-14 md:mt-10">
+       <div className=" sticky bottom-0 bg-white w-full px-5 ">
+          <div className="flex mx-4 md:mx-7 mb-5 items-center justify-center md:justify-end  md:mt-10">
             <div className="myBtn md:hidden" onClick={prevStep}>
               <Image
                 className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
@@ -123,15 +124,16 @@ function StepSize() {
             </div>
             <div
               onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded py-2.5 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+              className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-                Next Step
+                Next
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="" />
             </div>
           </div>
         </div>
+    </div>
     </div>
   );
 }

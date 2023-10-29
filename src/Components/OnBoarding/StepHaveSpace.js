@@ -46,22 +46,9 @@ function StepHaveSpace() {
     }
   };
   return (
-    // <div>
-    //   <div>Do you have space image?</div>
-    //   <div className="flex  gap-5">
-    //     <button onClick={()=>handleInput('yes')}>Yes</button>
-    //     <button onClick={()=>handleInput('no')}>No</button>
-    //   </div>
-    //   <div className="flex gap-5 mt-5">
-    //     <button className="myBtn" onClick={prevStep}>
-    //       Prev Step
-    //     </button>
-    //     <button className="myBtn" onClick={nextStep}>
-    //       Next Step
-    //     </button>
-    //   </div>
-    // </div>
-    <div className="w-full h-[100vh]   ">
+   
+   <div className="h-[90vh] md:h-[86vh]">
+     <div className="w-full h-full  md:h-auto ">
       <div className="h-full  w-full pt-[10%]  ">
         <h3 className="mb-[30px] text-[#271703] text-[25px] md:text-[48px] text-center font-[Gilroy-SemiBold] ">
           Do you have a space image?
@@ -104,8 +91,8 @@ function StepHaveSpace() {
         </div>
       </div>
       {/* .......  next prev btn.......... */}
-      <div className="sticky bottom-2 bg-white w-full px-5 py-3s">
-        <div className="flex w-full  items-center justify-center md:justify-end ">
+      <div className="sticky bottom-0 bg-white w-full px-5 md:mt-4">
+        <div className="flex w-full gap-3  items-center justify-center md:justify-end ">
           <div className="myBtn md:hidden" onClick={prevStep}>
             <Image
               className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
@@ -115,16 +102,17 @@ function StepHaveSpace() {
           </div>
           <div
             onClick={nextStep}
-            className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+            className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px]  md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
           >
             <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-              Next Step
+              Next
             </p>
             <Image className="mb-[-3px]" src={arrow} alt="" />
           </div>
         </div>
       </div>
     </div>
+   </div>
   );
 }
 
