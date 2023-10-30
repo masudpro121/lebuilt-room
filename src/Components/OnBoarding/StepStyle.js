@@ -116,8 +116,9 @@ function StepStyle() {
   };
 
   return (
-    <div className="h-[100vh] md:h-full flex justify-center items-center ">
-      <div className="mt-20">
+    <div className="h-[90vh] md:h-[86vh] mt-2">
+      <div className="md:h-auto flex justify-center items-center ">
+      <div className="">
         <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
           Select style
         </h3>
@@ -306,6 +307,7 @@ function StepStyle() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

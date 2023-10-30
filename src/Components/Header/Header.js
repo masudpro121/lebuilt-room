@@ -40,10 +40,10 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <div className="right flex items-center space-x-[4px]">
+        {/* <div className="right flex items-center space-x-[4px]">
           <Image src={userIcon} alt="" />
           <Image src={downArrow} alt="" />
-        </div>
+        </div> */}
       </div>
     </div>
 

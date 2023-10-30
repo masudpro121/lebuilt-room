@@ -96,7 +96,7 @@ const OnBoardLayout = (props) => {
                     <div
                       onClick={()=>handleStep(item.step)}
                       key={index}
-                      className={`py-[12px] pl-[10px] w-[300px] pr-[8px] bg-[#F7F8F9] rounded-tr-lg rounded-br-lg flex space-x-[12px] border-l-2 border-[#9D5C0D] cursor-pointer`}
+                      className={`py-[12px] pl-[10px] w-[300px] pr-[8px] bg-[#F7F8F9] rounded-tr-lg rounded-br-lg flex space-x-[12px]  ${item.step==onBoardingStep && "border-l-2 border-[#9D5C0D]"} cursor-pointer`}
                     >
                       <Image className="w-8" src={item.step==onBoardingStep?menuIconBrown:menuIconGreen} alt="" />
                       <div className="">

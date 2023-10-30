@@ -47,14 +47,14 @@ function StepHaveSpace() {
   };
   return (
    
-   <div className="h-[90vh] md:h-[86vh]">
+   <div className="h-[90vh] md:h-[86vh] flex items-center">
      <div className="w-full h-full  md:h-auto ">
-      <div className="h-full  w-full pt-[10%]  ">
-        <h3 className="mb-[30px] text-[#271703] text-[25px] md:text-[48px] text-center font-[Gilroy-SemiBold] ">
+      <div className="h-full  w-full   ">
+        <h3 className=" text-[#271703] text-[25px] md:text-[48px] text-center font-[Gilroy-SemiBold] ">
           Do you have a space image?
         </h3>
 
-        <div className="flex items-center px-4 md:px-6 pt-6 pb-[30px] space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl mb-[30px]">
+        <div className="flex items-center px-4 md:px-6 py-6 space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl my-[30px]">
           <Image
             className=" w-[40px] h-[40px] bg-[#9D5C0D] rounded-xl border-4  border-[#f1c28e]"
             src={logo}
@@ -91,7 +91,7 @@ function StepHaveSpace() {
         </div>
       </div>
       {/* .......  next prev btn.......... */}
-      <div className="sticky bottom-0 bg-white w-full px-5 md:mt-4">
+      {/* <div className="sticky bottom-0 bg-white w-full px-5 md:mt-4">
         <div className="flex w-full gap-3  items-center justify-center md:justify-end ">
           <div className="myBtn md:hidden" onClick={prevStep}>
             <Image
@@ -110,7 +110,7 @@ function StepHaveSpace() {
             <Image className="mb-[-3px]" src={arrow} alt="" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
    </div>
   );
