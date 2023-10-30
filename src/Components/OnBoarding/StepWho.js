@@ -73,8 +73,9 @@ function StepWho() {
     setOnBoard(myOnBoard);
   };
   return (
-    <div className="w-full h-[100vh] md:h-full md:w-auto">
-      <div className="w-full md:w-auto h-full mx-auto flex justify-center items-center">
+    <div className="h-[90vh] md:h-[86vh]">
+      <div className="w-full  md:h-full md:w-auto">
+      <div className="w-full md:w-auto  mx-auto flex justify-center items-center ">
         <div className="h-full w-full md:w-auto">
           <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
             I am
@@ -83,7 +84,7 @@ function StepWho() {
             Tell us a bit about yourself.
           </p>
 
-          <div className=" md:hidden mb-[16px] w-full px-0 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
+          <div className=" md:hidden mb-[16px] w-full px-0 flex gap-3  py-[10px] bg-[#FEF7EF] justify-center">
             <Image className="" src={step} alt="" />
             <div className="">
               <h3 className=" text-[#271703] text-[16px]  font-[Gilroy-SemiBold]">I am</h3>
@@ -155,12 +156,13 @@ function StepWho() {
         </div>
         <div
           onClick={nextStep}
-          className="myBtn bg-[#9D5C0D] text-white flex rounded py-3 md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+          className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
         >
           <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">Next</p>
           <Image className="mb-[-3px]" src={arrow} alt="" />
         </div>
       </div>
+    </div>
     </div>
   );
 }

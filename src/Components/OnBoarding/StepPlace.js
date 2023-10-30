@@ -100,7 +100,7 @@ function StepPlace() {
         {/* .......  next prev btn.......... */}
         
       </div>
-      <div className="sticky bottom-0 bg-white w-full px-5 pt-3">
+      <div className="sticky bottom-0 bg-white w-full px-5 pt-3 mt-4">
           <div className=" flex items-center justify-center md:justify-end space-x-[18px]  ">
             <div className="myBtn md:hidden" onClick={prevStep}>
               <Image

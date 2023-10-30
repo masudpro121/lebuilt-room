@@ -255,11 +255,11 @@ function StepStyle() {
         </div>
         {/* .........  next prev button........... */}
 
-        <div className="  sticky bottom-[-2px] bg-white w-full px-5 py-3">
-          <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center">
+        <div className="  sticky bottom-0 bg-white w-full px-5 pt-2 ">
+          <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center pb-2">
             <div
               onClick={showMoreStyle}
-              className=" hidden md:flex border rounded-lg py-3 px-[28px] items-center gap-2 cursor-pointer"
+              className=" hidden md:flex border rounded-lg py-[12px] px-[28px] items-center gap-2 cursor-pointer"
             >
               <Image src={repeat} alt="more style" />
               <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
