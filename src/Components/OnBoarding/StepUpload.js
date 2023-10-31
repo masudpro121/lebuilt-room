@@ -242,7 +242,7 @@ function StepUpload() {
                   <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                     Next
                   </p>
-                  <Image className="mb-[-3px]" src={arrow} alt="" />
+                 <Image className="" src={arrow} alt="" />
                 </div>
               </div>
             </div>

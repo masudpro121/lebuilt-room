@@ -140,7 +140,7 @@ function StepStyle() {
         </div>
 
         <div className=" md:mx-10">
-        <div className="mt-3 flex px-4 md:px-6 pt-6 pb-[30px] items-center gap-3 bg-[#F7F8F9] mx-3  md:mx-[35px] rounded-3xl mb-6">
+        <div className="mt-3 flex px-3 md:px-6  py-3 md:py-6 items-center gap-3 bg-[#F7F8F9] mx-3  md:mx-[35px] rounded-xl md:rounded-3xl mb-6">
           <Image
             className=" w-[40px] h-[40px] bg-[#9D5C0D] rounded-xl border-4  border-[#f1c28e]"
             src={logo}
@@ -155,7 +155,7 @@ function StepStyle() {
             to discover other options. Your ideal style might be just a click
             away!
           </h2>
-          <h2 className=" md:hidden text-[14px] md:text-[14px] font-[Gilroy-Bold] text-[#271703]">
+          <h2 className=" md:hidden text-[14px] md:text-[14px] font-[Gilroy-SemiBold] leading-5 text-[#271703]">
             Your selection is crucial, as the final outcome hinges on the style
             you choose.
           </h2>
@@ -231,7 +231,7 @@ function StepStyle() {
                   key={style.name + i}
                   onClick={() => handleInput(i)}
                 >
-                  <div className="relative cursor-pointer h-full p-1 ">
+                  <div className="relative cursor-pointer h-full p-2 ">
                     <img
                       className={`w-full h-full rounded-lg  ${
                         selectedOption == style.name &&
@@ -257,7 +257,7 @@ function StepStyle() {
         </div>
         {/* .........  next prev button........... */}
 
-        <div className="  sticky bottom-0 bg-white w-full px-5 pt-2 ">
+        <div className="  sticky bottom-0 bg-white w-full px-5 md:pt-2 ">
           <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center pb-2">
             <div
               onClick={showMoreStyle}
@@ -276,20 +276,20 @@ function StepStyle() {
               <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
                 Next
               </p>
-              <Image className="mb-[-3px]" src={arrow} alt="" />
+             <Image className="" src={arrow} alt="" />
             </div>
           </div>
           <div className="flex justify-center md:justify-end mb-3">
             <div className=" lg:hidden flex border rounded-lg py-3 px-[32px] items-center justify-center  gap-2 cursor-pointer">
               <Image src={repeat} alt="" />
-              <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
+              <p className="text-[#323A46] text-[17px] font-[Gilroy-SemiBold]">
                 Show More Styles
               </p>
             </div>
           </div>
 
           {/* ........... for responsive......... */}
-          <div className="lg:hidden flex w-full items-center justify-center md:justify-end space-x-[18px] ">
+          <div className="lg:hidden flex w-full items-center justify-center md:justify-end gap-3">
             <div className="myBtn " onClick={prevStep}>
               <Image
                 className="border w-[55px] rounded-lg bg-gray-50 py-[12px] px-[14px]"
@@ -299,7 +299,7 @@ function StepStyle() {
             </div>
             <div
               onClick={nextStep}
-              className="myBtn bg-[#9D5C0D] text-white flex rounded py-[10px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
+              className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                 Next

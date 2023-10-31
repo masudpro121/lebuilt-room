@@ -84,7 +84,7 @@ function StepWho() {
             Tell us a bit about yourself.
           </p>
 
-          <div className=" md:hidden mb-[16px] w-full px-0 flex gap-3  py-[10px] bg-[#FEF7EF] justify-center">
+          <div className=" md:hidden mb-[16px] w-full px-0 flex items-center gap-3  py-[10px] bg-[#FEF7EF] justify-center">
             <Image className="" src={step} alt="" />
             <div className="">
               <h3 className=" text-[#271703] text-[16px]  font-[Gilroy-SemiBold]">I am</h3>
@@ -146,7 +146,7 @@ function StepWho() {
       </div>
 
       {/* .......  next prev btn.......... */}
-      <div className="flex items-center justify-center md:justify-end space-x-[18px] pr-6 md:pr-[60px]  sticky bottom-0 bg-white w-full px-5 py-3">
+      <div className="flex items-center justify-center md:justify-end space-x-[18px] pr-6 md:pr-[60px]  sticky bottom-0 bg-white w-full px-5 pt-3 sm:pb-3">
         <div className="myBtn md:hidden" onClick={prevStep}>
           <Image
             className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
@@ -159,7 +159,7 @@ function StepWho() {
           className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
         >
           <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">Next</p>
-          <Image className="mb-[-3px]" src={arrow} alt="" />
+         <Image className="" src={arrow} alt="" />
         </div>
       </div>
     </div>

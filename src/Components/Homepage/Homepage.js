@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/assets/images/logo.png";
+import Logo from "@/assets/images/logo.webp";
 import LogoWhite from "@/assets/images/logo-white.png";
 import Image from "next/image";
 import styles from "./homepage.module.css";
@@ -45,7 +45,7 @@ const Homepage = ({ nextStep }) => {
       <div className="sticky top-0 z-50">
         <div className="w-full h-20 sm:h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
           <div className="justify-start items-center  flex">
-            <Image src={Logo} className=" w-[50px] sm:w-16 sm:h-16" />
+            {/* <Image src={Logo} className=" w-[50px] sm:w-16 sm:h-16" /> */}
             <div className="hidden sm:block text-stone-900 text-lg font-normal font-['Gilroy-Medium']">
               Create exclusive AI interior design in 30 seconds
             </div>
@@ -210,7 +210,7 @@ const Homepage = ({ nextStep }) => {
             >
               <div className="px-7 sm:px-20 py-4 sm:py-5 bg-yellow-700 rounded-lg shadow justify-center items-center gap-3 flex ">
                 <Image width={20} height={20} src={WhiteStarImg} />
-                <div className="  text-white text-lg font-[Gilroy-SemiBold] font-['Inter'] leading-7">
+                <div className="  text-white text-lg font-[Gilroy-SemiBold]  leading-7">
                   Generate your designs
                 </div>
               </div>

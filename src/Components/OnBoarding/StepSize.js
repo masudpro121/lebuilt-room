@@ -114,8 +114,8 @@ function StepSize() {
        
       </div>
        {/* .......  next prev btn.......... */}
-       <div className=" sticky bottom-0 bg-white w-full px-5 ">
-          <div className="flex mx-4 md:mx-7 mb-5 items-center justify-center md:justify-end  md:mt-10">
+       <div className=" sticky bottom-0 bg-white w-full px-3 ">
+          <div className="flex mx-4 md:mx-7 mb-5 items-center gap-3 justify-center md:justify-end  md:mt-10">
             <div className="myBtn md:hidden" onClick={prevStep}>
               <Image
                 className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
@@ -130,7 +130,7 @@ function StepSize() {
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                 Next
               </p>
-              <Image className="mb-[-3px]" src={arrow} alt="" />
+             <Image className="" src={arrow} alt="" />
             </div>
           </div>
         </div>

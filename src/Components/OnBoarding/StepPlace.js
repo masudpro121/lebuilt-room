@@ -101,7 +101,7 @@ function StepPlace() {
         
       </div>
       <div className="sticky bottom-0 bg-white w-full px-5 pt-3 mt-4">
-          <div className=" flex items-center justify-center md:justify-end space-x-[18px]  ">
+          <div className=" flex items-center justify-center md:justify-end  gap-3  ">
             <div className="myBtn md:hidden" onClick={prevStep}>
               <Image
                 className="border w-[55px] rounded-lg bg-gray-50 py-[13px] px-[14px]"
@@ -116,7 +116,7 @@ function StepPlace() {
               <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                 Next
               </p>
-              <Image className="mb-[-3px]" src={arrow} alt="" />
+             <Image className="" src={arrow} alt="" />
             </div>
           </div>
         </div>

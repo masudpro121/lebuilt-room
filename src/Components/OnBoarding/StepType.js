@@ -265,7 +265,7 @@ function StepType() {
 
         {/* .........  next prev button........... */}
       </div>
-      <div className=" sticky bottom-0 bg-white w-full px-5 pt-3">
+      <div className=" sticky bottom-0 bg-white w-full px-5 pt-3 sm:pb-3">
         <div className="hidden lg:flex w-full md:w-auto space-x-[18px] md:space-x-[40px] justify-center md:justify-end items-center">
           <div
             onClick={nextStep}
@@ -274,7 +274,7 @@ function StepType() {
             <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
               Next
             </p>
-            <Image className="mb-[-3px]" src={arrow} alt="" />
+           <Image className="" src={arrow} alt="" />
           </div>
         </div>
 
@@ -294,7 +294,7 @@ function StepType() {
             <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
               Next
             </p>
-            <Image className="mb-[-3px]" src={arrow} alt="" />
+           <Image className="" src={arrow} alt="" />
           </div>
         </div>
       </div>

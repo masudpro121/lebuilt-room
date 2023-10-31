@@ -102,7 +102,7 @@ const OnBoardLayout = (props) => {
                         "border-l-2  border-[#9D5C0D] bg-[#F7F8F9]"
                       } cursor-pointer`}
                     >
-                      <div className="w-10  flex items-center justify-start">
+                      <div className="w-8  flex items-center justify-start">
                         <Image
                           className=""
                           src={

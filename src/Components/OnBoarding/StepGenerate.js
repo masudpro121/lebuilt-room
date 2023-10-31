@@ -23,8 +23,8 @@ const RoomImg = "/public/images/room.png";
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
-  //TODO: do it 0
-  const [progress, setProgress] = useState(100);
+ 
+  const [progress, setProgress] = useState(0);
   const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
 
@@ -86,49 +86,47 @@ function StepGenerate() {
   }
   
   const handleGenerate = async () => {
-    //TODO uncomment
-    // setProgress(0);
+    setProgress(0);
     setProgressImage("");
     setGeneratedImages([]);
     const onBoard = JSON.parse(localStorage.getItem("onBoard"));
     const { image, type, style, place, size, budget } = onBoard;
     // const prompt = `${image}, type: ${type?.name}, style: ${style?.name}`;
     const prompt = generatePrompt({ image, type, style });
-    // TODO uncomment
-    // setProgress(5);
-    // setTimeout(()=>{
-    //   setProgress(10)
-    // },2000)
-    // setTimeout(()=>{
-    //   setProgress(15) 
-    // },4000)
-    // generateImage({ prompt })
-    //   .then((msgId) => {
-    //     setTimeout(() => {
-    //       setProgress(20);
-    //       let myInterval = setInterval(() => {
-    //         checkImage(msgId, onBoard).then((checkRes) => {
+    setProgress(5);
+    setTimeout(()=>{
+      setProgress(10)
+    },2000)
+    setTimeout(()=>{
+      setProgress(15) 
+    },4000)
+    generateImage({ prompt })
+      .then((msgId) => {
+        setTimeout(() => {
+          setProgress(20);
+          let myInterval = setInterval(() => {
+            checkImage(msgId, onBoard).then((checkRes) => {
            
-    //           if(checkRes.progress > 20 ){
-    //             setProgress(checkRes.progress);
-    //           }
-    //           if (checkRes.progress == 100) {
-    //             clearInterval(myInterval);
-    //           }
-    //           if (checkRes.images) {
-    //             setGeneratedImages(checkRes.images);
-    //             sendImageMsg(checkRes.images, user.uid)
-    //           }
-    //           if (checkRes.progressImage) {
-    //             setProgressImage(checkRes.progressImage);
-    //           }
-    //         });
-    //       }, 5000);
-    //     }, 20000);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+              if(checkRes.progress > 20 ){
+                setProgress(checkRes.progress);
+              }
+              if (checkRes.progress == 100) {
+                clearInterval(myInterval);
+              }
+              if (checkRes.images) {
+                setGeneratedImages(checkRes.images);
+                sendImageMsg(checkRes.images, user.uid)
+              }
+              if (checkRes.progressImage) {
+                setProgressImage(checkRes.progressImage);
+              }
+            });
+          }, 5000);
+        }, 20000);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const prevStep = () => {
@@ -213,8 +211,8 @@ function StepGenerate() {
             {progress == 100 && (
               <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
                 <div className="gap-5 bg-[#F2F1EF] p-5 sm:p-0 rounded-xl sm:bg-white flex justify-center flex-wrap mt-10">
-                   {/*TODO remove demo images  */}
-                  {demoImages.map((img, i) => {
+               
+                  {generatedImages.map((img, i) => {
                     return (
                       <ImageModal key={img + i} img={img}>
                         <div className="cursor-pointer h-[220px] sm:h-auto">
