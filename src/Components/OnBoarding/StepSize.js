@@ -29,6 +29,7 @@ function StepSize() {
     "Below 20 Square Feet",
     "20 - 30 Square Feet",
     "More than 30 Feet",
+    "Another Option"
   ];
   const handleInput = (selected) => {
     setSelectedOption(selected);

@@ -23,7 +23,8 @@ const RoomImg = "/public/images/room.png";
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
-  const [progress, setProgress] = useState(0);
+  //TODO: do it 0
+  const [progress, setProgress] = useState(100);
   const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
 
@@ -85,48 +86,49 @@ function StepGenerate() {
   }
   
   const handleGenerate = async () => {
-    setProgress(0);
+    //TODO uncomment
+    // setProgress(0);
     setProgressImage("");
     setGeneratedImages([]);
     const onBoard = JSON.parse(localStorage.getItem("onBoard"));
     const { image, type, style, place, size, budget } = onBoard;
     // const prompt = `${image}, type: ${type?.name}, style: ${style?.name}`;
     const prompt = generatePrompt({ image, type, style });
-    console.log(prompt, "prompt");
-    setProgress(5);
-    setTimeout(()=>{
-      setProgress(10)
-    },2000)
-    setTimeout(()=>{
-      setProgress(15)
-    },4000)
-    generateImage({ prompt })
-      .then((msgId) => {
-        setTimeout(() => {
-          setProgress(20);
-          let myInterval = setInterval(() => {
-            checkImage(msgId, onBoard).then((checkRes) => {
+    // TODO uncomment
+    // setProgress(5);
+    // setTimeout(()=>{
+    //   setProgress(10)
+    // },2000)
+    // setTimeout(()=>{
+    //   setProgress(15) 
+    // },4000)
+    // generateImage({ prompt })
+    //   .then((msgId) => {
+    //     setTimeout(() => {
+    //       setProgress(20);
+    //       let myInterval = setInterval(() => {
+    //         checkImage(msgId, onBoard).then((checkRes) => {
            
-              if(checkRes.progress > 20 ){
-                setProgress(checkRes.progress);
-              }
-              if (checkRes.progress == 100) {
-                clearInterval(myInterval);
-              }
-              if (checkRes.images) {
-                setGeneratedImages(checkRes.images);
-                sendImageMsg(checkRes.images, user.uid)
-              }
-              if (checkRes.progressImage) {
-                setProgressImage(checkRes.progressImage);
-              }
-            });
-          }, 5000);
-        }, 20000);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    //           if(checkRes.progress > 20 ){
+    //             setProgress(checkRes.progress);
+    //           }
+    //           if (checkRes.progress == 100) {
+    //             clearInterval(myInterval);
+    //           }
+    //           if (checkRes.images) {
+    //             setGeneratedImages(checkRes.images);
+    //             sendImageMsg(checkRes.images, user.uid)
+    //           }
+    //           if (checkRes.progressImage) {
+    //             setProgressImage(checkRes.progressImage);
+    //           }
+    //         });
+    //       }, 5000);
+    //     }, 20000);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
 
   const prevStep = () => {
@@ -160,20 +162,20 @@ function StepGenerate() {
             </div>
             <div className="hidden md:block w-2/3 border-b-2 m-auto"></div>
 
-            <div className="w-1/2 m-auto">
+            <div className="w-3/4 md:w-1/2 m-auto">
               {progress > 0 && progress != 100 && (
                 <div className="my-3 ">
                   <ProgressBar progress={progress} />
                 </div>
               )}
               {progress >=10 && progress != 100 && (
-                <div className="mt-2 flex  gap-3 animate-pulse">
-                  <Image src={CheckImg} />
+                <div className="mt-2 flex items-center  gap-3 animate-pulse">
+                  <Image  src={CheckImg} />
                   <p>Scanning the data <span className="animate-ping">..</span></p>
                 </div>
               )}
               {progress >= 20 && progress != 100 && (
-                <div className="mt-3 flex  gap-3 animate-pulse">
+                <div className="mt-3 flex items-center  gap-3 animate-pulse">
                   <Image src={StarImg} />
                   <p>Generating real estate images just for you...</p>
                 </div>
@@ -210,11 +212,12 @@ function StepGenerate() {
             )}
             {progress == 100 && (
               <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
-                <div className="gap-5 flex justify-center flex-wrap mt-10">
-                  {generatedImages.map((img, i) => {
+                <div className="gap-5 bg-[#F2F1EF] p-5 sm:p-0 rounded-xl sm:bg-white flex justify-center flex-wrap mt-10">
+                   {/*TODO remove demo images  */}
+                  {demoImages.map((img, i) => {
                     return (
                       <ImageModal key={img + i} img={img}>
-                        <div className="cursor-pointer">
+                        <div className="cursor-pointer h-[220px] sm:h-auto">
                           <RenderImage src={img} />
                         </div>
                       </ImageModal>
@@ -225,19 +228,19 @@ function StepGenerate() {
             )}
 
             <div className="flex flex-wrap gap-3 md:gap-10 justify-end sm:justify-center mt-5">
-              <div onClick={handleGenerate} className="flex w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
+              <div onClick={handleGenerate} className="flex justify-center w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={RepeatImg} />
                 <p className="font-[Gilroy-SemiBold]">Regenerate</p>
               </div>
-              <div className="flex w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
+              <div className="flex justify-center w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={PlusIconImg} />
                 <p className="font-[Gilroy-SemiBold]">Select a new Style</p>
               </div>
               {
-                generatedImages.length > 0 && 
-                <div onClick={sendTextMsg} className="flex w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
+                true && 
+                <div onClick={sendTextMsg} className="flex  justify-center w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
                 <Image src={LogoWhite} />
-                <p className="font-[Gilroy-SemiBold]">
+                <p className="font-[Gilroy-SemiBold] py-2 sm:py-0">
                   Get a local designer to work on your project
                 </p>
               </div>

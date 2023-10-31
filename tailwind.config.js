@@ -13,7 +13,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        custom: ['Gilroy-Regular', 'Gilroy-Medium', 'Gilroy-SemiBold', 'Gilroy-ExtraBold', 'Gilroy-ExtraBoldItalic'], // 'YourFontName' should match the font name from step 2
+        custom: ['Gilroy-Regular', 'Gilroy-Medium', 'Gilroy-SemiBold', 'Gilroy-Bold', 'Gilroy-ExtraBold', 'Gilroy-ExtraBoldItalic'], // 'YourFontName' should match the font name from step 2
       },
     },
   },

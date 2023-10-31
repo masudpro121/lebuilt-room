@@ -139,13 +139,14 @@ function StepStyle() {
           </div>
         </div>
 
-        <div className="mt-3 flex px-4 md:px-6 pt-6 pb-[30px] space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl mb-6">
+        <div className=" md:mx-10">
+        <div className="mt-3 flex px-4 md:px-6 pt-6 pb-[30px] items-center gap-3 bg-[#F7F8F9] mx-3  md:mx-[35px] rounded-3xl mb-6">
           <Image
             className=" w-[40px] h-[40px] bg-[#9D5C0D] rounded-xl border-4  border-[#f1c28e]"
             src={logo}
             alt=""
           />
-          <h2 className="hidden md:block text-[14px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
+          <h2 className="hidden md:block text-[14px] md:text-[14px] font-[Gilroy-Bold] text-[#271703] leading-6 m-0">
             Your selection is crucial, as the final outcome hinges on the style
             you choose. Take your time and choose with care. Click{" "}
             <Link className="text-[#667412]" href="/">
@@ -154,14 +155,15 @@ function StepStyle() {
             to discover other options. Your ideal style might be just a click
             away!
           </h2>
-          <h2 className=" md:hidden text-[14px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
+          <h2 className=" md:hidden text-[14px] md:text-[14px] font-[Gilroy-Bold] text-[#271703]">
             Your selection is crucial, as the final outcome hinges on the style
             you choose.
           </h2>
         </div>
+        </div>
 
         {/* Style here  */}
-        <div className="sm:flex justify-between gap-3 px-3 h-full  ">
+        <div className="sm:flex justify-between gap-3 px-3 md:mx-3 h-full  ">
           <div
             className="hidden md:block  w-full p-3 sm:p-0"
             onClick={() => handleInput(0)}

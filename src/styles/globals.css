@@ -60,6 +60,14 @@ p{
 }
 
 @font-face {
+  font-family: 'Gilroy-Bold';
+  /* Give your font a name */
+  src: url('../assets/fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Gilroy-ExtraBold';
   /* Give your font a name */
   src: url('../assets/fonts/Gilroy-ExtraBold.ttf') format('truetype');
