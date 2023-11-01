@@ -36,6 +36,7 @@ function StepSize() {
     let myOnBoard = onBoard;
     myOnBoard.size = selected;
     setOnBoard(myOnBoard);
+    nextStep()
   };
   return (
     <div className="h-[90vh] md:h-[86vh]">

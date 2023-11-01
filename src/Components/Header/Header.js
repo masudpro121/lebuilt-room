@@ -21,8 +21,7 @@ const Header = () => {
     setOnBoardingStep(0);
     router.push("/");
   };
-  if(isLoggedIn){
-    <>
+    return <>
       <div className="hidden md:block border border-[#F1F5F9] bg-white w-full px-10 ">
         <div className=" custom-container px-8 xl:px-0  flex justify-between  ">
           <div className="left flex items-center space-x-[60px]">
@@ -84,11 +83,6 @@ const Header = () => {
         </div>
       </div>
     </>
-  }else{
-    return <div className="h-14">
-
-    </div>
-  }
 };
 
 export default Header;

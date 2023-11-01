@@ -87,6 +87,10 @@ p{
   @apply max-w-full mx-auto
 }
 
+.noto-sans{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
 /* Example custom class for checked radio button */
 .checked-radio:checked {
   fill: var(--primary-500, #9D5C0D);

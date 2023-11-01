@@ -1,9 +1,10 @@
 import "@/styles/globals.css";
 import "react-loading-skeleton/dist/skeleton.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { createContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 
 export const MyContext = createContext();
 export default function App({ Component, pageProps }) {
@@ -31,7 +32,7 @@ export default function App({ Component, pageProps }) {
       localStorage.setItem("onBoardingStep", onBoardingStep + 1);
       setOnBoardingStep(onBoardingStep + 1);
       console.log("yes step called", onBoardingStep);
-    } 
+    }
     if (onBoard.haveSpace == "no") {
       localStorage.setItem("onBoardingStep", onBoardingStep + 2);
       setOnBoardingStep(onBoardingStep + 2);
@@ -44,7 +45,7 @@ export default function App({ Component, pageProps }) {
       .then((res) => res.json())
       .then((res) => {
         setUser(res);
-        localStorage.setItem("user", JSON.stringify(res))
+        localStorage.setItem("user", JSON.stringify(res));
         const onBoardingStep =
           Number(localStorage.getItem("onBoardingStep")) || 0;
         if (onBoardingStep == 7 && res.email) {
@@ -56,6 +57,20 @@ export default function App({ Component, pageProps }) {
 
   return (
     <MyContext.Provider value={value}>
+      <Head>
+        {/* 
+          ADD GA CODE HERE
+          ADD GA CODE HERE
+          ADD GA CODE HERE
+        
+        */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <Component {...pageProps} />
     </MyContext.Provider>
   );

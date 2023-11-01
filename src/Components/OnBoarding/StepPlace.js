@@ -38,6 +38,7 @@ function StepPlace() {
     let myOnBoard = onBoard;
     myOnBoard.place = selected;
     setOnBoard(myOnBoard);
+    nextStep()
   };
   return (
     <div className="h-[90vh] md:h-[86vh] ">

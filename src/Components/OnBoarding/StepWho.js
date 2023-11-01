@@ -71,6 +71,7 @@ function StepWho() {
     let myOnBoard = onBoard;
     myOnBoard.who = selected;
     setOnBoard(myOnBoard);
+    nextStep()
   };
   return (
     <div className="h-[90vh] md:h-[86vh]">
