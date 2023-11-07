@@ -15,7 +15,8 @@ function RenderImage({src, cls="",}) {
       </div>
      }
     {
-       src && <img className={isLoading?"hidden":"block" + " rounded-2xl sm:rounded-md  w-full h-full max-w-[500px] m-auto sm:h-[400px] object-cover "} src={src} onLoad={handleLoaded} />
+      //  src && <img className={isLoading?"hidden":"block" + " rounded-2xl sm:rounded-md  w-full h-full max-w-[500px] m-auto sm:h-[400px] object-cover "} src={src} onLoad={handleLoaded} />
+       src && <img className={isLoading?"hidden":"block" + " rounded-2xl sm:rounded-md  w-full h-full m-auto object-cover "} src={src} onLoad={handleLoaded} />
     }
     </>
   )

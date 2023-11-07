@@ -58,12 +58,15 @@ export default function App({ Component, pageProps }) {
   return (
     <MyContext.Provider value={value}>
       <Head>
-        {/* 
-          ADD GA CODE HERE
-          ADD GA CODE HERE
-          ADD GA CODE HERE
-        
-        */}
+        <title>
+          ai.ufoliving.co
+        </title>
+        <meta
+          name="description"
+          content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
+          key="desc"
+        />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logo from "@/assets/images/logo.webp";
-import LogoWhite from "@/assets/images/logo-white.png";
+import LogoWhite from "@/assets/images/logo_white.svg";
 import Image from "next/image";
 import styles from "./homepage.module.css";
 import RoomImg from "@/assets/images/room/room.png";
@@ -14,20 +14,13 @@ import TiktokImg from "@/assets/images/tiktok.png";
 import WhiteStarImg from "@/assets/images/whitestar.svg";
 import StarImg from "@/assets/images/star.svg";
 import { Noto_Sans } from "@next/font/google";
-const nt = Noto_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+import styleImages from "@/data/styleImages";
+
 
 const Homepage = ({ nextStep }) => {
   const [images, setImages] = useState([])
-  useEffect(()=>{
-    fetch("/api/latest-images")
-    .then(res=>res.json())
-    .then(res=>{
-      setImages(res)
-    })
-  },[])
+
+
   // const images = [
   //   RoomImg,
   //   RoomImg,
@@ -46,20 +39,19 @@ const Homepage = ({ nextStep }) => {
   //   RoomImg3,
   //   RoomImg2,
   // ];
-  const images1 = images.slice(0, 4);
-  const images2 = images.slice(4, 8);
-  const images3 = images.slice(8, 12);
-  const images4 = images.slice(12, 16);
-  if(images.length<1){
-    return ""
-  }
+
+  const images1 = styleImages.slice(0, 4);
+  const images2 = styleImages.slice(4, 8);
+  const images3 = styleImages.slice(8, 12);
+  const images4 = styleImages.slice(12, 16);
+ 
   return (
     <div className="">
       <div className="sticky top-0 z-50">
         <div className="w-full h-20 sm:h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
           <div className="justify-start items-center  flex">
             <Image src={Logo} className=" w-[50px] sm:w-16 sm:h-16" />
-            <div className="hidden sm:block text-stone-900 text-lg font-normal font-['Gilroy-Medium']">
+            <div className="hidden sm:block  text-stone-900 text-lg font-normal font-['Gilroy-Medium']">
               Create exclusive AI interior design in 30 seconds
             </div>
           </div>
@@ -76,6 +68,7 @@ const Homepage = ({ nextStep }) => {
           </div>
         </div>
       </div>
+      
 
       {/* Hero Section with Video  */}
       <div className="relative ">
@@ -93,8 +86,7 @@ const Homepage = ({ nextStep }) => {
               <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
                 <div
                   className={
-                    "herobg self-stretch text-center leading-[2] sm:leading-[4] " +
-                    nt.className
+                    "herobg self-stretch text-center leading-[2] sm:leading-[4] noto-sans" 
                   }
                 >
                   <span className="text-orange-50 text-2xl sm:text-5xl noto-sans ">
@@ -157,15 +149,15 @@ const Homepage = ({ nextStep }) => {
           </div>
         </div>
 
-        <div className="px-3 grid sm:grid-cols-2  lg:grid-cols-4 gap-4 grid-flow-dense">
+        <div className="px-3 grid sm:grid-cols-2  lg:grid-cols-4 gap-4 ">
           <div className="grid gap-4 sm:gap-0">
             {images1.map((image, key) => {
               return (
                 <img
                   key={"images1" + key}
-                  className="h-[300px] w-full rounded-lg"
+                  className="w-80 h-80 rounded-lg"
                   
-                  src={image}
+                  src={image.img}
                 />
               );
             })}
@@ -175,8 +167,8 @@ const Homepage = ({ nextStep }) => {
               return (
                 <img
                   key={"images2" + key}
-                  className="h-[300px] w-full rounded-lg"
-                  src={image}
+                  className="w-80 h-80 rounded-lg"
+                  src={image.img}
                  
                 />
               );
@@ -187,8 +179,8 @@ const Homepage = ({ nextStep }) => {
               return (
                 <img
                   key={"images3" + key}
-                  className="h-[300px] w-full rounded-lg"
-                  src={image}
+                  className="w-80 h-80 rounded-lg"
+                  src={image.img}
                   
                 />
               );
@@ -199,8 +191,8 @@ const Homepage = ({ nextStep }) => {
               return (
                 <img
                   key={"images4" + key}
-                  className="h-[300px] w-full rounded-lg"
-                  src={image}
+                  className="w-80 h-80 rounded-lg"
+                  src={image.img}
                   
                 />
               );

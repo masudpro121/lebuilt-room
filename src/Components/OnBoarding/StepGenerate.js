@@ -11,7 +11,7 @@ import downArrow from "@/assets/images/onBoard/Icon.png";
 import StarImg from "@/assets/images/star.png";
 import CheckImg from "@/assets/images/check.png";
 import LogoBlackBgImg from "@/assets/images/logo_blackbg.png";
-import LogoWhite from "@/assets/images/logo-white.png";
+import LogoWhite from "@/assets/images/logo_white.svg";
 import PlusIconImg from "@/assets/images/onBoard/plusicon.png";
 import RepeatImg from "@/assets/images/onBoard/repeat-02.png";
 import Image from "next/image";
@@ -24,7 +24,7 @@ function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
  
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(100);
   const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
 
@@ -32,11 +32,12 @@ function StepGenerate() {
   const demoImages = [
     "https://i.ibb.co/316mc1W/room.png",
     "https://i.ibb.co/q5S5HyQ/room1.jpg",
-    "https://i.ibb.co/G3Sd3nx/room2.jpg",
-    "https://i.ibb.co/rZD3hb3/room3.jpg",
+    "https://i.ibb.co/316mc1W/room.png",
+    "https://i.ibb.co/q5S5HyQ/room1.jpg",
   ];
   useEffect(()=>{
-    handleGenerate()
+    // TODO 
+    // handleGenerate()
   },[])
   
   const sendImageMsg = (images) => {
@@ -208,14 +209,15 @@ function StepGenerate() {
                 </div>
               </>
             )}
-            {progress == 100 && (
+            {/* TODO progress == 100 */}
+            {true && (
               <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
-                <div className="gap-5 bg-[#F2F1EF] p-5 sm:p-0 rounded-xl sm:bg-white flex justify-center flex-wrap mt-10">
-               
-                  {generatedImages.map((img, i) => {
+                <div className="gap-3 bg-[#F2F1EF] p-5 sm:p-0 rounded-xl sm:bg-white flex justify-center items-center flex-wrap mt-10 ">
+                {/* TODO generatedImages */}
+                {demoImages.map((img, i) => {
                     return (
                       <ImageModal key={img + i} img={img}>
-                        <div className="cursor-pointer h-[220px] sm:h-auto">
+                        <div className="cursor-pointer w-full h-full ">
                           <RenderImage src={img} />
                         </div>
                       </ImageModal>
@@ -235,7 +237,7 @@ function StepGenerate() {
                 <p className="font-[Gilroy-SemiBold]">Select a new Style</p>
               </div>
               {
-                true && 
+                progress==100 && 
                 <div onClick={sendTextMsg} className="flex  justify-center w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
                 <Image src={LogoWhite} />
                 <p className="font-[Gilroy-SemiBold] py-2 sm:py-0">

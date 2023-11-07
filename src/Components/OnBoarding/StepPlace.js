@@ -1,8 +1,8 @@
 import { MyContext } from "@/pages/_app";
 import React, { useContext, useState } from "react";
-import logo from "../../assets/images/onBoard/logo svg (1).png";
+import logo from "../../assets/images/onBoard/ion_arrow-up.svg";
 import repeat from "../../assets/images/onBoard/repeat-02.png";
-import arrow from "../../assets/images/onBoard/ion_arrow-up.png";
+import arrow from "../../assets/images/onBoard/ion_arrow-up.svg";
 import Image from "next/image";
 import step from "../../assets/images/_Step icon base.png";
 import leftarrow from "../../assets/images/arrow-left.png";

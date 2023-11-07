@@ -7,7 +7,7 @@ import brush from "../../assets/images/onBoard/ri_brush-fill.png";
 import real from "../../assets/images/onBoard/ic_round-real-estate-agent.png";
 import other from "../../assets/images/onBoard/ic_baseline-other-houses.png";
 import Image from "next/image";
-import arrow from "../../assets/images/onBoard/ion_arrow-up.png";
+import arrow from "../../assets/images/onBoard/ion_arrow-up.svg";
 import leftarrow from "../../assets/images/arrow-left.png";
 import step from "../../assets/images/_Step icon base.png";
 import checkboxImg from "../../assets/images/onBoard/checkbox.png";
