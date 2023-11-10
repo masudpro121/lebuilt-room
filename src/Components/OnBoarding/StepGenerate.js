@@ -19,12 +19,13 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import ImageModal from "../ImageModal/ImageModal";
 import Link from "next/link";
 import Header from "../Header/Header";
+import translate from "@/utils/translate";
 const RoomImg = "/public/images/room.png";
 function StepGenerate() {
   const [generatedImages, setGeneratedImages] = useState([]);
   const [progressImage, setProgressImage] = useState("");
  
-  const [progress, setProgress] = useState(100);
+  const [progress, setProgress] = useState(0);
   const { onBoardingStep, setOnBoardingStep, user } = useContext(MyContext);
   const onBoard = JSON.parse(localStorage.getItem("onBoard")) || {};
 
@@ -36,8 +37,7 @@ function StepGenerate() {
     "https://i.ibb.co/q5S5HyQ/room1.jpg",
   ];
   useEffect(()=>{
-    // TODO 
-    // handleGenerate()
+    handleGenerate()
   },[])
   
   const sendImageMsg = (images) => {
@@ -92,8 +92,10 @@ function StepGenerate() {
     setGeneratedImages([]);
     const onBoard = JSON.parse(localStorage.getItem("onBoard"));
     const { image, type, style, place, size, budget } = onBoard;
-    // const prompt = `${image}, type: ${type?.name}, style: ${style?.name}`;
-    const prompt = generatePrompt({ image, type, style });
+    const translated = await translate(type.name)
+    const translatedType = translated?.data?.translations[0]?.translatedText
+    const prompt = generatePrompt({ image, type:translatedType, style });
+    console.log(prompt, 'prompt');
     setProgress(5);
     setTimeout(()=>{
       setProgress(10)
@@ -152,39 +154,41 @@ function StepGenerate() {
         <div className="bg-white rounded-md p-8 ">
           <div className="lg:border-2 lg:border-[#FBE8D0] md:py-8 min-h-[82vh]">
             <div className="text-center  pb-8">
-              <h2 className="text-[#271703] font-[Gilroy-SemiBold] text-3xl md:text-4xl">
-                Generate My Space
+              <h2 className="text-[#271703] font-semibold noto-sans text-3xl md:text-4xl">
+              生成我的空间
               </h2>
-              <p className="text-[#9D5C0D] text-md md:text-xl mt-3">
-                Let AI craft a space that’s uniquely yours
+              <p className="text-[#9D5C0D] text-md md:text-xl mt-3 noto-sans">
+              让 AI 打造专属于您的空间
               </p>
             </div>
             <div className="hidden md:block w-2/3 border-b-2 m-auto"></div>
 
             <div className="w-3/4 md:w-1/2 m-auto">
               {progress > 0 && progress != 100 && (
-                <div className="my-3 ">
+                <div className="mb-3 ">
                   <ProgressBar progress={progress} />
                 </div>
               )}
               {progress >=10 && progress != 100 && (
                 <div className="mt-2 flex items-center  gap-3 animate-pulse">
                   <Image  src={CheckImg} />
-                  <p>Scanning the data <span className="animate-ping">..</span></p>
+                  <p className="noto-sans">扫描数据 <span className="animate-ping">..</span></p>
                 </div>
               )}
               {progress >= 20 && progress != 100 && (
                 <div className="mt-3 flex items-center  gap-3 animate-pulse">
                   <Image src={StarImg} />
-                  <p>Generating real estate images just for you...</p>
+                  <p className="noto-sans">专门为您生成房地产图像...</p>
                 </div>
               )}
             </div>
 
            {
             progress < 100 &&
-            <div className="mt-5">
+            <div className="mt-5 w-1/3 m-auto">
+           <div>
             <RenderImage src={progressImage} />
+           </div>
           </div>
            }
 
@@ -194,27 +198,25 @@ function StepGenerate() {
                 <div className="lg:w-2/5 relative lg:-left-10 m-auto">
                   <div className="mt-3 md:mt-5 flex items-center  gap-3">
                     <Image className="h-8 w-8" src={LogoBlackBgImg} />
-                    <p>
-                      With ufoliving touch, your real estate images are ready to
-                      impress!
+                    <p className="noto-sans">
+                    通过 ufoliving touch，您的房地产图像已准备好
+                       印象深刻！
                     </p>
                   </div>
                 </div>
                 <div className="lg:w-2/5 m-auto bg-[#F2F1EF] mt-3 rounded-md px-3 md:px-5 py-3">
                   <div className="flex  gap-3">
-                    <p className="font-[Gilroy-SemiBold] text-md md:text-xl">
-                      Modern Style Old-house renovation
+                    <p className="font-semibold noto-sans text-md md:text-xl">
+                    现代风格老房子改造
                     </p>
                   </div>
                 </div>
               </>
             )}
-            {/* TODO progress == 100 */}
-            {true && (
+            {progress == 100 && (
               <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
                 <div className="gap-3 bg-[#F2F1EF] p-5 sm:p-0 rounded-xl sm:bg-white flex justify-center items-center flex-wrap mt-10 ">
-                {/* TODO generatedImages */}
-                {demoImages.map((img, i) => {
+                {generatedImages.map((img, i) => {
                     return (
                       <ImageModal key={img + i} img={img}>
                         <div className="cursor-pointer w-full h-full ">

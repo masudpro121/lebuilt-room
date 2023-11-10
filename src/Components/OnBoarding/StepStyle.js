@@ -79,22 +79,22 @@ function StepStyle() {
     <div className="h-[90vh] md:h-[86vh] mt-2">
       <div className="md:h-auto flex justify-center items-center ">
       <div className="">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
-          Select style
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold noto-sans ">
+        选择款式
         </h3>
-        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[18px]">
-          Choose your preferred design style.
+        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[18px] noto-sans">
+          选择您喜欢的设计风格。
         </p>
 
         <div className="md:hidden mb-[16px] w-full px-0 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
           <Image className="" src={step} alt="" />
           <div className="">
-            <h3 className=" text-[#271703] text-[16px] font-bold ">
+            <h3 className=" text-[#271703] text-[16px] font-semibold noto-sans ">
               {" "}
-              Select style
+              选择款式
             </h3>
-            <p className="  text-[12px] text-[#9D5C0D] ">
-              Choose your preferred design style.
+            <p className="  text-[12px] text-[#9D5C0D] noto-sans">
+              选择您喜欢的设计风格。
             </p>
           </div>
         </div>
@@ -106,18 +106,18 @@ function StepStyle() {
             src={logo}
             alt=""
           />
-          <h2 className="hidden md:block text-[14px] md:text-[14px] font-[Gilroy-Bold] text-[#271703] leading-6 m-0">
-            Your selection is crucial, as the final outcome hinges on the style
-            you choose. Take your time and choose with care. Click{" "}
+          <h2 className="hidden md:block text-[14px] md:text-[14px] font-bold noto-sans text-[#271703] leading-6 m-0">
+          您的选择至关重要，因为最终结果取决于风格
+             你选。 慢慢来，谨慎选择。 点击{" "}
             <Link className="text-[#667412]" href="/">
-              Show More Styles
+              显示更多款式
             </Link>{" "}
-            to discover other options. Your ideal style might be just a click
-            away!
+            发现其他选择。 您理想的风格可能只需点击一下
+             离开！
           </h2>
-          <h2 className=" md:hidden text-[14px] md:text-[14px] font-[Gilroy-SemiBold] leading-5 text-[#271703] m-0">
-            Your selection is crucial, as the final outcome hinges on the style
-            you choose.
+          <h2 className=" md:hidden text-[14px] md:text-[14px] font-semibold noto-sans leading-5 text-[#271703] m-0">
+          您的选择至关重要，因为最终结果取决于风格
+             你选。
           </h2>
         </div>
         </div>

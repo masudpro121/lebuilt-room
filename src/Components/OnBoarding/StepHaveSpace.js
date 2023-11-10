@@ -50,8 +50,8 @@ function StepHaveSpace() {
    <div className="h-[90vh] md:h-[86vh] flex items-center">
      <div className="w-full h-full  md:h-auto ">
       <div className="h-full  w-full   ">
-        <h3 className=" text-[#271703] text-[25px] md:text-[48px] text-center font-[Gilroy-SemiBold] ">
-          Do you have a space image?
+        <h3 className=" text-[#271703] text-[25px] md:text-[48px] text-center font-semibold noto-sans ">
+        你有太空图像吗？
         </h3>
 
         <div className="flex items-center px-4 md:px-6 py-6 space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl my-[30px]">
@@ -60,14 +60,14 @@ function StepHaveSpace() {
             src={logo}
             alt=""
           />
-          <h2 className=" text-[12px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
+          <h2 className=" text-[12px] md:text-[14px] font-semibold noto-sans text-[#271703]">
             <Link href="/" className="text-[#667412]">
               {" "}
-              Uploading an inspiring image is key! 🌟
+              上传鼓舞人心的图片是关键！ 🌟
             </Link>{" "}
-            It guides our AI to tailor the design closely to your vision,
-            ensuring each detail reflects your style and preferences. Every
-            piece of inspiration counts!
+            它指导我们的人工智能根据您的愿景量身定制设计，
+             确保每个细节都能体现您的风格和偏好。 每一个
+             灵感很重要！
           </h2>
         </div>
 
@@ -76,15 +76,15 @@ function StepHaveSpace() {
             <div className=" gap-4 items-center flex  justify-center bg-[#F7F8F9] border border-[#B8C0CC] rounded-[12px] px-3 py-2">
               <button
                 onClick={() => handleInput("yes")}
-                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-[Gilroy-SemiBold] text-[#9D5C0D] rounded-lg "
+                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-semibold noto-sans text-[#9D5C0D] rounded-lg "
               >
-                Yes
+                是的
               </button>
               <button
                 onClick={() => handleInput("no")}
-                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-[Gilroy-SemiBold] text-[#9D5C0D] rounded-lg "
+                className="px-10 sm:px-0 sm:w-[147px] h-[44px] border border-[#9D5C0D] text-[14px] text-center md:text-[16px] font-semibold noto-sans text-[#9D5C0D] rounded-lg "
               >
-                No
+                不
               </button>
             </div>
           </div>

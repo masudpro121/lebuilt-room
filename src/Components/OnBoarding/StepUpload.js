@@ -88,56 +88,57 @@ function StepUpload() {
     setOnBoard(myOnBoard);
     localStorage.setItem("onBoardingStep", onBoardingStep + 1);
     setOnBoardingStep(onBoardingStep + 1);
-  }
+  };
   return (
-    <div>
-      {user.email && (
-        <div className="w-full h-[100vh] ">
-          <div className="h-full">
-            <h3 className="hidden md:block text-[#271703] text-[30px] lg:text-[48px] text-center font-[Gilroy-SemiBold] ">
-              Choose and upload file
-            </h3>
-            <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center">
-              Upload your room image
-            </p>
+    <div className="h-[90vh] md:h-[86vh] ">
+      <div className="h-full  md:h-auto ">
+        {user.email && (
+          <div className="w-full ">
+            <div className="">
+              <h3 className="hidden md:block text-[#271703] text-[30px] lg:text-[48px] text-center font-semibold noto-sans ">
+              选择并上传文件
+              </h3>
+              <p className="hidden md:block text-[18px] noto-sans text-[#9D5C0D] text-center">
+                上传您的房间图片
+              </p>
 
-            {/* ......responsive heading.......... */}
+              {/* ......responsive heading.......... */}
 
-            <div className="md:hidden w-full px-0 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
-              <Image className="" src={step} alt="" />
-              <div className="">
-                <h3 className=" text-[#271703] text-[16px] font-bold ">
-                  {" "}
-                  Choose and upload file
-                </h3>
-                <p className="  text-[12px] text-[#9D5C0D] ">
-                  Upload your room image
-                </p>
+              <div className="md:hidden w-full px-0 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
+                <Image className="" src={step} alt="" />
+                <div className="">
+                  <h3 className=" text-[#271703] text-[16px] font-semibold noto-sans ">
+                    {" "}
+                    选择并上传文件
+                  </h3>
+                  <p className="  text-[12px] noto-sans text-[#9D5C0D] ">
+                    上传您的房间图片
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* ......description .......... */}
+              {/* ......description .......... */}
 
-            <div className="flex px-4 md:px-6 pt-6   space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-3xl mt-5 md:my-[30px]">
-              <Image
-                className=" w-[40px] h-[40px] bg-[#9D5C0D] rounded-xl border-4  border-[#f1c28e]"
-                src={logo}
-                alt=""
-              />
-              <h2 className=" text-[12px] md:text-[14px] font-[Gilroy-SemiBold] text-[#271703]">
-                <Link href="/" className="text-[#667412]">
-                  {" "}
-                  Uploading an inspiring image is key! 🌟
-                </Link>{" "}
-                It guides our AI to tailor the design closely to your vision,
-                ensuring each detail reflects your style and preferences. Every
-                piece of inspiration counts!
-              </h2>
-            </div>
+              <div className="flex px-4 md:px-6 pt-6   space-x-[16px] bg-[#F7F8F9] mx-4 md:mx-[35px] rounded-lg md:rounded-3xl mt-4 md:my-[30px]">
+                <Image
+                  className=" w-[40px] h-[40px] bg-[#9D5C0D] rounded-xl border-4  border-[#f1c28e]"
+                  src={logo}
+                  alt=""
+                />
+                <h2 className=" text-[12px] md:text-[14px] font-semibold noto-sans text-[#271703]">
+                  <Link href="/" className="text-[#667412]">
+                    {" "}
+                    上传鼓舞人心的图片是关键！ 🌟
+                  </Link>{" "}
+                  它指导我们的人工智能根据您的愿景量身定制设计，
+                   确保每个细节都能体现您的风格和偏好。
+                   每一个灵感都很重要！
+                </h2>
+              </div>
 
-            {/* ...... error mesage .......... */}
+              {/* ...... error mesage .......... */}
 
-            {/* <div className="flex px-4 md:px-6 pt-5 pb-[30px] space-x-[16px] bg-[#FFFBFA] mx-4 md:mx-[35px] rounded-3xl my-5 md:my-[30px] border border-[#FCA5A5] ">
+              {/* <div className="flex px-4 md:px-6 pt-5 pb-[30px] space-x-[16px] bg-[#FFFBFA] mx-4 md:mx-[35px] rounded-3xl my-5 md:my-[30px] border border-[#FCA5A5] ">
               <Image className="object-contain" src={error} alt="" />
               <div className="">
                 <h2 className=" text-[12px] md:text-[14px] font-[Gilroy-SemiBold] text-[#B91C1C]">
@@ -150,75 +151,72 @@ function StepUpload() {
               </div>
             </div> */}
 
-            {
-            progress > 0 && 
-            <div className="px-10 max-w-[1000px] m-auto">
-              <ProgressBar progress={progress} />
-            </div>
-            }
+              {progress > 0 && (
+                <div className="px-10 max-w-[1000px] m-auto">
+                  <ProgressBar progress={progress} />
+                </div>
+              )}
 
-            <div className="px-10">
-            {selectedImage ? (
-              <div
-                className={`relative sm:w-[380px] w-full sm:h-[380px] mx-auto mt-5`}
-              >
-                {!uploaded && (
-                  <div className="absolute w-full  h-full bg-[#9D5C0D] opacity-80"></div>
-                )}
-                <img
-                  className=" border-4 border-[#C5DF2C] w-full h-full  object-cover mx-auto"
-                  src={selectedImage}
-                  alt=""
-                />
-                {uploaded && (
-                  <div className="absolute top-4 right-5 cursor-pointer p-[2px] border-4 border-red-300 rounded-full bg-red-600">
-                    <Image
-                      className=""
-                      src={close}
+              <div className="px-10">
+                {selectedImage ? (
+                  <div
+                    className={`relative sm:w-[380px] w-full  mx-auto mt-5`}
+                  >
+                    {!uploaded && (
+                      <div className="absolute w-full  h-full bg-[#9D5C0D] opacity-80"></div>
+                    )}
+                    <img
+                      className=" border-4 border-[#C5DF2C] w-full h-full  object-cover mx-auto"
+                      src={selectedImage}
                       alt=""
-                      onClick={handleCancel}
                     />
+                    {uploaded && (
+                      <div className="absolute top-4 right-5 cursor-pointer p-[2px] border-4 border-red-300 rounded-full bg-red-600">
+                        <Image
+                          className=""
+                          src={close}
+                          alt=""
+                          onClick={handleCancel}
+                        />
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="mx-6 mt-4 lg:mt-5 sm:mx-8 md:mx-5 flex justify-center lg:mx-auto  bg-[#F7F8F9] border-2 border-dashed lg:w-[564px] lg:h-[368px] p-3 lg:py-8 md:py-[64px] lg:px-[112px] rounded-[28px] hover:bg-[#F6FADF]  relative">
+                    <label htmlFor="file-input" className="cursor-pointer">
+                      <div className="opacity-0 w-0 h-0 absolute overflow-hidden">
+                        <input
+                          type="file"
+                          id="file-input"
+                          className="hidden"
+                          accept="image/*"
+                          onChange={handleFileChange}
+                        />
+                      </div>
+
+                      <div className="text-center ">
+                        <div className="inline-block mx-auto cursor-pointer">
+                          <div className="p-5 border bg-white shadow-lg rounded-full mb-[28px]">
+                            <Image src={uploadIcon} alt="" />
+                          </div>
+                        </div>
+
+                        <h2 className="text-[20px] text-[#333A09] leading-6 md:leading-9 mb-3 text-center md:text-[33px] font-semibold noto-sans">
+                        上传励志 <br /> 图像
+                        </h2>
+                        <p className="text-center mt-2 text-[#333A09] text-[14px] md:text-[16px] noto-sans">
+                        请以PNG或JPG格式上传。
+                          <br /> 最大文件大小：10MB
+                        </p>
+                      </div>
+                    </label>
                   </div>
                 )}
               </div>
-            ) : (
-              <div className="mx-6 mt-5 sm:mx-8 md:mx-5 flex justify-center lg:mx-auto  bg-[#F7F8F9] border-2 border-dashed lg:w-[564px] lg:h-[368px] py-8 md:py-[64px] lg:px-[112px] rounded-[28px] hover:bg-[#F6FADF]  relative">
-                <label htmlFor="file-input" className="cursor-pointer">
-                  <div className="opacity-0 w-0 h-0 absolute overflow-hidden">
-                    <input
-                      type="file"
-                      id="file-input"
-                      className="hidden"
-                      accept="image/*"
-                      onChange={handleFileChange}
-                    />
-                  </div>
 
-                  <div className="text-center ">
-                    <div className="inline-block mx-auto cursor-pointer">
-                      <div className="p-5 border bg-white shadow-lg rounded-full mb-[28px]">
-                        <Image src={uploadIcon} alt="" />
-                      </div>
-                    </div>
-
-                    <h2 className="text-[20px] text-[#333A09] leading-6 md:leading-9 mb-3 text-center md:text-[33px] font-[Gilroy-SemiBold]">
-                      Upload Inspirational <br /> Image
-                    </h2>
-                    <p className="text-center mt-2 text-[#333A09] text-[14px] md:text-[16px] font-[Gilroy-Regular]">
-                      Please upload in PNG or JPG format.
-                      <br /> Maximum file size: 10MB
-                    </p>
-                  </div>
-                </label>
-              </div>
-            )}
+              {/* ...... next prev button .......... */}
             </div>
-
-            {/* ...... next prev button .......... */}
-
-            
-          </div>
-          <div className="sticky bottom-0 bg-white w-full px-5 py-3">
+            <div className="sticky bottom-0 bg-white w-full px-5 pt-5">
               <div className="flex justify-center sm:justify-end items-center space-x-2">
                 <div
                   onClick={handleSkip}
@@ -242,14 +240,15 @@ function StepUpload() {
                   <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
                     Next
                   </p>
-                 <Image className="" src={arrow} alt="" />
+                  <Image className="" src={arrow} alt="" />
                 </div>
               </div>
             </div>
-        </div>
-      )}
+          </div>
+        )}
 
-      {!user.email && <Signin />}
+        {!user.email && <Signin />}
+      </div>
     </div>
   );
 }

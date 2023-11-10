@@ -37,31 +37,31 @@ function StepWho() {
   };
   const iam = [
     {
-      title: "Home Buyer",
+      title: "购房者",
       img: home,
     },
     {
-      title: "Landlord",
+      title: "房东",
       img: land,
     },
     {
-      title: "Tenant",
+      title: "租户",
       img: business,
     },
     {
-      title: "Business Owner",
+      title: "业主",
       img: business,
     },
     {
-      title: "Interior Designer",
+      title: "室内设计师",
       img: brush,
     },
     {
-      title: "Real Estate Agent",
+      title: "房地产中介",
       img: real,
     },
     {
-      title: "Other",
+      title: "其他",
       img: other,
     },
   ];
@@ -78,19 +78,19 @@ function StepWho() {
       <div className="w-full  md:h-full md:w-auto">
       <div className="w-full md:w-auto  mx-auto flex justify-center items-center ">
         <div className="h-full w-full md:w-auto">
-          <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
-            I am
+          <h3 className="hidden md:block text-[#271703] text-[48px] text-center noto-sans font-semibold ">
+          我是
           </h3>
-          <p className=" hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[30px] font-[Gilroy-Regular]">
-            Tell us a bit about yourself.
+          <p className=" hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[30px] noto-sans">
+            告诉我们一些关于你自己的事。
           </p>
 
           <div className=" md:hidden mb-[16px] w-full px-0 flex items-center gap-3  py-[10px] bg-[#FEF7EF] justify-center">
             <Image className="" src={step} alt="" />
             <div className="">
-              <h3 className=" text-[#271703] text-[16px]  font-[Gilroy-SemiBold]">I am</h3>
-              <p className="  text-[12px] text-[#9D5C0D] font-[Gilroy-Regular] ">
-                Tell us a bit about yourself.
+              <h3 className=" text-[#271703] text-[16px]  noto-sans font-bold">我是</h3>
+              <p className="  text-[12px] text-[#9D5C0D] noto-sans ">
+                告诉我们一些关于你自己的事。
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ function StepWho() {
                       alt=""
                     />
                     <label
-                      className=" text-[16px] sm:text-[18px] text-[#271703] font-[Gilroy-SemiBold]"
+                      className=" text-[16px] sm:text-[18px] text-[#271703] noto-sans font-bold"
                       htmlFor={am.title.replaceAll(" ", "")}
                     >
                       {am.title}

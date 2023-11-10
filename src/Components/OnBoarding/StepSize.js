@@ -26,10 +26,10 @@ function StepSize() {
     }
   };
   const sizes = [
-    "Below 20 Square Feet",
-    "20 - 30 Square Feet",
-    "More than 30 Feet",
-    "Another Option"
+    "20平方尺以下",
+    "20 - 30 平方英尺",
+    "超过 30 英尺",
+    "另外一个选择"
   ];
   const handleInput = (selected) => {
     setSelectedOption(selected);
@@ -42,22 +42,22 @@ function StepSize() {
     <div className="h-[90vh] md:h-[86vh]">
       <div className="w-full h-full md:h-auto">
       <div className=" h-full  md:h-full w-full  md:pt-[10%]  ">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
-          Select Room Size
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center noto-sans font-semibold ">
+        选择房间大小
         </h3>
-        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px]">
-          Please provide the size in square feet.
+        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px] noto-sans">
+          请提供以平方英尺为单位的尺寸。
         </p>
 
         <div className="md:hidden mb-[16px] w-full px-1 flex  gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
           <Image className="" src={step} alt="" />
           <div className="">
-            <h3 className=" text-[#271703] text-[16px] font-bold ">
+            <h3 className=" text-[#271703] text-[16px] font-semibold noto-sans ">
               {" "}
-              Select Room Size
+              选择房间大小
             </h3>
-            <p className="  text-[12px] text-[#9D5C0D] ">
-              Please provide the size in square feet.
+            <p className="  text-[12px] text-[#9D5C0D] noto-sans ">
+              请提供以平方英尺为单位的尺寸。
             </p>
           </div>
         </div>
@@ -69,8 +69,8 @@ function StepSize() {
               src={logo}
               alt=""
             />
-            <p className="mb-[12px] text-[14px] md:text-[16px] font-[Gilroy-SemiBold] text-[#76450A]">
-              Pick a Space! Choose from options.
+            <p className="mb-[12px] text-[14px] md:text-[16px] font-semibold noto-sans text-[#76450A]">
+            选择一个空间！ 从选项中进行选择。
             </p>
           </div>
 
@@ -82,7 +82,7 @@ function StepSize() {
                 <div
                   onClick={() => handleInput(size)}
                   key={i}
-                  className={`px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${
+                  className={`px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px]  rounded-md noto-sans font-semibold shadow ${
                     selectedOption == size
                       ? "bg-[#271703] text-white"
                       : "text-[#271703] bg-white"

@@ -16,10 +16,8 @@ import StarImg from "@/assets/images/star.svg";
 import { Noto_Sans } from "@next/font/google";
 import styleImages from "@/data/styleImages";
 
-
 const Homepage = ({ nextStep }) => {
-  const [images, setImages] = useState([])
-
+  const [images, setImages] = useState([]);
 
   // const images = [
   //   RoomImg,
@@ -40,11 +38,8 @@ const Homepage = ({ nextStep }) => {
   //   RoomImg2,
   // ];
 
-  const images1 = styleImages.slice(0, 4);
-  const images2 = styleImages.slice(4, 8);
-  const images3 = styleImages.slice(8, 12);
-  const images4 = styleImages.slice(12, 16);
- 
+  const myImages = styleImages.slice(0, 20);
+
   return (
     <div className="">
       <div className="sticky top-0 z-50">
@@ -68,7 +63,6 @@ const Homepage = ({ nextStep }) => {
           </div>
         </div>
       </div>
-      
 
       {/* Hero Section with Video  */}
       <div className="relative ">
@@ -86,15 +80,17 @@ const Homepage = ({ nextStep }) => {
               <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
                 <div
                   className={
-                    "herobg self-stretch text-center leading-[2] sm:leading-[4] noto-sans" 
+                    "herobg self-stretch text-center leading-[2] sm:leading-[4] noto-sans"
                   }
                 >
                   <span className="text-orange-50 text-2xl sm:text-5xl noto-sans ">
-                  靠<span className="font-extrabold"> 感覺 </span>來設計您的空間{" "} 
-                  </span><br />
-                  
+                    靠<span className="font-extrabold"> 感覺 </span>
+                    來設計您的空間{" "}
+                  </span>
+                  <br />
+
                   <span className="text-orange-50 text-2xl sm:text-5xl noto-sans ">
-                  <span className="font-[Gilroy-Bold]">AI </span>室內設計
+                    <span className="font-[Gilroy-Bold]">AI </span>室內設計
                   </span>
                 </div>
                 <div
@@ -103,7 +99,7 @@ const Homepage = ({ nextStep }) => {
                 >
                   <Image width={30} height={30} src={StarImg} />
                   <div className="text-black font-semibold text-lg  noto-sans leading-[21.6px] ">
-                  生成室內設計
+                    生成室內設計
                   </div>
                 </div>
               </div>
@@ -130,75 +126,41 @@ const Homepage = ({ nextStep }) => {
 
       {/* New Version Show Images  */}
       <div className="mt-0 ">
-        <div className=" h-8 relative top-8 bg-gray-50"></div>
-        <div className="hidden absolute lg:flex justify-center items-start right-0 mt-7 h-[300px] w-3/12 bg-gray-50 ">
-          <div className="py-10 pl-10 shadow-inner bg-white rounded-lg mt-2  w-full xl:w-[90%]">
-            <h3 className="noto-sans text-2xl ">
-            體驗用感覺來設計
-            </h3>
-            <p className=" text-black font-semibold noto-sans mt-4 text-[16px]">
-            探索AI驅動的情感設計的室內設計 <br />
-            從色彩搭配到空間布置
-            </p>
-            <button
-              onClick={nextStep}
-              className=" bg-[#9D5C0D] noto-sans font-bold text-white  py-4 rounded-md tracking-wider mt-5 w-[95%] xl:w-[290px]"
-            >
-              生成室內設計
-            </button>
-          </div>
-        </div>
+        {/* <div className=" h-8 relative top-8 bg-gray-50"></div> */}
 
-        <div className="px-3 grid sm:grid-cols-2  lg:grid-cols-4 gap-4 ">
-          <div className="grid gap-4 sm:gap-0">
-            {images1.map((image, key) => {
+        <div className="flex flex-wrap gap-4 justify-center mt-4 max-w-[1695px] m-auto ">
+          {myImages.map((image, key) => {
+            if (key == 3) {
+             return  (
+              <div className="hidden xl:flex justify-center items-start h-80 w-80 bg-gray-50 ">
+                <div className="py-10 px-4 shadow-inner bg-white rounded-lg mt-2  w-full xl:w-[90%]">
+                  <h3 className="noto-sans text-2xl ">體驗用感覺來設計</h3>
+                  <p className=" text-black font-semibold noto-sans mt-3 text-[16px]">
+                    探索AI驅動的情感設計的室內設計 <br />
+                    從色彩搭配到空間布置
+                  </p>
+                  <button
+                    onClick={nextStep}
+                    className=" bg-[#9D5C0D] noto-sans font-bold text-white  py-4 rounded-md w-full mt-3"
+                  >
+                    生成室內設計
+                  </button>
+                </div>
+              </div>
+             )
+            }else {
               return (
                 <img
                   key={"images1" + key}
                   className="w-80 h-80 rounded-lg"
-                  
                   src={image.img}
                 />
               );
-            })}
-          </div>
-          <div className="grid gap-4 sm:mt-7">
-            {images2.map((image, key) => {
-              return (
-                <img
-                  key={"images2" + key}
-                  className="w-80 h-80 rounded-lg"
-                  src={image.img}
-                 
-                />
-              );
-            })}
-          </div>
-          <div className="grid gap-4 sm:gap-0">
-            {images3.map((image, key) => {
-              return (
-                <img
-                  key={"images3" + key}
-                  className="w-80 h-80 rounded-lg"
-                  src={image.img}
-                  
-                />
-              );
-            })}
-          </div>
-          <div className="grid gap-4 sm:mt-7">
-            {images4.map((image, key) => {
-              return (
-                <img
-                  key={"images4" + key}
-                  className="w-80 h-80 rounded-lg"
-                  src={image.img}
-                  
-                />
-              );
-            })}
-          </div>
+            }
+            
+          })}
         </div>
+
         <div className=" h-20 relative bottom-20 bg-gradient-to-t from-slate-100 to-transparent "></div>
       </div>
 

@@ -32,30 +32,30 @@ function StepBudget() {
     <div className="h-[90vh] md:h-[86vh]">
       <div className="w-full h-full md:h-auto ">
       <div className="h-full  md:h-full w-full  md:pt-[10%]  ">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
-          Enter Your Budget
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold noto-sans ">
+          输入您的预算
         </h3>
-        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px]">
-          Enter the amount you plan to invest
+        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center noto-sans mb-[60px]">
+        输入您计划投资的金额
         </p>
 
         <div className="md:hidden mb-[16px] w-full px-1 flex  gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
           <Image className="" src={step} alt="" />
           <div className="">
-            <h3 className=" text-[#271703] text-[16px] font-bold ">
+            <h3 className=" text-[#271703] text-[16px] font-semibold noto-sans ">
               {" "}
-              Enter Your Budget
+              输入您的预算
             </h3>
-            <p className=" text-[12px] text-[#9D5C0D] ">
-              Enter the amount you plan to invest
+            <p className=" text-[12px] text-[#9D5C0D] noto-sans ">
+            输入您计划投资的金额
             </p>
           </div>
         </div>
 
         <div className="rounded-[20px] flex flex-col items-center md:items-start px-4 md:px-8 pt-6 pb-5 md:pb-[64px] mt-3 bg-[#F7F8F9] mx-4 md:mx-7">
-          <p className="mb-3  text-[14px] text-center px-2 md:text-left md:text-[16px] font-[Gilroy-SemiBold] md:font-[Gilroy-SemiBold] text-[#76450A] ">
-            Pick a Room Type or Craft Your Own! Choose from options, or type in
-            your unique space.
+          <p className="mb-3  text-[14px] text-center px-2 md:text-left md:text-[16px] font-semibold noto-sans text-[#76450A] ">
+          选择房间类型或打造您自己的房间类型！ 从选项中选择，或输入
+             你独特的空间。
           </p>
 
           {/* .........  input field ........... */}

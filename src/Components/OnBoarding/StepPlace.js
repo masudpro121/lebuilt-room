@@ -27,11 +27,11 @@ function StepPlace() {
     }
   };
   const places = [
-    "New House Generation",
-    "Pre-Sale Home",
-    "Old House Renovation",
-    "Commercial Space",
-    "Public Space",
+    "新房一代",
+    "预售首页",
+    "老房子改造",
+    "商业空间",
+    "公共场所",
   ];
   const handleInput = (selected) => {
     setSelectedOption(selected);
@@ -44,22 +44,22 @@ function StepPlace() {
     <div className="h-[90vh] md:h-[86vh] ">
       <div className="w-full h-full md:h-auto  ">
       <div className="h-full   md:pt-[10%]">
-        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-[Gilroy-SemiBold] ">
-          Select place
+        <h3 className="hidden md:block text-[#271703] text-[48px] text-center font-semibold noto-sans ">
+          选择地点
         </h3>
-        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px]">
-          Click on a label that best describes your location.
+        <p className="hidden md:block text-[18px] text-[#9D5C0D] text-center mb-[60px] noto-sans">
+          单击最能描述您所在位置的标签。
         </p>
 
         <div className="md:hidden mb-[16px] px-1 flex gap-3 items-center py-[10px] bg-[#FEF7EF] justify-center">
           <Image className="" src={step} alt="" />
           <div className="">
-            <h3 className=" text-[#271703] text-[16px] font-bold ">
+            <h3 className=" text-[#271703] text-[16px] font-semibold noto-sans ">
               {" "}
-              Select place
+              选择地点
             </h3>
-            <p className="  text-[12px] text-[#9D5C0D] ">
-              Click on a label that best describes your location.
+            <p className="  text-[12px] text-[#9D5C0D] noto-sans ">
+              单击最能描述您所在位置的标签。
             </p>
           </div>
         </div>
@@ -71,8 +71,8 @@ function StepPlace() {
               src={logo}
               alt=""
             />
-            <p className="mb-[12px] text-[14px] md:text-[16px] font-[Gilroy-SemiBold] text-[#76450A]">
-              Pick a Space! Choose from options.
+            <p className="mb-[12px] text-[14px] md:text-[16px] font-semibold noto-sans text-[#76450A]">
+            选择一个空间！ 从选项中进行选择。
             </p>
           </div>
 
@@ -84,7 +84,7 @@ function StepPlace() {
               return (
                 <div
                   onClick={() => handleInput(place)}
-                  className={` px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-bold rounded-md md:font-[Gilroy-SemiBold] shadow ${
+                  className={` px-4 py-[6px] cursor-pointer text-[14px] md:text-[18px] font-semibold noto-sans rounded-md  shadow ${
                     selectedOption == place
                       ? "bg-[#271703] text-white"
                       : "text-[#271703] bg-white"

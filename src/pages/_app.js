@@ -58,17 +58,15 @@ export default function App({ Component, pageProps }) {
   return (
     <MyContext.Provider value={value}>
       <Head>
-        <title>
-          ai.ufoliving.co
-        </title>
+        <title>ai.ufoliving.co</title>
         <meta
           name="description"
-          content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
-          key="desc"
+          content="ai ufoliving description"
+          key="ufoliving"
         />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;600;700;800&display=swap"
           rel="stylesheet"
