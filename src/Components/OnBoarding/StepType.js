@@ -276,8 +276,8 @@ function StepType() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-2 md:py-3 px-[28px] items-center justify-center w-full  md:w-[192px] cursor-pointer"
             >
-              <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
-                Next
+              <p className=" text-[20px] font-semibold noto-sans whitespace-nowrap">
+              下一个
               </p>
               <Image className="" src={arrow} alt="" />
             </div>
@@ -296,7 +296,7 @@ function StepType() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
-              <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
+              <p className="text-[17px] md:text-[20px] font-semibold noto-sans">
                 Next
               </p>
               <Image className="" src={arrow} alt="" />

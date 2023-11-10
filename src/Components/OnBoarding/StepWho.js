@@ -159,7 +159,7 @@ function StepWho() {
           onClick={nextStep}
           className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] md:py-3 px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
         >
-          <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">Next</p>
+          <p className="text-[17px] md:text-[20px] font-semibold noto-sans">下一个</p>
          <Image className="" src={arrow} alt="" />
         </div>
       </div>

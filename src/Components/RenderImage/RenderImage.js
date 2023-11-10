@@ -10,7 +10,7 @@ function RenderImage({src, cls="",}) {
   return (
     <>
      {
-      isLoading  && <div className="flex justify-center">
+      isLoading  && <div className="">
         <Skeleton duration={0.7} className={"!w-80 !h-80 sm:!w-[500px] sm:!h-[400px]"} />
       </div>
      }

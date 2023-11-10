@@ -19,7 +19,7 @@ const Collection = () => {
       <div className=" md:p-5 md:bg-slate-100">
         <div className=" bg-white md:p-5">
           <div className="md:border-2 border-[#FBE8D0]">
-          <div className="bg-[#F2F1EF] py-3 px-3 rounded-md font-[Gilroy-SemiBold] text-md md:text-xl mt-4 mb-2 w-[85%] m-auto">Explore what others are creating</div>
+          <div className="bg-[#F2F1EF] py-3 px-3 rounded-md font-semibold noto-sans text-md md:text-xl mt-4 mb-2 w-[85%] m-auto">探索其他人正在创造什么</div>
           <CollectionHistory data={data} />
           </div>
         </div>

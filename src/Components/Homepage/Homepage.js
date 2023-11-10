@@ -46,8 +46,8 @@ const Homepage = ({ nextStep }) => {
         <div className="w-full h-20 sm:h-24 px-2 sm:px-8 py-4 bg-white border border-slate-100 justify-between items-center inline-flex">
           <div className="justify-start items-center  flex">
             <Image src={Logo} className=" w-[50px] sm:w-16 sm:h-16" />
-            <div className="hidden sm:block  text-stone-900 text-lg font-normal font-['Gilroy-Medium']">
-              Create exclusive AI interior design in 30 seconds
+            <div className="hidden sm:block  text-stone-900 text-lg font-medium noto-sans">
+            30秒打造专属AI室内设计
             </div>
           </div>
           <div
@@ -55,9 +55,9 @@ const Homepage = ({ nextStep }) => {
             className="cursor-pointer w-48 justify-end mr-2 items-center gap-6 flex"
           >
             <div className="sm:w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
-              <div className=" flex items-center gap-3 text-center text-slate-50 text-sm font-normal font-['Gilroy-SemiBold'] leading-none">
+              <div className=" flex items-center gap-3 text-center text-slate-50 text-sm font-semibold noto-sans leading-none">
                 <Image width={20} height={20} src={WhiteStarImg} />
-                <div>Start generating </div>
+                <div>开始生成 </div>
               </div>
             </div>
           </div>
@@ -198,18 +198,18 @@ const Homepage = ({ nextStep }) => {
             <div className=" flex items-center gap-2 text-orange-50 text-xl font-bold font-['Plus Jakarta Sans']">
               <Image src={LogoWhite} className="w-[50px] h-[50px]" />
             </div>
-            <div className=" text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-7">
+            <div className=" text-orange-50 text-sm font-normal noto-sans leading-7">
               <div className="sm:hidden text-right sm:text-left">
-                Where Each Corner Reflects the Future of Living
+              每个角落都体现着未来的生活
               </div>
-              <div className="hidden sm:block text-right sm:text-left">
-                Where Each Corner Reflects the <br /> Future of Living
+              <div className="hidden sm:block text-right sm:text-left noto-sans">
+              每个角落都反映出 <br /> 未来的生活
               </div>
             </div>
           </div>
           <div className="grow   pl-6 flex-col justify-start items-end gap-2 inline-flex mt-10 sm:mt-0 mb-3 pr-2 sm:pr-0">
-            <div className="text-orange-50 text-lg font-normal font-['Gilroy-SemiBold'] leading-snug">
-              Connect with us
+            <div className="text-orange-50 text-lg font-semibold noto-sans leading-snug">
+            联系我们
             </div>
             <div className="flex gap-3">
               <Image className="cursor-pointer" src={FbImg} />
@@ -220,15 +220,15 @@ const Homepage = ({ nextStep }) => {
           </div>
         </div>
         <div className="mb-0 sm:mt-20  px-8 bg-[#4D453E] justify-start items-center gap-5 block w-full sm:inline-flex h-[70px]">
-          <div className="py-2 text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
-            Copyright 2023 -{" "}
+          <div className="py-2 text-orange-50 text-sm noto-sans leading-none">
+          版权所有 2023 -{" "}
             <span className="noto-sans">悠孚室內裝修設計股份有限公司</span>
           </div>
-          <div className="py-2 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
-            Terms & policies
+          <div className="py-2 cursor-pointer text-orange-50 text-sm noto-sans leading-none">
+          条款和政策
           </div>
-          <div className="py-2 cursor-pointer text-orange-50 text-sm font-normal font-['Gilroy-Regular'] leading-none">
-            Privacy & policies
+          <div className="py-2 cursor-pointer text-orange-50 text-sm noto-sans leading-none">
+          隐私和政策
           </div>
         </div>
       </div>

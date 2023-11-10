@@ -224,8 +224,8 @@ function StepStyle() {
               className=" hidden md:flex border rounded-lg py-[12px] px-[28px] items-center gap-2 cursor-pointer"
             >
               <Image src={repeat} alt="more style" />
-              <p className="text-[#323A46] text-[20px] font-[Gilroy-SemiBold]">
-                Show More Styles
+              <p className="text-[#323A46] text-[20px] font-semibold noto-sans">
+              显示更多款式
               </p>
             </div>
 
@@ -233,8 +233,8 @@ function StepStyle() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded-[8px] py-[12px] md:py-3 px-[28px] items-center justify-center space-x-[12px] w-full  md:w-[192px] cursor-pointer"
             >
-              <p className=" text-[20px] font-[Gilroy-SemiBold] whitespace-nowrap">
-                Next
+              <p className=" text-[20px] font-semibold noto-sans whitespace-nowrap">
+              下一个
               </p>
              <Image className="" src={arrow} alt="" />
             </div>
@@ -242,8 +242,8 @@ function StepStyle() {
           <div className="flex justify-center md:justify-end mb-3">
             <div className=" lg:hidden flex border rounded-lg py-3 px-[32px] items-center justify-center  gap-2 cursor-pointer">
               <Image src={repeat} alt="" />
-              <p className="text-[#323A46] text-[17px] font-[Gilroy-SemiBold]">
-                Show More Styles
+              <p className="text-[#323A46] text-[17px] font-semibold noto-sans">
+              显示更多款式
               </p>
             </div>
           </div>
@@ -261,8 +261,8 @@ function StepStyle() {
               onClick={nextStep}
               className="myBtn bg-[#9D5C0D] text-white flex rounded py-[12px] px-4 md:px-[28px] items-center justify-center space-x-[12px] w-[192px] cursor-pointer"
             >
-              <p className="text-[17px] md:text-[20px] font-[Gilroy-SemiBold]">
-                Next
+              <p className="text-[17px] md:text-[20px] font-semibold noto-sans">
+              下一个
               </p>
               <Image className="mb-[-3px]" src={arrow} alt="next" />
             </div>

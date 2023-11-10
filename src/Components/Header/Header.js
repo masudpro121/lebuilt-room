@@ -33,13 +33,13 @@ const Header = () => {
             />
             <div className="flex items-center space-x-[20px]">
               <Link href="/history" className="no-underline">
-                <h2 className="text-[16px] text-[#475569] cursor-pointer  ">
-                  History
+                <h2 className="text-[16px] noto-sans font-semibold text-[#475569] cursor-pointer  ">
+                历史
                 </h2>
               </Link>
               <Link href="/collection" className="no-underline">
-                <h2 className="text-[16px] text-[#475569] cursor-pointer  ">
-                  Collection
+                <h2 className="text-[16px] noto-sans font-semibold text-[#475569] cursor-pointer  ">
+                收藏
                 </h2>
               </Link>
             </div>

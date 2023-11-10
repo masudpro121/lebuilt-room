@@ -19,51 +19,51 @@ const OnBoardLayout = (props) => {
 
   const leftMenu = [
     {
-      title: "I am",
-      description: "Tell us a bit about yourself.",
+      title: "我是",
+      description: "告诉我们一些关于你自己的事。",
       step: 1,
       target: "who",
     },
     {
-      title: "Select Style",
-      description: "Choose your preferred design style.",
+      title: "选择风格",
+      description: "选择您喜欢的设计风格。",
       step: 2,
       target: "style",
     },
     {
-      title: "Select room type",
-      description: "Pick or type the room type you're envisioning",
+      title: "选择房型",
+      description: "选择或输入您想要的房间类型",
       step: 3,
       target: "type",
     },
     {
-      title: "Select place",
+      title: "选择地点",
       // description: "Select best describes place",
-      description: "Click on a label that best describes your location.",
+      description: "单击最能描述您所在位置的标签。",
       step: 4,
       target: "place",
     },
     {
-      title: "Select Room Size",
-      description: "Upload your room image",
+      title: "选择房间大小",
+      description: "上传您的房间图片",
       step: 5,
       target: "size",
     },
     {
-      title: "Enter Your Budget",
-      description: "Please provide your name and email",
+      title: "输入您的预算",
+      description: "请提供您的预算",
       step: 6,
       target: "budget",
     },
     {
       title: "Choose ",
-      description: "Please provide your name and email",
+      description: "选择您的空间",
       step: 7,
       target: "haveSpace",
     },
     {
       title: "Upload File",
-      description: "Please provide your name and email",
+      description: "上传您的房间图片",
       step: 8,
       target: "",
     },
@@ -114,11 +114,11 @@ const OnBoardLayout = (props) => {
                         />
                       </div>
                       <div className="w-full">
-                        <h2 className="text-[16px] text-[#344054] font-[Gilroy-SemiBold]">
+                        <h2 className="text-[16px] text-[#344054] font-semibold noto-sans">
                           {item.title}
                         </h2>
                         <p
-                          className={`text-[14px]  ${
+                          className={`text-[14px] noto-sans  ${
                             onBoard[item.target] &&
                             !(onBoardingStep == item.step)
                               ? "text-[#98AE1A]"

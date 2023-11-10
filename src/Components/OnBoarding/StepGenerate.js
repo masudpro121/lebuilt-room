@@ -185,10 +185,8 @@ function StepGenerate() {
 
            {
             progress < 100 &&
-            <div className="mt-5 w-1/3 m-auto">
-           <div>
+            <div className="mt-5 md:w-1/3 h-[500px] m-auto">
             <RenderImage src={progressImage} />
-           </div>
           </div>
            }
 
@@ -214,12 +212,12 @@ function StepGenerate() {
               </>
             )}
             {progress == 100 && (
-              <div className="w-full  lg:w-2/3 m-auto flex justify-center ">
+              <div className="w-full  lg:w-2/3 m-auto flex justify-center gap-3">
                 <div className="gap-3 bg-[#F2F1EF] p-5 sm:p-0 rounded-xl sm:bg-white flex justify-center items-center flex-wrap mt-10 ">
                 {generatedImages.map((img, i) => {
                     return (
                       <ImageModal key={img + i} img={img}>
-                        <div className="cursor-pointer w-full h-full ">
+                        <div className="cursor-pointer  ">
                           <RenderImage src={img} />
                         </div>
                       </ImageModal>
@@ -232,18 +230,18 @@ function StepGenerate() {
             <div className="flex flex-wrap gap-3 md:gap-10 justify-end sm:justify-center mt-5">
               <div onClick={handleGenerate} className="flex justify-center w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={RepeatImg} />
-                <p className="font-[Gilroy-SemiBold]">Regenerate</p>
+                <p className="font-semibold noto-sans">再生</p>
               </div>
               <div className="flex justify-center w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={PlusIconImg} />
-                <p className="font-[Gilroy-SemiBold]">Select a new Style</p>
+                <p className="font-semibold noto-sans">选择新风格</p>
               </div>
               {
                 progress==100 && 
                 <div onClick={sendTextMsg} className="flex  justify-center w-full sm:w-auto gap-3 cursor-pointer pl-3 pr-7 rounded-md items-center bg-[#9D5C0D] text-white">
                 <Image src={LogoWhite} />
-                <p className="font-[Gilroy-SemiBold] py-2 sm:py-0">
-                  Get a local designer to work on your project
+                <p className="font-semibold noto-sans py-2 sm:py-0">
+                聘请当地设计师来完成您的项目
                 </p>
               </div>
               }
