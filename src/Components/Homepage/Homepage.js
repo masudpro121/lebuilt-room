@@ -54,7 +54,7 @@ const Homepage = ({ nextStep }) => {
             onClick={nextStep}
             className="cursor-pointer w-48 justify-end mr-2 items-center gap-6 flex"
           >
-            <div className="sm:w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
+            <div className="sm:w-48 h-10 px-3 py-2 bg-[#030303] rounded justify-center items-center gap-1.5 flex">
               <div className=" flex items-center gap-3 text-center text-slate-50 text-sm font-semibold noto-sans leading-none">
                 <Image width={20} height={20} src={WhiteStarImg} />
                 <div>开始生成 </div>
@@ -98,7 +98,7 @@ const Homepage = ({ nextStep }) => {
                   className="cursor-pointer px-7 sm:px-20 py-4 sm:py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex md:w-[418px]"
                 >
                   <Image width={30} height={30} src={StarImg} />
-                  <div className="text-black font-semibold text-lg  noto-sans leading-[21.6px] ">
+                  <div className="text-black font-extrabold text-lg  noto-sans leading-[21.6px] ">
                     生成室內設計
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const Homepage = ({ nextStep }) => {
                   </p>
                   <button
                     onClick={nextStep}
-                    className=" bg-[#9D5C0D] noto-sans font-bold text-white  py-4 rounded-md w-full mt-3"
+                    className=" bg-[#030303] noto-sans font-bold text-white  py-4 rounded-md w-full mt-3"
                   >
                     生成室內設計
                   </button>
