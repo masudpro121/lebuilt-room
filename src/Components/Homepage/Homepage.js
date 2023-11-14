@@ -54,10 +54,10 @@ const Homepage = ({ nextStep }) => {
             onClick={nextStep}
             className="cursor-pointer w-48 justify-end mr-2 items-center gap-6 flex"
           >
-            <div className="sm:w-48 h-10 px-3 py-2 bg-yellow-700 rounded justify-center items-center gap-1.5 flex">
+            <div className="sm:w-48 h-10 px-5 py-2 bg-[#030303] rounded justify-center items-center gap-1.5 flex">
               <div className=" flex items-center gap-3 text-center text-slate-50 text-sm font-semibold noto-sans leading-none">
-                <Image width={20} height={20} src={WhiteStarImg} />
                 <div>开始生成 </div>
+                <Image width={20} height={20} src={WhiteStarImg} />
               </div>
             </div>
           </div>
@@ -75,16 +75,16 @@ const Homepage = ({ nextStep }) => {
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 h-[305px] sm:h-[506px] flex items-center justify-center">
-          <div className={`w-full h-full flex justify-center  bg-[#000000f6] `}>
+          <div className={`w-full h-full flex justify-center  bg-[#4D453Eee] `}>
             <div className=" py-10  flex-col justify-start items-start gap-2.5 inline-flex">
-              <div className="self-stretch grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
+              <div className="self-stretch  grow shrink basis-0 px-8 py-2.5  flex-col justify-center items-center gap-8 flex">
                 <div
                   className={
                     "herobg self-stretch text-center leading-[2] sm:leading-[4] noto-sans"
                   }
                 >
                   <span className="text-orange-50 text-2xl sm:text-5xl noto-sans ">
-                    靠<span className="font-extrabold"> 感覺 </span>
+                    靠<span className="font-extrabold">感覺</span>
                     來設計您的空間{" "}
                   </span>
                   <br />
@@ -95,9 +95,9 @@ const Homepage = ({ nextStep }) => {
                 </div>
                 <div
                   onClick={nextStep}
-                  className="cursor-pointer px-7 sm:px-20 py-4 sm:py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex md:w-[418px]"
+                  className="cursor-pointer px-10 sm:px-28 py-3.5 sm:py-5 bg-orange-50 rounded-lg shadow justify-center items-center gap-3 flex md:w-[418px]"
                 >
-                  <Image width={30} height={30} src={StarImg} />
+                  <Image width={35} height={35} src={StarImg} />
                   <div className="text-black font-semibold text-lg  noto-sans leading-[21.6px] ">
                     生成室內設計
                   </div>
@@ -141,7 +141,7 @@ const Homepage = ({ nextStep }) => {
                   </p>
                   <button
                     onClick={nextStep}
-                    className=" bg-[#9D5C0D] noto-sans font-bold text-white  py-4 rounded-md w-full mt-3"
+                    className=" bg-[#030303] noto-sans font-bold text-white  py-4 rounded-md w-full mt-3"
                   >
                     生成室內設計
                   </button>
@@ -180,7 +180,7 @@ const Homepage = ({ nextStep }) => {
               onClick={nextStep}
               className="h-20 justify-start items-start inline-flex cursor-pointer"
             >
-              <div className="px-7 sm:px-20 py-[16px] bg-black rounded-lg shadow justify-center items-center gap-3 flex md:w-[512px] ">
+              <div className="px-7 sm:px-20 py-[28px] bg-black rounded-lg shadow justify-center items-center gap-3 flex md:w-[512px] ">
                 <Image width={20} height={20} src={WhiteStarImg} />
                 <div className="  text-white text-lg noto-sans font-bold  leading-7">
                   生成室內設計
