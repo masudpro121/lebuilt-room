@@ -186,7 +186,7 @@ function StepGenerate() {
            {
             progress < 100 &&
             <div className="mt-5 md:w-1/3  m-auto">
-            <div className="flex justify-center"><RenderImage src={progressImage} /></div>
+            <RenderImage src={progressImage} />
           </div>
            }
 

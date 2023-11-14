@@ -47,7 +47,23 @@ const styleImages = [
     name: "f64d2879fd086dcef1df44a9274f51dc",
     img: "https://res.cloudinary.com/dzo4lqjb2/image/upload/v1694678090/style%20images/jb33bgm2gpwc8fkowwfp.webp",
   },
-  
+  // others copy 
+  {
+    name: "179e71556de6df22457bac6a4d8dc6e2",
+    img: "https://res.cloudinary.com/dzo4lqjb2/image/upload/v1694614965/style%20images/ltrrrjtwfg47t5jcivgp.webp",
+  },
+  {
+    name: "4b81ff29487cd0a1f6855819c34d1873",
+    img: "https://res.cloudinary.com/dzo4lqjb2/image/upload/v1694615275/style%20images/ibrr53psy0cn2gwnnsya.webp",
+  },
+  {
+    name: "52d50cd11d69797d26aa95eb13592760",
+    img: "https://res.cloudinary.com/dzo4lqjb2/image/upload/v1694677447/style%20images/pswk_A_photography_capturing_the_interior_design_of_a_modern-st_e1b400ef-7978-41a4-a361-60a8b6881ceb_jigd5k.webp",
+  },
+  {
+    name: "f64d2879fd086dcef1df44a9274f51dc",
+    img: "https://res.cloudinary.com/dzo4lqjb2/image/upload/v1694678090/style%20images/jb33bgm2gpwc8fkowwfp.webp",
+  },
 ];
 
 export default styleImages
