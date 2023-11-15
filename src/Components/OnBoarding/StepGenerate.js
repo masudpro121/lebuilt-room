@@ -93,7 +93,8 @@ function StepGenerate() {
     const onBoard = JSON.parse(localStorage.getItem("onBoard"));
     const { image, type, style, place, size, budget } = onBoard;
     const translated = await translate(type.name)
-    const translatedType = translated?.data?.translations[0]?.translatedText
+    
+    const translatedType = translated?.trans
     const prompt = generatePrompt({ image, type:translatedType, style });
     console.log(prompt, 'prompt');
     setProgress(5);
@@ -143,6 +144,10 @@ function StepGenerate() {
       }
     }
   };
+  const redirectStep = (step) => {
+    localStorage.setItem("onBoardingStep", 2);
+    setOnBoardingStep(2);
+  }
   return (
     <div>
       {/* <button onClick={prevStep}>Prev Step</button>  */}
@@ -185,7 +190,7 @@ function StepGenerate() {
 
            {
             progress < 100 &&
-            <div className="mt-5 md:w-1/3  m-auto">
+            <div className={`mt-5 flex justify-center  m-auto ${progressImage && "md:w-1/3"}`}>
             <RenderImage src={progressImage} />
           </div>
            }
@@ -232,7 +237,7 @@ function StepGenerate() {
                 <Image src={RepeatImg} />
                 <p className="font-semibold noto-sans">再生</p>
               </div>
-              <div className="flex justify-center w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
+              <div onClick={()=>redirectStep(2)} className="flex justify-center w-full sm:w-auto gap-3 cursor-pointer px-8 py-3 rounded-md items-center border-2 border-[#D0D5DD]">
                 <Image src={PlusIconImg} />
                 <p className="font-semibold noto-sans">选择新风格</p>
               </div>

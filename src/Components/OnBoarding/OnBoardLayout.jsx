@@ -56,13 +56,13 @@ const OnBoardLayout = (props) => {
       target: "budget",
     },
     {
-      title: "Choose ",
+      title: "选择",
       description: "选择您的空间",
       step: 7,
       target: "haveSpace",
     },
     {
-      title: "Upload File",
+      title: "上传文件",
       description: "上传您的房间图片",
       step: 8,
       target: "",

@@ -1,29 +1,28 @@
-import axios from 'axios'
+import axios from "axios";
 const translate = async (text) => {
   const encodedParams = new URLSearchParams();
-  encodedParams.set("q", text);
-  encodedParams.set("format", "text");
-  encodedParams.set("source", "zh-CN");
-  encodedParams.set("target", "en");
+
+  encodedParams.set("from", "auto");
+  encodedParams.set("to", "en");
+  encodedParams.set("text", text);
 
   const options = {
     method: "POST",
-    url: "https://google-translate1.p.rapidapi.com/language/translate/v2",
+    url: "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "Accept-Encoding": "application/gzip",
-      "X-RapidAPI-Key": "a0da856e65msh3d9021db6e76e07p144c43jsnce7b7228dfba",
-      "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
+      "X-RapidAPI-Key": "efb2b785c6msh1ae9c55a6859ce5p181d94jsnbe2d6e86d146",
+      "X-RapidAPI-Host": "google-translate113.p.rapidapi.com",
     },
     data: encodedParams,
   };
 
   try {
     const response = await axios.request(options);
-     return response.data
+    return response.data;
   } catch (error) {
     console.error(error);
   }
 };
 
-export default translate
+export default translate;
